@@ -1,98 +1,71 @@
-🎓 Hiclass – Smart Learning Platform
+# 📚 HiClass - Smart Learning Platform
 
-Hiclass is an all-in-one online learning solution created for students, teachers, and knowledge seekers. It blends education with simplicity, offering smart features for learning anywhere, anytime.
+![HiClass Logo](file_00000000f52c61f8a973cb3d08a7bde2.png)
 
-
-
-
----
-
-🚀 Features
-
-📚 Smart Courses (Academic + Islamic)
-
-🎥 Video Tutorials with YouTube Integration
-
-📖 Downloadable Notes and PDFs
-
-❓ Quizzes with Scoring System
-
-🌐 Multi-language Support: Urdu | Hindi | English
-
-🧑‍💼 Admin Panel for Course Uploads
-
-🔔 Push Notifications (Coming Soon)
-
-👥 Referral System with Rewards
-
-🧾 Privacy-Focused User Data Handling
-
-
+Welcome to **HiClass**, an advanced and student-friendly e-learning platform developed by **Ahmad Reza**. This platform offers free courses, Islamic books, subject notes, and a smart dashboard to track your learning progress.
 
 ---
 
-🖼️ Screenshots
+## 🌟 Key Features
 
-Homepage	Dashboard	Mobile View
-
-		
-
-
-
----
-
-💡 Technologies Used
-
-HTML5 / CSS3
-
-JavaScript (Vanilla)
-
-Firebase (Auth, DB, Hosting)
-
-YouTube API
-
-Responsive Web Design
-
-
+- ✅ Smart & responsive UI (Desktop + Mobile)
+- 📘 Free courses and Islamic books
+- 📝 Quizzes and progress tracking
+- 🔒 Secure login/signup system
+- 🌐 Multilingual support: Urdu, Hindi, English
+- 🔔 Push notifications (Firebase ready)
+- 🧠 Admin dashboard for uploads
+- 🎯 Referral and reward system
 
 ---
 
-🌐 Live Website
+## 🔧 Tech Stack
 
-🔗 Visit Hiclass
-
-
----
-
-🧑‍💻 About Developer
-
-Developed by Ahmad Reza, a passionate educational technologist from Karachi, Pakistan. Dedicated to building tools that make learning accessible and enjoyable.
-
-📍 Location: Surjani Town, Karachi
-
-📧 Email: kingpubg45555@gmail.com
-
-📞 WhatsApp: +92 307 2080527
-
-🎵 TikTok: @team.work.by.ahme
-
-📺 YouTube: sid.rapper1
-
-
+- **HTML5** / **CSS3**
+- **JavaScript (Vanilla)**
+- **Firebase (Auth, Firestore, Hosting)**
+- **Responsive Design (Mobile Friendly)**
+- **GitHub Pages** (Static Deployment)
 
 ---
 
-🔐 Privacy Policy
+## 🔗 Live Demo
 
-We respect user privacy. No personal data is shared with third parties. Full policy available on info.html
-
+> 🟢 Coming soon: [https://hiclass.vercel.app](#)
 
 ---
 
-🛠️ How to Contribute
+## 📸 UI Previews
 
-1. Fork the repository  
-2. Clone it to your local machine  
-3. Create a branch and start making changes  
-4. Push and create a Pull Request
+### 🏠 Homepage
+![Homepage](file_00000000d9786230b1fe5a42df76ffbe.png)
 
+### 📊 Dashboard
+![Dashboard Preview](dashboard_preview.png)
+
+### 📱 Mobile View
+![Mobile View](mobile_view_preview.png)
+
+---
+
+## 📁 Folder Structure
+
+```plaintext
+📦 HiClass/
+├── index.html
+├── about.html
+├── login.html
+├── signup.html
+├── dashboard.html
+├── courses.html
+├── contact.html
+├── privacy.html
+├── faq.html
+├── forget-password.html
+├── style.css
+├── README.md
+└── assets/
+    ├── logo.png
+    ├── homepage_banner.png
+    ├── dashboard_preview.png
+    └── mobile_view_preview.png
