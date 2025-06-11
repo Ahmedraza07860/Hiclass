@@ -1,0 +1,11 @@
+
+commit 1a2b3c4d5e6f7g8h9i0j
+Author: Ahmad Reza <ahmad@example.com>
+Date:   2025-06-11
+
+    Add Islamic Urdu Books collection (Quran, Seerat, Namaz, Ahadith)
+
+    - Quran_Pak_Urdu_Translation.pdf
+    - Seerat_un_Nabi.pdf
+    - Namaz_ka_Tariqa.pdf
+    - Hadees_Collection.pdf
