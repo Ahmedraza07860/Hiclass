@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HiClass | Modern Style</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(120deg, #e0eafc, #cfdef3);
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: rgba(30, 144, 255, 0.9);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      border-bottom: 2px solid #ffffff22;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+    }
+
+    main {
+      flex: 1;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid #ffffff33;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    }
+
+    .card h2 {
+      color: #1e90ff;
+      margin-bottom: 15px;
+    }
+
+    .card p {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(30, 144, 255, 0.95);
+      color: white;
+      font-size: 0.95rem;
+      border-top: 2px solid #ffffff22;
+      box-shadow: 0 -5px 20px rgba(0,0,0,0.15);
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+      .card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>📘 Welcome to HiClass</h1>
+    <p>Smart Learning Platform by Ahmad Reza</p>
+  </header>
+
+  <main>
+    <div class="card">
+      <h2>🎓 Course Access</h2>
+      <p>Get unlimited access to educational videos, Islamic content, and school subjects from your dashboard.</p>
+    </div>
+
+    <div class="card">
+      <h2>📊 Progress Tracker</h2>
+      <p>Stay motivated by checking your course completion stats, quiz scores, and achievements.</p>
+    </div>
+
+    <div class="card">
+      <h2>🏆 Earn Certificates</h2>
+      <p>Receive official certificates for every course you finish — verified and downloadable instantly.</p>
+    </div>
+
+    <div class="card">
+      <h2>💡 Learn Anywhere</h2>
+      <p>Access your learning material on mobile, tablet, or desktop anytime, from anywhere in Pakistan.</p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 HiClass | Built by Ahmad Reza | All rights reserved.
+  </footer>
+
+</body>
+</html>
