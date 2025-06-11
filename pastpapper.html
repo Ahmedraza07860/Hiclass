@@ -2,7 +2,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HiClass | Past Papers</title>
+  <title>Hiclass - Smart Learning</title>
   <style>
     * {
       margin: 0;
@@ -11,138 +11,141 @@
     }
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f4f6fa;
-      color: #222;
-      padding: 20px;
-    }
-    h1 {
       text-align: center;
-      margin-bottom: 40px;
+      background-color: #f4f6f8;
+      padding: 20px;
+      color: #333;
+    }
+    .logo {
+      width: 150px;
+      margin: 20px auto;
+    }
+    .banner {
+      width: 90%;
+      max-width: 800px;
+      margin: 20px auto;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+    .cta-button {
+      background-color: #007bff;
+      color: white;
+      padding: 14px 24px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 12px;
+      transition: background-color 0.3s ease;
+    }
+    .cta-button:hover {
+      background-color: #0056b3;
+    }
+    .button-group {
+      margin: 30px 0;
+    }
+    .screenshots {
+      padding: 40px 20px;
+      background: #eef6ff;
+      border-top: 2px solid #ddd;
+    }
+    .screenshots h2 {
+      font-size: 28px;
+      margin-bottom: 30px;
       color: #1e3a8a;
     }
-    .section {
-      margin-bottom: 50px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-      padding: 25px;
-    }
-    .section h2 {
-      margin-bottom: 20px;
-      color: #0f172a;
-      border-bottom: 2px solid #3b82f6;
-      padding-bottom: 10px;
-    }
-    .resources {
+    .screenshot-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
+      justify-content: center;
+      gap: 30px;
     }
-    .resource-box {
-      flex: 1 1 250px;
-      background: #e0f2fe;
-      padding: 15px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      transition: 0.3s ease;
+    .screenshot-box {
+      max-width: 300px;
     }
-    .resource-box:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    .screenshot-box img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
     }
-    .resource-box h3 {
+    .screenshot-box h3 {
+      margin: 10px 0 5px;
       font-size: 18px;
-      color: #1d4ed8;
-      margin-bottom: 10px;
+      color: #333;
     }
-    .resource-box a {
-      text-decoration: none;
-      display: inline-block;
-      margin: 5px 0;
-      color: #0c4a6e;
-      font-weight: bold;
-    }
-    footer {
-      text-align: center;
-      margin-top: 60px;
+    .footer {
+      margin-top: 50px;
+      padding-top: 20px;
       font-size: 14px;
-      color: #888;
+      color: #777;
+      border-top: 1px solid #ccc;
+    }
+    .footer a {
+      color: #007bff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 600px) {
+      .cta-button {
+        display: block;
+        width: 90%;
+        margin: 10px auto;
+      }
+      .screenshot-row {
+        flex-direction: column;
+        gap: 20px;
+      }
     }
   </style>
+  <script>
+    // User login check
+    const isLoggedIn = localStorage.getItem("userLoggedIn");
+    const protectedPages = ["book.html", "pastpapper.html", "courses.html", "dashboard.html"];
+    const currentPage = window.location.pathname.split("/").pop();
+    if (protectedPages.includes(currentPage) && !isLoggedIn) {
+      window.location.href = "login.html";
+    }
+  </script>
 </head>
 <body>
-  <h1>📚 HiClass – Past Papers Archive</h1>  <div class="section">
-    <h2>9th Class Past Papers</h2>
-    <div class="resources">
-      <div class="resource-box">
-        <h3>Science Group</h3>
-        <a href="#">Download PDF</a><br>
-        <a href="#">Watch Video Solutions</a>
+  <img src="file_00000000f52c61f8a973cb3d08a7bde2.png" alt="Hiclass Logo" class="logo">
+  <h1>Welcome to Hiclass</h1>
+  <p>Smart Learning for Every Student</p>
+  <img src="file_00000000d9786230b1fe5a42df76ffbe.png" alt="Learning Banner" class="banner">
+  <div class="button-group">
+    <a href="signup.html"><button class="cta-button">Join Now</button></a>
+    <a href="login.html"><button class="cta-button">Login</button></a>
+    <a href="courses.html"><button class="cta-button">Explore Courses</button></a>
+    <a href="dashboard.html"><button class="cta-button">Go to Dashboard</button></a>
+  </div>
+  <section class="screenshots">
+    <h2>📸 Platform Previews</h2>
+    <div class="screenshot-row">
+      <div class="screenshot-box">
+        <h3>🏠 Homepage</h3>
+        <img src="assets/Home.png" alt="HiClass Homepage">
       </div>
-      <div class="resource-box">
-        <h3>Arts Group</h3>
-        <a href="#">Download PDF</a><br>
-        <a href="#">Watch Video Solutions</a>
+      <div class="screenshot-box">
+        <h3>📊 Dashboard</h3>
+        <img src="assets/dashboard.png" alt="HiClass Dashboard">
       </div>
-    </div>
-  </div>  <div class="section">
-    <h2>10th Class Past Papers</h2>
-    <div class="resources">
-      <div class="resource-box">
-        <h3>Science Group</h3>
-        <a href="#">Download PDF</a><br>
-        <a href="#">Watch Video Solutions</a>
-      </div>
-      <div class="resource-box">
-        <h3>Arts Group</h3>
-        <a href="#">Download PDF</a><br>
-        <a href="#">Watch Video Solutions</a>
+      <div class="screenshot-box">
+        <h3>📱 Mobile View</h3>
+        <img src="assets/Mobileview.png" alt="HiClass Mobile View">
       </div>
     </div>
-  </div>  <div class="section">
-    <h2>1st Year Past Papers</h2>
-    <div class="resources">
-      <div class="resource-box">
-        <h3>Pre-Medical</h3>
-        <a href="#">Download PDF</a><br>
-        <a href="#">Watch Video Solutions</a>
-      </div>
-      <div class="resource-box">
-        <h3>Pre-Engineering</h3>
-        <a href="#">Download PDF</a><br>
-        <a href="#">Watch Video Solutions</a>
-      </div>
-    </div>
-  </div>  <div class="section">
-    <h2>2nd Year Past Papers</h2>
-    <div class="resources">
-      <div class="resource-box">
-        <h3>Pre-Medical</h3>
-        <a href="#">Download PDF</a><br>
-        <a href="#">Watch Video Solutions</a>
-      </div>
-      <div class="resource-box">
-        <h3>Pre-Engineering</h3>
-        <a href="#">Download PDF</a><br>
-        <a href="#">Watch Video Solutions</a>
-      </div>
-    </div>
-  </div>  <div class="section">
-    <h2>Graduation Level Past Papers</h2>
-    <div class="resources">
-      <div class="resource-box">
-        <h3>BA / BSc</h3>
-        <a href="#">Download PDF</a><br>
-        <a href="#">Watch Video Solutions</a>
-      </div>
-      <div class="resource-box">
-        <h3>B.Com / BS</h3>
-        <a href="#">Download PDF</a><br>
-        <a href="#">Watch Video Solutions</a>
-      </div>
-    </div>
-  </div>  <footer>
-    © 2025 Hiclass — All rights reserved.
-  </footer>
+  </section>
+  <div class="footer">
+    <p>
+      <a href="about.html">About Us</a> |
+      <a href="faq.html">FAQ</a> |
+      <a href="privacy.html">Privacy Policy</a> |
+      <a href="contact.html">Contact</a>
+    </p>
+    <p>© 2025 Hiclass by Ahmad Reza</p>
+  </div>
 </body>
 </html>
