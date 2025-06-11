@@ -1,0 +1,195 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel - HiClass</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f0f2f5;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(to right, #004aad, #0077ff);
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    nav a {
+      color: white;
+      margin-left: 1.2rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .dashboard {
+      max-width: 1250px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 18px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+    .dashboard h2 {
+      margin-bottom: 2rem;
+      color: #004aad;
+      text-align: center;
+      font-size: 1.6rem;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background: #e6f0ff;
+      padding: 1.8rem;
+      border-radius: 14px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card h3 {
+      margin: 0;
+      font-size: 1.3rem;
+      color: #003370;
+    }
+    .card p {
+      margin-top: 0.8rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #222;
+    }
+    .actions {
+      margin-top: 3rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .actions button {
+      padding: 1rem 1.5rem;
+      background: #004aad;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    .actions button:hover {
+      background: #003a8c;
+      transform: scale(1.05);
+    }
+    .quick-links {
+      margin-top: 3rem;
+      background: #f8faff;
+      padding: 1.5rem;
+      border-radius: 14px;
+    }
+    .quick-links h4 {
+      margin-bottom: 1rem;
+      color: #004aad;
+    }
+    .quick-links ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .quick-links li a {
+      background: #dbeeff;
+      padding: 0.7rem 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #004aad;
+      font-weight: 500;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: #eee;
+      margin-top: 2rem;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>HiClass Admin Panel</h1>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="index.html">Home</a>
+      <a href="settings.html">Settings</a>
+      <a href="logout.html">Logout</a>
+    </nav>
+  </header>  <section class="dashboard">
+    <h2>👨‍💼 Welcome Admin Ahmad Reza</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>📚 Total Courses</h3>
+        <p>28</p>
+      </div>
+      <div class="card">
+        <h3>👥 Registered Users</h3>
+        <p>5,124</p>
+      </div>
+      <div class="card">
+        <h3>📥 Downloads</h3>
+        <p>12,308</p>
+      </div>
+      <div class="card">
+        <h3>📝 Active Quizzes</h3>
+        <p>15</p>
+      </div>
+      <div class="card">
+        <h3>💬 Feedback Received</h3>
+        <p>132</p>
+      </div>
+      <div class="card">
+        <h3>🕒 Server Uptime</h3>
+        <p>99.9%</p>
+      </div>
+    </div><div class="actions">
+  <button onclick="location.href='upload.html'">➕ Upload Course</button>
+  <button onclick="location.href='manage-users.html'">👥 Manage Users</button>
+  <button onclick="location.href='analytics.html'">📊 Analytics</button>
+  <button onclick="location.href='messages.html'">📨 Messages</button>
+  <button onclick="location.href='referrals.html'">🎁 Referrals</button>
+</div>
+
+<div class="quick-links">
+  <h4>🔗 Quick Admin Tools</h4>
+  <ul>
+    <li><a href="add-quiz.html">➕ Add Quiz</a></li>
+    <li><a href="manage-books.html">📖 Manage Books</a></li>
+    <li><a href="upload-pdf.html">📄 Upload PDFs</a></li>
+    <li><a href="feedback.html">💬 View Feedback</a></li>
+    <li><a href="coupons.html">🎫 Coupons</a></li>
+    <li><a href="admin-profile.html">🧑 Admin Profile</a></li>
+  </ul>
+</div>
+
+  </section>  <footer>
+    <p>© 2025 HiClass | Advanced Admin Panel by Ahmad Reza | Powered with ❤️ in Pakistan</p>
+  </footer>
+</body>
+</html>
