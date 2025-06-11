@@ -1,0 +1,145 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HICLASS Quiz Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    select, button {
+      width: 100%;
+      padding: 12px;
+      margin: 15px 0;
+      font-size: 16px;
+      border-radius: 8px;
+    }
+    .question-box {
+      margin-top: 20px;
+    }
+    .question {
+      font-weight: bold;
+      margin: 10px 0;
+    }
+    .options input {
+      margin-right: 10px;
+    }
+    .score {
+      text-align: center;
+      font-size: 20px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📘 HICLASS Quiz Game</h1>
+    <h2>Select Quiz Category</h2>
+    <select id="category">
+      <option value="islamic">🕌 Islamic Quiz</option>
+      <option value="knowledge">🌐 General Knowledge</option>
+      <option value="class9">📚 9th Class Quiz</option>
+      <option value="class10">📘 10th Class Quiz</option>
+      <option value="1styear">📙 1st Year Quiz</option>
+      <option value="2ndyear">📒 2nd Year Quiz</option>
+      <option value="graduate">🎓 Graduation Quiz</option>
+    </select>
+    <button onclick="startQuiz()">Start Quiz</button><div id="quizBox" class="question-box"></div>
+<div id="scoreBox" class="score"></div>
+
+  </div>  <script>
+    const quizzes = {
+      islamic: [
+        { q: "What is the first month of Islamic calendar?", o: ["Muharram", "Ramadan", "Shaban", "ZilHajj"], a: 0 },
+        { q: "How many times do Muslims pray daily?", o: ["3", "4", "5", "6"], a: 2 },
+      ],
+      knowledge: [
+        { q: "What is the capital of Pakistan?", o: ["Lahore", "Karachi", "Islamabad", "Multan"], a: 2 },
+        { q: "Which planet is known as the Red Planet?", o: ["Earth", "Mars", "Venus", "Jupiter"], a: 1 },
+      ],
+      class9: [
+        { q: "What is H2O?", o: ["Hydrogen", "Oxygen", "Water", "Acid"], a: 2 },
+        { q: "Who discovered gravity?", o: ["Einstein", "Newton", "Darwin", "Galileo"], a: 1 },
+      ],
+      class10: [
+        { q: "What is the chemical symbol for Gold?", o: ["Au", "Ag", "Fe", "Pb"], a: 0 },
+        { q: "Which gas do plants absorb?", o: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"], a: 1 },
+      ],
+      1styear: [
+        { q: "Who is the father of Biology?", o: ["Aristotle", "Newton", "Einstein", "Darwin"], a: 0 },
+        { q: "What is the unit of Force?", o: ["Watt", "Newton", "Pascal", "Joule"], a: 1 },
+      ],
+      2ndyear: [
+        { q: "Define Ohm's Law.", o: ["V=IR", "F=ma", "E=mc^2", "P=VI"], a: 0 },
+        { q: "Derivative of sin(x)?", o: ["cos(x)", "-cos(x)", "tan(x)", "-sin(x)"], a: 0 },
+      ],
+      graduate: [
+        { q: "What is GDP?", o: ["Gross Domestic Product", "Global Demand Plan", "Good Domestic Policy", "General Data Protection"], a: 0 },
+        { q: "Who developed C language?", o: ["Dennis Ritchie", "Bill Gates", "Linus Torvalds", "Steve Jobs"], a: 0 },
+      ]
+    };
+
+    let currentQuiz = [];
+    let currentIndex = 0;
+    let score = 0;
+
+    function startQuiz() {
+      const selected = document.getElementById('category').value;
+      currentQuiz = quizzes[selected];
+      currentIndex = 0;
+      score = 0;
+      document.getElementById('scoreBox').innerText = "";
+      loadQuestion();
+    }
+
+    function loadQuestion() {
+      const quizBox = document.getElementById('quizBox');
+      quizBox.innerHTML = "";
+      if (currentIndex >= currentQuiz.length) {
+        document.getElementById('scoreBox').innerText = `🎉 Your Score: ${score}/${currentQuiz.length}`;
+        return;
+      }
+
+      const q = currentQuiz[currentIndex];
+      const qDiv = document.createElement('div');
+      qDiv.className = 'question';
+      qDiv.innerText = q.q;
+      quizBox.appendChild(qDiv);
+
+      q.o.forEach((opt, i) => {
+        const label = document.createElement('label');
+        label.innerHTML = `<input type='radio' name='option' value='${i}'> ${opt}`;
+        quizBox.appendChild(label);
+        quizBox.appendChild(document.createElement('br'));
+      });
+
+      const btn = document.createElement('button');
+      btn.innerText = "Next";
+      btn.onclick = checkAnswer;
+      quizBox.appendChild(btn);
+    }
+
+    function checkAnswer() {
+      const selected = document.querySelector('input[name="option"]:checked');
+      if (!selected) return alert("Please select an option.");
+
+      if (parseInt(selected.value) === currentQuiz[currentIndex].a) score++;
+      currentIndex++;
+      loadQuestion();
+    }
+  </script></body>
+</html>
