@@ -82,3 +82,30 @@ A user-friendly, empowering experience for students of all ages
 
 Focus on accessibility, quality, and multilingual content (Urdu, Hindi, English)
 
+# Hiclass
+
+## 🚀 Overview
+Hiclass is a smart, multilingual e-learning platform offering video lessons, quizzes, PDFs, and more in Urdu, Hindi, and English.
+
+## 🎨 Visual Identity
+- **Logo:** Represents high-quality and accessible education
+- **Banner:** Depicts a modern, empowered learning environment
+
+## 🌟 Key Features
+- Multilingual content
+- Video + PDF learning
+- Mobile-friendly design
+- Admin dashboard (planned)
+
+## 👨‍💻 Developer
+**Ahmad Reza**  
+Founder & Developer of Hiclass
+
+## 🧰 Tech Stack
+- HTML, CSS, JS
+- Firebase (Planned)
+- GitHub Pages
+
+## 📸 Visual Samples
+- hiclass-logo.png
+- smart-learning-banner.jpg
