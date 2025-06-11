@@ -4,134 +4,154 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>HiClass - Smart Learning</title>
-  <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="favicon.png" />
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f9f9f9;
+      background: #f4f7fa;
       color: #333;
     }
-    #auth {
-      text-align: center;
-      padding: 40px;
-      background: #f2f2f2;
-    }
-    #auth button {
-      margin: 10px;
-      padding: 10px 20px;
-      font-size: 16px;
-      border: none;
-      background: #007BFF;
-      color: white;
-      border-radius: 5px;
-      cursor: pointer;
-    }
     header {
-      background: #ffffff;
+      background: #fff;
       padding: 10px 20px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .top-bar {
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    .top-bar .logo {
-      width: 60px;
+    .logo {
+      height: 60px;
+    }
+    .theme-toggle {
+      font-size: 24px;
+      cursor: pointer;
     }
     nav ul {
-      list-style: none;
       display: flex;
       flex-wrap: wrap;
-      padding: 0;
-      margin: 10px 0;
       justify-content: center;
+      padding: 0;
+      list-style: none;
+      margin: 10px 0;
     }
     nav li {
       margin: 10px;
-      padding: 8px 12px;
-      background: #eeeeee;
+      padding: 8px 15px;
+      background: #e0e0e0;
       border-radius: 8px;
       cursor: pointer;
+      transition: background 0.3s;
+    }
+    nav li:hover {
+      background: #007BFF;
+      color: white;
     }
     .banner {
-      text-align: center;
-      padding: 40px 20px;
-      background: linear-gradient(to right, #7b2ff7, #f107a3);
+      background: linear-gradient(to right, #6a11cb, #2575fc);
       color: white;
+      padding: 50px 20px;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    }
+    .banner h1 {
+      font-size: 36px;
+      margin: 0;
+    }
+    .banner p {
+      font-size: 18px;
+      margin-top: 10px;
     }
     .features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
-      padding: 20px;
+      padding: 40px 20px;
     }
     .feature-box {
       background: white;
-      padding: 20px;
       border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      padding: 20px;
       text-align: center;
+      transition: transform 0.2s;
+    }
+    .feature-box:hover {
+      transform: translateY(-5px);
     }
     .feature-box a {
+      margin-top: 12px;
       display: inline-block;
-      margin-top: 10px;
-      text-decoration: none;
       color: #007BFF;
       font-weight: bold;
+      text-decoration: none;
     }
     footer {
+      background: #222;
+      color: white;
       text-align: center;
       padding: 20px;
-      background: #333;
-      color: white;
     }
     footer a {
       color: #00f3ff;
       margin: 0 10px;
       text-decoration: none;
     }
-    .theme-toggle {
+    #auth {
+      text-align: center;
+      padding: 40px;
+      background: #f2f2f2;
+    }
+    #auth img {
+      width: 80px;
+    }
+    #auth button {
+      margin: 10px;
+      padding: 10px 25px;
+      font-size: 16px;
+      border: none;
+      background: #007BFF;
+      color: white;
+      border-radius: 6px;
       cursor: pointer;
+    }
+    #auth button:hover {
+      background: #0056b3;
     }
   </style>
 </head>
-
 <body>
 
-  <!-- 🔐 Login/Signup First -->
+  <!-- Auth/Login Section -->
   <section id="auth">
-    <img src="logo.png" alt="HiClass Logo" style="width:80px;" />
+    <img src="logo.png" alt="HiClass Logo" />
     <h1>Welcome to <strong>HiClass</strong></h1>
     <p>Smart Learning Platform for Every Student</p>
     <button onclick="window.location.href='login.html'">🔐 Login</button>
     <button onclick="window.location.href='signup.html'">🚀 Sign Up</button>
   </section>
 
-  <!-- 🌟 Main Content -->
+  <!-- Main Content -->
   <section id="main-content" style="display:none">
     <header>
-      <div class="top-bar">
-        <img src="logo.png" alt="HiClass Logo" class="logo" />
-        <div class="theme-toggle">🌓</div>
-      </div>
-      <nav>
-        <ul>
-          <li onclick="location.href='index.html'">🏠 Home</li>
-          <li onclick="location.href='book.html'">📚 Books & Quran</li>
-          <li onclick="location.href='pastpaper.html'">📝 Past Papers</li>
-          <li onclick="location.href='quiz.html'">🧠 Quiz Zone</li>
-          <li onclick="location.href='courses.html'">🎓 Courses</li>
-          <li class="student-only" onclick="location.href='dashboard.html'">👤 Profile</li>
-          <li class="admin-only" onclick="location.href='admin.html'">🛠️ Admin Panel</li>
-          <li onclick="location.href='settings.html'">⚙️ Settings</li>
-          <li onclick="location.href='interview.html'">💼 Interview Tips</li>
-        </ul>
-      </nav>
+      <img src="logo.png" alt="Logo" class="logo">
+      <div class="theme-toggle">🌓</div>
     </header>
+
+    <nav>
+      <ul>
+        <li onclick="location.href='index.html'">🏠 Home</li>
+        <li onclick="location.href='book.html'">📚 Books & Quran</li>
+        <li onclick="location.href='pastpaper.html'">📝 Past Papers</li>
+        <li onclick="location.href='quiz.html'">🧠 Quiz Zone</li>
+        <li onclick="location.href='courses.html'">🎓 Courses</li>
+        <li onclick="location.href='dashboard.html'">👤 Profile</li>
+        <li onclick="location.href='admin.html'">🛠️ Admin Panel</li>
+        <li onclick="location.href='settings.html'">⚙️ Settings</li>
+        <li onclick="location.href='interview.html'">💼 Interview Tips</li>
+      </ul>
+    </nav>
 
     <section class="banner">
       <h1>HiClass - Smart Learning for Every Student</h1>
@@ -140,24 +160,24 @@
 
     <section class="features">
       <div class="feature-box">
-        <h2>📘 Quran & Books / قرآن و کتب</h2>
-        <p>9th, 10th, 1st Year, 2nd Year and Islamic Books available to read & download.</p>
-        <a href="book.html">Open Book Section</a>
+        <h2>📘 Quran & Books</h2>
+        <p>9th, 10th, 1st Year, 2nd Year and Islamic Books available.</p>
+        <a href="book.html">Explore Books</a>
       </div>
       <div class="feature-box">
         <h2>📝 Past Papers</h2>
-        <p>View and download all previous year exam papers.</p>
-        <a href="pastpaper.html">View Past Papers</a>
+        <p>All Board Past Papers Download & View</p>
+        <a href="pastpaper.html">View Papers</a>
       </div>
       <div class="feature-box">
         <h2>🧠 Quiz Zone</h2>
-        <p>Islamic, General Knowledge and Class-Wise Quizzes</p>
+        <p>Islamic & General Knowledge Quizzes</p>
         <a href="quiz.html">Start Quiz</a>
       </div>
       <div class="feature-box">
-        <h2>🎓 Advanced Courses</h2>
-        <p>IT, Graphic Design, Trading, Freelancing, Dropshipping & more</p>
-        <a href="courses.html">View All Courses</a>
+        <h2>🎓 Online Courses</h2>
+        <p>IT, Freelancing, Graphics, Amazon & More</p>
+        <a href="courses.html">Browse Courses</a>
       </div>
     </section>
 
@@ -171,7 +191,7 @@
     </footer>
   </section>
 
-  <!-- JS to Control Auth Display -->
+  <!-- JS: Show Main Content If Logged In -->
   <script>
     const loggedIn = localStorage.getItem('loggedIn');
     if (loggedIn === 'true') {
