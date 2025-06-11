@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HICLASS - Progress Tracker</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f4f8;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #1e3a8a;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      background-color: #fff;
+    }
+    th, td {
+      padding: 12px 16px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #007bff;
+      color: white;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+    .progress-bar {
+      width: 100%;
+      background-color: #ddd;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 16px;
+      background-color: #28a745;
+      width: 0%;
+      transition: width 0.4s ease;
+    }
+  </style>
+</head>
+<body>
+  <h1>📊 Student Progress Tracker - HICLASS</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Student Name</th>
+        <th>Class</th>
+        <th>Completed Lessons</th>
+        <th>Total Lessons</th>
+        <th>Progress</th>
+      </tr>
+    </thead>
+    <tbody id="progress-data">
+      <!-- Dynamic Data -->
+    </tbody>
+  </table>  <script>
+    // Sample Data (replace this with dynamic data via Firebase/API later)
+    const students = [
+      { name: "Ali Khan", class: "9th", completed: 7, total: 10 },
+      { name: "Ayesha Reza", class: "10th", completed: 4, total: 10 },
+      { name: "Bilal Ahmed", class: "1st Year", completed: 9, total: 12 },
+      { name: "Fatima Noor", class: "2nd Year", completed: 11, total: 12 }
+    ];
+
+    const tableBody = document.getElementById("progress-data");
+
+    students.forEach(student => {
+      const percent = ((student.completed / student.total) * 100).toFixed(1);
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${student.name}</td>
+        <td>${student.class}</td>
+        <td>${student.completed}</td>
+        <td>${student.total}</td>
+        <td>
+          <div class="progress-bar">
+            <div class="progress-bar-fill" style="width:${percent}%"></div>
+          </div>
+          ${percent}%
+        </td>
+      `;
+      tableBody.appendChild(row);
+    });
+  </script></body>
+</html>
