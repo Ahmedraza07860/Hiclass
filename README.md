@@ -1,6 +1,6 @@
 # 🧠 HiClass – Smart Learning for Every Student
 
-![HiClass Logo](assets/Flux_Schnell_Background_Soft_gradient_bluewhite_Icons_Use_emoj_2.jpg)
+![HiClass Logo](assets/Home.png)
 
 HiClass is Pakistan’s modern educational platform developed by **Ahmad Reza**, offering free & premium knowledge resources, Islamic education, PDF books, and student-friendly features. This platform blends smart technology with an Islamic and academic mission — making quality education accessible to all.
 
@@ -14,27 +14,25 @@ HiClass is Pakistan’s modern educational platform developed by **Ahmad Reza**,
 | 📘 Islamic Books                  | Quran, Hadith, Islamic history, and more                                                |
 | 📺 Video Lessons                  | High-quality YouTube + Firebase-hosted lectures                                          |
 | 📄 Downloadable PDFs              | All notes and books available for download                                               |
-| ❓ Quiz System                    | MCQs, scoring, and leaderboards                                                         |
-| 🔐 Secure Login                  | Firebase Email, Google Login, OTP with CAPTCHA                                           |
-| 📱 Mobile Ready                   | Works smoothly on Android devices like Tecno Camon 12 Air                               |
-| 🧑‍💼 Admin Panel                 | Upload content, track users, send notifications                                         |
+| ❓ Quiz System                     | MCQs, scoring, and leaderboards                                                         |
+| 🔐 Secure Login                   | Firebase Email, Google Login, OTP with CAPTCHA                                           |
+| 📱 Mobile Ready                   | Works smoothly on Android devices like Tecno Camon 12 Air                                |
+| 🧑‍💼 Admin Panel                  | Upload content, track users, send notifications                                         |
 | 📊 Analytics Dashboard            | See user growth, top courses, referrals, and more                                        |
 | 🎁 Referral System                | Invite 20 friends = 1 free course, includes IP filtering, rewards, and lucky draw        |
 
 ---
 
-## 🖼️ Screenshots (Live Preview)
+## 🖼️ Screenshots (Live UI Preview)
 
 ### 🏠 Homepage  
-![Homepage](assets/Flux_Schnell_Background_Soft_gradient_bluewhite_Icons_Use_emoj_2.jpg)
+![Homepage](assets/Home.png)
 
-## 📊 Dashboard View
-Here is the dashboard page of Hiclass:
-
-![Dashboard](assets/file_000000001f0061f9927ed26cfea5ac0d.png)
+### 📊 Dashboard View  
+![Dashboard](assets/dashboard.png)
 
 ### 📱 Mobile View  
-![Mobile View](assets/Screenshot_20250611-163147.png)
+![Mobile View](assets/Mobileview.png)
 
 ---
 
@@ -59,7 +57,7 @@ All real content files with styling — no dummy pages.
 
 ## 📁 Project Structure
 
-hiclass/ ├── index.html ├── about.html ├── login.html ├── signup.html ├── dashboard.html ├── courses.html ├── faq.html ├── privacy.html ├── contact.html ├── forgot-password.html ├── README.md └── assets/ ├── Flux_Schnell_Background_Soft_gradient_bluewhite_Icons_Use_emoj_2.jpg ├── file_000000001f0061f9927ed26cfea5ac0d.png └── Screenshot_20250611-163147.png
+hiclass/ ├── index.html ├── about.html ├── login.html ├── signup.html ├── dashboard.html ├── courses.html ├── faq.html ├── privacy.html ├── contact.html ├── forgot-password.html ├── README.md └── assets/ ├── Home.png ├── dashboard.png └── Mobileview.png
 
 ---
 
@@ -100,5 +98,3 @@ This project is ideal for:
 - Islamic education apps
 - Urdu/Hindi/English multi-language websites
 - Secure, scalable, quiz-enabled LMS systems
-
----
