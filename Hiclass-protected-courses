@@ -1,0 +1,63 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hiclass - Secure Courses</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      color: #333;
+    }
+    .container {
+      padding: 60px 20px;
+    }
+    h1 {
+      color: #1d3557;
+    }
+    p {
+      font-size: 18px;
+      margin: 20px 0;
+    }
+    .btn-group a {
+      display: inline-block;
+      padding: 14px 24px;
+      margin: 10px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+    .btn-group a:hover {
+      background-color: #0056b3;
+    }
+    .alert-box {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #fff3cd;
+      color: #856404;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid #ffeeba;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🚫 Login Required</h1>
+    <div class="alert-box">
+      <p>To access Hiclass video lectures, course books, and downloads, please login or sign up first.</p>
+    </div>
+    <div class="btn-group">
+      <a href="login.html">🔐 Login</a>
+      <a href="signup.html">🆕 Signup</a>
+      <a href="courses.html">📚 Explore Courses</a>
+    </div>
+  </div>
+</body>
+</html>
