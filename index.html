@@ -28,109 +28,105 @@
       box-shadow: 0 0 20px rgba(0,0,0,0.1);
     }
     .cta-button {
-      background-color: #007bff;
+      background: linear-gradient(135deg, #1e3a8a, #007bff);
       color: white;
       padding: 14px 24px;
       font-size: 18px;
       border: none;
-      border-radius: 8px;
+      border-radius: 12px;
       cursor: pointer;
       margin: 12px;
-      transition: background-color 0.3s ease;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
     .cta-button:hover {
-      background-color: #0056b3;
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #0f256e, #0056b3);
     }
     .button-group {
       margin: 30px 0;
-    }
-
-    .screenshots {
-      padding: 40px 20px;
-      background: #eef6ff;
-      border-top: 2px solid #ddd;
-    }
-
-    .screenshots h2 {
-      font-size: 28px;
-      margin-bottom: 30px;
-      color: #1e3a8a;
-    }
-
-    .screenshot-row {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 30px;
-    }
+    }.screenshots {
+  padding: 40px 20px;
+  background: #eef6ff;
+  border-top: 2px solid #ddd;
+}
 
-    .screenshot-box {
-      max-width: 300px;
-    }
+.screenshots h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #1e3a8a;
+}
 
-    .screenshot-box img {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-    }
+.screenshot-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
 
-    .screenshot-box h3 {
-      margin: 10px 0 5px;
-      font-size: 18px;
-      color: #333;
-    }
+.screenshot-box {
+  max-width: 300px;
+}
 
-    .footer {
-      margin-top: 50px;
-      padding-top: 20px;
-      font-size: 14px;
-      color: #777;
-      border-top: 1px solid #ccc;
-    }
+.screenshot-box img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
 
-    .footer a {
-      color: #007bff;
-      text-decoration: none;
-      margin: 0 10px;
-    }
+.screenshot-box h3 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+  color: #333;
+}
 
-    .footer a:hover {
-      text-decoration: underline;
-    }
+.footer {
+  margin-top: 50px;
+  padding-top: 20px;
+  font-size: 14px;
+  color: #777;
+  border-top: 1px solid #ccc;
+}
 
-    @media (max-width: 600px) {
-      .cta-button {
-        display: block;
-        width: 90%;
-        margin: 10px auto;
-      }
+.footer a {
+  color: #007bff;
+  text-decoration: none;
+  margin: 0 10px;
+}
 
-      .screenshot-row {
-        flex-direction: column;
-        gap: 20px;
-      }
-    }
+.footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .cta-button {
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  .screenshot-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
   </style>
 </head>
 <body>
   <!-- Logo -->
   <img src="file_00000000f52c61f8a973cb3d08a7bde2.png" alt="Hiclass Logo" class="logo">
   <h1>Welcome to Hiclass</h1>
-  <p>Smart Learning for Every Student</p>
-
-  <!-- Banner -->
-  <img src="file_00000000d9786230b1fe5a42df76ffbe.png" alt="Learning Banner" class="banner">
-
-  <!-- Buttons -->
-  <div class="button-group">
-    <a href="signup.html"><button class="cta-button">Join Now</button></a>
-    <a href="login.html"><button class="cta-button">Login</button></a>
-    <a href="courses.html"><button class="cta-button">Explore Courses</button></a>
-    <a href="dashboard.html"><button class="cta-button">Go to Dashboard</button></a>
-  </div>
-
-  <!-- Screenshots Section -->
-  <section class="screenshots">
+  <p>Smart Learning for Every Student</p>  <!-- Banner -->  <img src="file_00000000d9786230b1fe5a42df76ffbe.png" alt="Learning Banner" class="banner">  <!-- Buttons -->  <div class="button-group">
+    <a href="signup.html"><button class="cta-button">🚀 Join Now</button></a>
+    <a href="login.html"><button class="cta-button">🔐 Login</button></a>
+    <a href="courses.html"><button class="cta-button">📚 Explore Courses</button></a>
+    <a href="dashboard.html"><button class="cta-button">📊 Go to Dashboard</button></a>
+    <a href="book.html"><button class="cta-button">📖 Books & Quran</button></a>
+  </div>  <!-- Screenshots Section -->  <section class="screenshots">
     <h2>📸 Platform Previews</h2>
     <div class="screenshot-row">
       <div class="screenshot-box">
@@ -146,10 +142,7 @@
         <img src="assets/Mobileview.png" alt="HiClass Mobile View">
       </div>
     </div>
-  </section>
-
-  <!-- Footer -->
-  <div class="footer">
+  </section>  <!-- Footer -->  <div class="footer">
     <p>
       <a href="about.html">About Us</a> |
       <a href="faq.html">FAQ</a> |
