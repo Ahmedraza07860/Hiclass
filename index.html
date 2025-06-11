@@ -1,46 +1,80 @@
 <!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hiclass - Smart Learning</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
-      font-family: sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       text-align: center;
-      background-color: #f7f7f7;
+      background-color: #f4f6f8;
       padding: 20px;
+      color: #333;
     }
     .logo {
-      width: 200px;
-      margin-bottom: 20px;
+      width: 150px;
+      margin: 20px auto;
     }
     .banner {
       width: 90%;
       max-width: 800px;
       margin: 20px auto;
       border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
     }
     .cta-button {
       background-color: #007bff;
       color: white;
-      padding: 12px 20px;
+      padding: 14px 24px;
       font-size: 18px;
       border: none;
-      border-radius: 6px;
+      border-radius: 8px;
       cursor: pointer;
-      margin: 20px;
+      margin: 12px;
+      transition: background-color 0.3s ease;
+    }
+    .cta-button:hover {
+      background-color: #0056b3;
+    }
+    .button-group {
+      margin: 30px 0;
     }
     .footer {
-      margin-top: 40px;
+      margin-top: 50px;
+      padding-top: 20px;
       font-size: 14px;
       color: #777;
+      border-top: 1px solid #ccc;
+    }
+    .footer a {
+      color: #007bff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 600px) {
+      .cta-button {
+        display: block;
+        width: 90%;
+        margin: 10px auto;
+      }
     }
   </style>
 </head>
 <body>  <!-- Logo -->  <img src="file_00000000f52c61f8a973cb3d08a7bde2.png" alt="Hiclass Logo" class="logo">  <h1>Welcome to Hiclass</h1>
-  <p>Smart Learning for Every Student</p>  <!-- Banner -->  <img src="file_00000000d9786230b1fe5a42df76ffbe.png" alt="Learning Banner" class="banner">  <!-- CTA Button --><a href="signup.html"><button class="cta-button">Join Now</button></a>
-
-  <!-- Quick Links Footer -->  <div class="footer">
+  <p>Smart Learning for Every Student</p>  <!-- Banner -->  <img src="file_00000000d9786230b1fe5a42df76ffbe.png" alt="Learning Banner" class="banner">  <!-- Buttons -->  <div class="button-group">
+    <a href="signup.html"><button class="cta-button">Join Now</button></a>
+    <a href="login.html"><button class="cta-button">Login</button></a>
+    <a href="courses.html"><button class="cta-button">Explore Courses</button></a>
+    <a href="dashboard.html"><button class="cta-button">Go to Dashboard</button></a>
+  </div>  <!-- Footer -->  <div class="footer">
     <p>
       <a href="about.html">About Us</a> |
       <a href="faq.html">FAQ</a> |
