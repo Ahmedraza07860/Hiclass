@@ -1,127 +1,52 @@
-<!DOCTYPE html><html lang="en">
+""<!DOCTYPE html>
+
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>HiClass - Smart Learning</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
-      transition: background 0.3s, color 0.3s;
-    }
-    .dark-mode {
-      background-color: #111;
-      color: #eee;
-    }
-    header {
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    header img {
-      width: 120px;
-      height: auto;
-    }
-    nav {
-      background-color: #333;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 10px 0;
-    }
-    nav a {
-      color: white;
-      margin: 10px 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .section {
-      padding: 40px 20px;
-      text-align: center;
-    }
-    .section h2 {
-      color: #0056b3;
-    }
-    .btn {
-      display: inline-block;
-      margin: 10px;
-      padding: 10px 20px;
-      background-color: #007bff;
-      color: white;
-      border-radius: 5px;
-      text-decoration: none;
-    }
-    .btn:hover {
-      background-color: #0056b3;
-    }
-    footer {
-      background: #222;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-    .toggle-btn {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      padding: 10px 15px;
-      background: #007bff;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
 </head>
-<body>
-  <button class="toggle-btn" onclick="toggleMode()">🌓 Dark/Light</button>  <header>
-    <img src="banner.png" alt="Hiclass Logo">
-    <h1>Welcome to HiClass</h1>
-    <p>Smart Learning for Every Student | سمارٹ لرننگ ہر طالبعلم کے لیے</p>
-  </header>  <nav>
-    <a href="index.html">Home</a>
-    <a href="book.html">Books & Quran</a>
-    <a href="pastpapper.html">Past Papers</a>
-    <a href="quiz.html">Quiz Zone</a>
-    <a href="courses.html">Courses</a>
-    <a href="profile.html">Profile</a>
-    <a href="admin-panel.html">Admin Panel</a>
-    <a href="setting.html">Settings</a>
-    <a href="interview-tips.html">Interview Tips</a>
-  </nav>  <div class="section">
+<body class="light-mode">  <!-- 🌗 Dark/Light Mode Toggle -->  <div class="mode-toggle">
+    <button onclick="toggleMode()">🌓 Dark / Light</button>
+  </div>  <!-- 🔐 Login / Signup -->  <header class="top-auth">
+    <a href="login.html" class="auth-btn">🔐 Login</a>
+    <a href="signup.html" class="auth-btn">🚀 Sign Up</a>
+  </header>  <!-- 🌐 Navigation -->  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="book.html">📚 Books & Quran</a></li>
+      <li><a href="pastpaper.html">📝 Past Papers</a></li>
+      <li><a href="quiz.html">🧠 Quiz Zone</a></li>
+      <li><a href="courses.html">🎓 Courses</a></li>
+      <li><a href="profile.html">👤 Profile</a></li>
+      <li><a href="admin-panel.html">🛠️ Admin Panel</a></li>
+      <li><a href="setting.html">⚙️ Settings</a></li>
+      <li><a href="interview-tips.html">💼 Interview Tips</a></li>
+    </ul>
+  </nav>  <!-- 🖼️ Banner / Welcome -->  <section class="banner">
+    <img src="banner.png" alt="HiClass Banner" class="banner-img" />
+    <h1>HiClass - Smart Learning for Every Student</h1>
+    <p>سمارٹ لرننگ ہر طالبعلم کے لیے</p>
+  </section>  <!-- 📘 Quran & Books -->  <section class="section" id="books">
     <h2>📘 Quran & Books / قرآن و کتب</h2>
     <p>9th, 10th, 1st Year, 2nd Year and Islamic Books available to read & download.</p>
-    <a class="btn" href="book.html">Open Book Section</a>
-  </div>  <div class="section">
+    <a href="book.html" class="btn">Open Book Section</a>
+  </section>  <!-- 📝 Past Papers -->  <section class="section" id="papers">
     <h2>📝 Past Papers</h2>
     <p>View and download all previous year exam papers.</p>
-    <a class="btn" href="pastpapper.html">View Past Papers</a>
-  </div>  <div class="section">
-    <h2>🧠 Quiz Game</h2>
+    <a href="pastpaper.html" class="btn">View Past Papers</a>
+  </section>  <!-- 🧠 Quiz Game -->  <section class="section" id="quiz">
+    <h2>🧠 Quiz Zone</h2>
     <p>Islamic, General Knowledge and Class-Wise Quizzes</p>
-    <a class="btn" href="quiz.html">Start Quiz</a>
-  </div>  <div class="section">
+    <a href="quiz.html" class="btn">Start Quiz</a>
+  </section>  <!-- 🎓 Advanced Courses -->  <section class="section" id="courses">
     <h2>🎓 Advanced Courses</h2>
     <p>IT, Graphic Design, Trading, Freelancing, Dropshipping & more</p>
-    <a class="btn" href="courses.html">View All Courses</a>
-  </div>  <footer>
-    <p>
-      <a href="about.html">About Us</a> | 
-      <a href="faq.html">FAQ</a> | 
-      <a href="privacy.html">Privacy Policy</a> | 
-      <a href="contact.html">Contact</a>
-    </p>
+    <a href="courses.html" class="btn">View All Courses</a>
+  </section>  <!-- 📞 Footer -->  <footer class="footer">
+    <p><a href="about.html">About Us</a> | <a href="faq.html">FAQ</a> | <a href="privacy.html">Privacy Policy</a> | <a href="contact.html">Contact</a></p>
     <p>© 2025 HiClass by Ahmad Reza</p>
-  </footer>  <script>
-    function toggleMode() {
-      document.body.classList.toggle('dark-mode');
-    }
-  </script></body>
-</html>
+  </footer></body>
+</html>""
