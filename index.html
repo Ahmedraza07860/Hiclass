@@ -1,52 +1,78 @@
-""<!DOCTYPE html>
-
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HiClass - Smart Learning</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.png">
 </head>
-<body class="light-mode">  <!-- 🌗 Dark/Light Mode Toggle -->  <div class="mode-toggle">
-    <button onclick="toggleMode()">🌓 Dark / Light</button>
-  </div>  <!-- 🔐 Login / Signup -->  <header class="top-auth">
-    <a href="login.html" class="auth-btn">🔐 Login</a>
-    <a href="signup.html" class="auth-btn">🚀 Sign Up</a>
-  </header>  <!-- 🌐 Navigation -->  <nav class="main-nav">
-    <ul>
-      <li><a href="index.html">🏠 Home</a></li>
-      <li><a href="book.html">📚 Books & Quran</a></li>
-      <li><a href="pastpaper.html">📝 Past Papers</a></li>
-      <li><a href="quiz.html">🧠 Quiz Zone</a></li>
-      <li><a href="courses.html">🎓 Courses</a></li>
-      <li><a href="profile.html">👤 Profile</a></li>
-      <li><a href="admin-panel.html">🛠️ Admin Panel</a></li>
-      <li><a href="setting.html">⚙️ Settings</a></li>
-      <li><a href="interview-tips.html">💼 Interview Tips</a></li>
-    </ul>
-  </nav>  <!-- 🖼️ Banner / Welcome -->  <section class="banner">
-    <img src="banner.png" alt="HiClass Banner" class="banner-img" />
-    <h1>HiClass - Smart Learning for Every Student</h1>
-    <p>سمارٹ لرننگ ہر طالبعلم کے لیے</p>
-  </section>  <!-- 📘 Quran & Books -->  <section class="section" id="books">
+<body>  <!-- 🔐 Login/Signup First -->  <section id="auth" style="text-align:center; padding:40px; background:#f2f2f2;">
+    <img src="logo.png" alt="HiClass Logo" style="width:80px;">
+    <h1>Welcome to <strong>HiClass</strong></h1>
+    <p>Smart Learning Platform for Every Student</p>
+    <button onclick="window.location.href='login.html'">🔐 Login</button>
+    <button onclick="window.location.href='signup.html'">🚀 Sign Up</button>
+  </section>  <!-- 🌟 Main Content Hidden Initially -->  <section id="main-content" style="display:none">
+    <header>
+      <div class="top-bar">
+        <img src="logo.png" alt="HiClass Logo" class="logo">
+        <div class="theme-toggle">🌓</div>
+      </div>
+      <nav>
+        <ul>
+          <li>🏠 Home</li>
+          <li>📚 Books & Quran</li>
+          <li>📝 Past Papers</li>
+          <li>🧠 Quiz Zone</li>
+          <li>🎓 Courses</li>
+          <li class="student-only">👤 Profile</li>
+          <li class="admin-only">🛠️ Admin Panel</li>
+          <li>⚙️ Settings</li>
+          <li>💼 Interview Tips</li>
+        </ul>
+      </nav>
+    </header><section class="banner">
+  <h1>HiClass - Smart Learning for Every Student</h1>
+  <p>سمارٹ لرننگ ہر طالبعلم کے لیے</p>
+</section>
+
+<section class="features">
+  <div class="feature-box">
     <h2>📘 Quran & Books / قرآن و کتب</h2>
     <p>9th, 10th, 1st Year, 2nd Year and Islamic Books available to read & download.</p>
-    <a href="book.html" class="btn">Open Book Section</a>
-  </section>  <!-- 📝 Past Papers -->  <section class="section" id="papers">
+    <a href="book.html">Open Book Section</a>
+  </div>
+  <div class="feature-box">
     <h2>📝 Past Papers</h2>
     <p>View and download all previous year exam papers.</p>
-    <a href="pastpaper.html" class="btn">View Past Papers</a>
-  </section>  <!-- 🧠 Quiz Game -->  <section class="section" id="quiz">
+    <a href="pastpaper.html">View Past Papers</a>
+  </div>
+  <div class="feature-box">
     <h2>🧠 Quiz Zone</h2>
     <p>Islamic, General Knowledge and Class-Wise Quizzes</p>
-    <a href="quiz.html" class="btn">Start Quiz</a>
-  </section>  <!-- 🎓 Advanced Courses -->  <section class="section" id="courses">
+    <a href="quiz.html">Start Quiz</a>
+  </div>
+  <div class="feature-box">
     <h2>🎓 Advanced Courses</h2>
     <p>IT, Graphic Design, Trading, Freelancing, Dropshipping & more</p>
-    <a href="courses.html" class="btn">View All Courses</a>
-  </section>  <!-- 📞 Footer -->  <footer class="footer">
-    <p><a href="about.html">About Us</a> | <a href="faq.html">FAQ</a> | <a href="privacy.html">Privacy Policy</a> | <a href="contact.html">Contact</a></p>
-    <p>© 2025 HiClass by Ahmad Reza</p>
-  </footer></body>
-</html>""
+    <a href="courses.html">View All Courses</a>
+  </div>
+</section>
+
+<footer>
+  <a href="about.html">About Us</a> |
+  <a href="faq.html">FAQ</a> |
+  <a href="privacy.html">Privacy Policy</a> |
+  <a href="contact.html">Contact</a>
+  <br>
+  <p>© 2025 HiClass by Ahmad Reza</p>
+</footer>
+
+  </section>  <!-- JS to Control Auth Display -->  <script>
+    const loggedIn = localStorage.getItem('loggedIn');
+    if (loggedIn === 'true') {
+      document.getElementById('auth').style.display = 'none';
+      document.getElementById('main-content').style.display = 'block';
+    }
+  </script></body>
+</html>
