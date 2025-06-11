@@ -4,78 +4,180 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>HiClass Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f6f8;
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-    header {
-      background-color: #007bff;
-      color: white;
-      padding: 15px;
-      text-align: center;
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f0f2f5;
+      color: #333;
+      line-height: 1.6;
     }
+
+    header {
+      background: linear-gradient(135deg, #007bff, #00c6ff);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 18px;
+    }
+
+    nav {
+      background: white;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    nav a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #0056b3;
+    }
+
     .container {
+      max-width: 1100px;
+      margin: 30px auto;
       padding: 20px;
     }
+
     .card {
       background: white;
-      border-radius: 8px;
-      padding: 20px;
-      margin: 15px 0;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+      transition: transform 0.3s ease;
     }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
     .card h3 {
-      margin-top: 0;
-    }
-    nav {
-      background: #fff;
-      padding: 10px;
-      text-align: center;
-    }
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
+      margin-bottom: 15px;
       color: #007bff;
-      font-weight: bold;
+    }
+
+    .dashboard-image {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-top: 10px;
+      border: 2px solid #007bff;
+    }
+
+    progress {
+      width: 100%;
+      height: 20px;
+      margin-top: 10px;
+    }
+
+    ul {
+      padding-left: 20px;
+      list-style-type: '✅ ';
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 28px;
+      }
+      nav {
+        gap: 15px;
+        padding: 10px;
+      }
+      .card {
+        padding: 18px;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Welcome to Your Dashboard</h1>
-    <p>HiClass by Ahmad Reza</p>
+    <h1>📊 HiClass Dashboard</h1>
+    <p>Welcome, Ahmad Reza – Learn Smart & Fast!</p>
   </header>
 
   <nav>
-    <a href="index.html">Home</a>
-    <a href="courses.html">Courses</a>
-    <a href="profile.html">Profile</a>
-    <a href="login.html">Logout</a>
+    <a href="index.html">🏠 Home</a>
+    <a href="courses.html">📚 Courses</a>
+    <a href="profile.html">👤 Profile</a>
+    <a href="login.html">🚪 Logout</a>
   </nav>
 
   <div class="container">
+
     <div class="card">
-      <h3>Your Progress</h3>
-      <p>You've completed 3 out of 10 courses.</p>
+      <h3>📈 Your Learning Progress</h3>
+      <p>You’ve completed <strong>3 out of 10</strong> enrolled courses. Keep going!</p>
+      <progress value="30" max="100"></progress>
     </div>
 
     <div class="card">
-      <h3>Latest Updates</h3>
+      <h3>🗓️ Latest Announcements</h3>
       <ul>
-        <li>📘 New Islamic Studies course added.</li>
-        <li>📢 Scholarship form open till 30th June.</li>
+        <li>New course on <strong>Quran with Translation</strong> added.</li>
+        <li>Final exams portal opens <strong>15 June</strong>.</li>
+        <li>Mobile app version launching soon!</li>
       </ul>
     </div>
 
     <div class="card">
-      <h3>Recommended for You</h3>
-      <p>Urdu Grammar Course – Start Now!</p>
+      <h3>📷 Dashboard Preview</h3>
+      <img src="assets/file_000000001f0061f9927ed26cfea5ac0d.png" alt="Dashboard Screenshot" class="dashboard-image" />
     </div>
+
+    <div class="card">
+      <h3>📌 Quick Tips</h3>
+      <ul>
+        <li>Click "Courses" to access your subjects.</li>
+        <li>Update your profile to receive certificates.</li>
+        <li>Use the app in Urdu, Hindi, or English.</li>
+      </ul>
+    </div>
+
   </div>
+
+  <footer>
+    © 2025 HiClass by Ahmad Reza. All rights reserved.
+  </footer>
 
 </body>
 </html>
