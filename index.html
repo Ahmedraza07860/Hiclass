@@ -1,155 +1,117 @@
-<!DOCTYPE html><html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hiclass - Smart Learning</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      text-align: center;
-      background-color: #f4f6f8;
-      padding: 20px;
-      color: #333;
-    }
-    .logo {
-      width: 150px;
-      margin: 20px auto;
-    }
-    .banner {
-      width: 90%;
-      max-width: 800px;
-      margin: 20px auto;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    }
-    .cta-button {
-      background: linear-gradient(135deg, #1e3a8a, #007bff);
-      color: white;
-      padding: 14px 24px;
-      font-size: 18px;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      margin: 12px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    .cta-button:hover {
-      transform: scale(1.05);
-      background: linear-gradient(135deg, #0f256e, #0056b3);
-    }
-    .button-group {
-      margin: 30px 0;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }.screenshots {
-  padding: 40px 20px;
-  background: #eef6ff;
-  border-top: 2px solid #ddd;
+Hiclass Logo
+
+Welcome to Hiclass / خوش آمدید
+
+🎓 Smart Learning for Every Student / ہر طالبعلم کے لیے سمارٹ لرننگ
+
+
+---
+
+🎯 Main Menu / مرکزی مینو
+
+🚀 Join Now / شامل ہوں     🔐 Login / لاگ ان کریں     📚 Explore Courses / کورسز دیکھیں     📊 Dashboard / ڈیش بورڈ     📖 Books & Quran / کتب اور قرآن     📝 Past Papers / پرچے     🧠 Quiz Game / کوئز     📈 My Progress / میرا ترقیاتی ریکارڈ     🎓 Advanced Courses / جدید کورسز     🛠️ Admin Panel / ایڈمن پینل     ⚙️ Settings / سیٹنگز     👤 My Profile / میری پروفائل     💼 Interview Tips / انٹرویو مشورے
+
+🌓 <button onclick="toggleMode()">🔄 Switch Theme / تھیم تبدیل کریں</button>
+
+
+---
+
+🗂️ Quick Access Files / فائلز تک آسان رسائی
+
+📖 Quran & Books / قرآن و کتب
+
+تمام نصابی و اسلامی کتب (9ویں تا 12ویں جماعت) ➡️ 📥 Open Book Section / سیکشن کھولیں
+
+📝 Past Papers / سابقہ پرچے
+
+تمام جماعتوں اور گریجویشن کے پرچے ➡️ 📥 View Past Papers / پرچے دیکھیں
+
+🧠 Quiz Zone / کوئز زون
+
+اسلامی، جنرل نالج اور جماعت وار کوئزز ➡️ 📥 Start Quiz / کوئز شروع کریں
+
+📈 Track Progress / کارکردگی ملاحظہ کریں
+
+اپنے سکور اور سیکھنے کی سرگرمی دیکھیں ➡️ 📥 Check Progress / رپورٹ دیکھیں
+
+🎓 Advanced Courses / جدید کورسز
+
+پروفیشنل ویڈیوز کورسز:
+
+💻 IT & کمپیوٹر اسکلز
+
+📱 اینڈرائڈ ڈیولپمنٹ
+
+🌐 ویب ڈیزائننگ & HTML/CSS
+
+📊 ڈیجیٹل مارکیٹنگ & SEO
+
+💸 ٹریڈنگ & کرپٹو
+
+🎨 گرافک ڈیزائننگ
+
+🛒 ڈراپ شپنگ & ای کامرس
+
+✍️ فری لانسنگ & فائور
+
+
+➡️ 📥 View All Courses / مکمل کورسز
+
+
+---
+
+🔧 System Sections / سسٹم کے حصے
+
+🛠️ Admin Panel / ایڈمن پینل
+
+⚙️ Settings / سیٹنگز
+
+👤 Profile / پروفائل
+
+💼 Interview Tips / انٹرویو مشورے
+
+
+
+---
+
+📌 Additional Sections / اضافی حصے
+
+👤 About Us / ہمارے بارے میں
+
+❓ FAQ / عمومی سوالات
+
+🔒 Privacy Policy / رازداری پالیسی
+
+📬 Contact / رابطہ کریں
+
+
+
+---
+
+© 2025 HiClass by Ahmad Reza | 🇵🇰 Pakistan’s Smart Learning Hub
+
+
+---
+
+<script>
+function toggleMode() {
+  document.body.classList.toggle('dark-mode');
 }
-
-.screenshots h2 {
-  font-size: 28px;
-  margin-bottom: 30px;
-  color: #1e3a8a;
+</script><style>
+.dark-mode {
+  background-color: #111;
+  color: #eee;
 }
-
-.screenshot-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
+button {
+  padding: 6px 14px;
+  margin: 10px 0;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
 }
-
-.screenshot-box {
-  max-width: 300px;
+button:hover {
+  background: #0056b3;
 }
-
-.screenshot-box img {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-}
-
-.screenshot-box h3 {
-  margin: 10px 0 5px;
-  font-size: 18px;
-  color: #333;
-}
-
-.footer {
-  margin-top: 50px;
-  padding-top: 20px;
-  font-size: 14px;
-  color: #777;
-  border-top: 1px solid #ccc;
-}
-
-.footer a {
-  color: #007bff;
-  text-decoration: none;
-  margin: 0 10px;
-}
-
-.footer a:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 600px) {
-  .cta-button {
-    display: block;
-    width: 90%;
-    margin: 10px auto;
-  }
-
-  .screenshot-row {
-    flex-direction: column;
-    gap: 20px;
-  }
-}
-
-  </style>
-</head>
-<body>
-  <!-- Logo -->
-  <img src="file_00000000f52c61f8a973cb3d08a7bde2.png" alt="Hiclass Logo" class="logo">
-  <h1>Welcome to Hiclass</h1>
-  <p>Smart Learning for Every Student</p>  <!-- Banner -->  <img src="file_00000000d9786230b1fe5a42df76ffbe.png" alt="Learning Banner" class="banner">  <!-- Buttons -->  <div class="button-group">
-    <a href="signup.html"><button class="cta-button">🚀 Join Now</button></a>
-    <a href="login.html"><button class="cta-button">🔐 Login</button></a>
-    <a href="courses.html"><button class="cta-button">📚 Explore Courses</button></a>
-    <a href="dashboard.html"><button class="cta-button">📊 Go to Dashboard</button></a>
-    <a href="book.html"><button class="cta-button">📖 Books & Quran</button></a>
-  </div>  <!-- Screenshots Section -->  <section class="screenshots">
-    <h2>📸 Platform Previews</h2>
-    <div class="screenshot-row">
-      <div class="screenshot-box">
-        <h3>🏠 Homepage</h3>
-        <img src="assets/Home.png" alt="HiClass Homepage">
-      </div>
-      <div class="screenshot-box">
-        <h3>📊 Dashboard</h3>
-        <img src="assets/dashboard.png" alt="HiClass Dashboard">
-      </div>
-      <div class="screenshot-box">
-        <h3>📱 Mobile View</h3>
-        <img src="assets/Mobileview.png" alt="HiClass Mobile View">
-      </div>
-    </div>
-  </section>  <!-- Footer -->  <div class="footer">
-    <p>
-      <a href="about.html">About Us</a> |
-      <a href="faq.html">FAQ</a> |
-      <a href="privacy.html">Privacy Policy</a> |
-      <a href="contact.html">Contact</a>
-    </p>
-    <p>© 2025 Hiclass by Ahmad Reza</p>
-  </div>
-</body>
-</html>
+</style>
