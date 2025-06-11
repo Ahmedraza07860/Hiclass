@@ -28,7 +28,9 @@ HiClass is Pakistan’s modern educational platform developed by **Ahmad Reza**,
 ### 🏠 Homepage  
 ![Homepage](assets/Flux_Schnell_Background_Soft_gradient_bluewhite_Icons_Use_emoj_2.jpg)
 
-### 💼 Dashboard  
+## 📊 Dashboard View
+Here is the dashboard page of Hiclass:
+
 ![Dashboard](assets/file_000000001f0061f9927ed26cfea5ac0d.png)
 
 ### 📱 Mobile View  
