@@ -1,0 +1,43 @@
+<!-- HiclassBot Start -->
+<div id="hiclassbot" style="position: fixed; bottom: 20px; right: 20px; width: 280px; max-width: 90%; background: #004080; color: white; border-radius: 15px; box-shadow: 0 0 10px rgba(0,0,0,0.2); font-family: sans-serif; overflow: hidden; z-index: 999;">
+  <div style="background: #00264d; padding: 12px 15px; font-size: 16px; font-weight: bold; display: flex; align-items: center;">
+    💬&nbsp; HiclassBot
+  </div>
+  <div style="padding: 12px; font-size: 14px;">
+    <p id="botMessage">👋 Assalamu Alaikum! Aap kya maloom karna chahte hain?</p>
+    <select id="langSelect" style="margin-top: 10px; width: 100%; padding: 8px; border: none; border-radius: 8px;">
+      <option value="ur">🇵🇰 Urdu</option>
+      <option value="hi">🇮🇳 Hindi</option>
+      <option value="en">🇺🇸 English</option>
+      <option value="ar">🇸🇦 Arabic</option>
+    </select>
+    <input type="text" id="userInput" placeholder="Type your question..." style="margin-top: 10px; padding: 8px; width: 100%; border-radius: 8px; border: none;" />
+    <button onclick="sendToWhatsApp()" style="margin-top: 10px; background: white; color: #004080; border: none; padding: 8px 15px; border-radius: 8px; width: 100%;">Send</button>
+  </div>
+</div>
+
+<script>
+  const greetings = {
+    ur: "👋 Assalamu Alaikum! Aap kya maloom karna chahte hain?",
+    hi: "👋 नमस्ते! आप क्या जानना चाहते हैं?",
+    en: "👋 Hello! What would you like to know?",
+    ar: "👋 السلام عليكم! ماذا تريد أن تعرف؟"
+  };
+
+  document.getElementById("langSelect").addEventListener("change", function () {
+    const lang = this.value;
+    document.getElementById("botMessage").innerText = greetings[lang] || greetings.en;
+  });
+
+  function sendToWhatsApp() {
+    const message = document.getElementById("userInput").value.trim();
+    if (message === "") {
+      alert("⚠️ Please type a message.");
+      return;
+    }
+    const phoneNumber = "923072080527"; // Your WhatsApp number without "+"
+    const url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
+    window.open(url, "_blank");
+  }
+</script>
+<!-- HiclassBot End -->
