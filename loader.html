@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Loading | HiClass</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f0f4f8;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .loader-container {
+      text-align: center;
+    }
+
+    .logo {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 20px;
+      animation: bounce 2s infinite;
+    }
+
+    .spinner {
+      border: 6px solid #e0e0e0;
+      border-top: 6px solid #007BFF;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      margin: auto;
+      animation: spin 1s linear infinite;
+    }
+
+    .text {
+      margin-top: 20px;
+      color: #333;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loader-container">
+    <img src="logo.svg" alt="HiClass Logo" class="logo" />
+    <div class="spinner"></div>
+    <div class="text">Loading HiClass content...</div>
+  </div>
+
+</body>
+</html>
