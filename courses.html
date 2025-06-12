@@ -6,76 +6,92 @@
   <title>HiClass Courses</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f0f2f5;
       margin: 0;
-      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #eef2f7;
+      color: #333;
     }
 
     header {
-      background: linear-gradient(45deg, #007bff, #00c6ff);
+      background: linear-gradient(135deg, #0066ff, #00c6ff);
       color: white;
-      padding: 30px 20px;
       text-align: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      padding: 50px 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     }
 
     header h1 {
+      font-size: 3em;
       margin: 0;
-      font-size: 2.5em;
     }
 
     header p {
-      margin-top: 8px;
-      font-size: 1.1em;
+      font-size: 1.2em;
+      margin-top: 10px;
+      opacity: 0.9;
     }
 
     .course-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-      padding: 30px;
+      gap: 30px;
+      padding: 40px 20px;
     }
 
     .course-card {
-      background: white;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      transition: transform 0.3s, box-shadow 0.3s;
+      background: #fff;
+      border-radius: 16px;
+      padding: 25px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .course-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     }
 
     .course-card h3 {
-      margin: 15px 0 10px;
-      font-size: 20px;
-      color: #333;
+      margin: 0 0 10px;
+      font-size: 1.4em;
+      color: #222;
     }
 
     .course-card p {
-      font-size: 14px;
-      color: #666;
+      font-size: 0.95em;
+      color: #555;
+      line-height: 1.5;
     }
 
     .download-btn {
       display: inline-block;
       margin-top: 15px;
-      background-color: #28a745;
-      color: white;
-      padding: 10px 18px;
-      border: none;
-      border-radius: 6px;
+      background: #28a745;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
-      transition: background-color 0.3s;
+      transition: background 0.3s ease;
     }
 
     .download-btn:hover {
-      background-color: #218838;
+      background: #218838;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.2em;
+      }
+
+      .course-card {
+        padding: 20px;
+      }
+
+      .download-btn {
+        width: 100%;
+        text-align: center;
+      }
     }
   </style>
 </head>
