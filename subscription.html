@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HiClass - Subscription Plans</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: #f4f6fa;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: linear-gradient(90deg, #007bff, #00c6ff);
+      padding: 40px 20px;
+      text-align: center;
+      color: white;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+    }
+
+    .plans {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .plan {
+      background: white;
+      margin: 20px;
+      padding: 30px;
+      width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .plan:hover {
+      transform: scale(1.05);
+    }
+
+    .plan h2 {
+      color: #007bff;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 2rem;
+      margin: 10px 0;
+      color: #333;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    li {
+      margin: 10px 0;
+      color: #444;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 25px;
+      background: #007bff;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: #0056d2;
+    }
+
+    @media (max-width: 768px) {
+      .plans {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Choose Your Plan</h1>
+    <p>Flexible learning options that suit your needs.</p>
+  </header>
+
+  <div class="plans">
+    <div class="plan">
+      <h2>Basic</h2>
+      <div class="price">FREE</div>
+      <ul>
+        <li>Access free courses</li>
+        <li>Download PDFs</li>
+        <li>Join discussions</li>
+      </ul>
+      <a href="#" class="btn">Start Free</a>
+    </div>
+
+    <div class="plan">
+      <h2>Pro</h2>
+      <div class="price">Rs. 999/mo</div>
+      <ul>
+        <li>All Basic features</li>
+        <li>Exclusive video lessons</li>
+        <li>Live instructor sessions</li>
+        <li>Course completion certificate</li>
+      </ul>
+      <a href="#" class="btn">Upgrade Now</a>
+    </div>
+
+    <div class="plan">
+      <h2>Elite</h2>
+      <div class="price">Rs. 1999/mo</div>
+      <ul>
+        <li>All Pro features</li>
+        <li>1-on-1 Mentorship</li>
+        <li>Priority support</li>
+        <li>Personal Dashboard</li>
+      </ul>
+      <a href="#" class="btn">Go Elite</a>
+    </div>
+  </div>
+
+</body>
+</html>
