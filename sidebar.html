@@ -1,4 +1,8 @@
-<aside class="sidebar">
+<!-- Sidebar Toggle Button -->
+<button id="toggleSidebar" class="sidebar-toggle">☰ Menu</button>
+
+<!-- Sidebar -->
+<aside id="sidebar" class="sidebar hidden">
   <div class="sidebar-logo">
     <h2>📚 HiClass</h2>
   </div>
@@ -14,6 +18,20 @@
 </aside>
 
 <style>
+  .sidebar-toggle {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    background: #0f4c81;
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    font-size: 1.2rem;
+    z-index: 1001;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
   .sidebar {
     width: 240px;
     background-color: #0f4c81;
@@ -23,6 +41,12 @@
     top: 0; left: 0;
     padding: 1rem;
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  .hidden {
+    transform: translateX(-100%);
   }
 
   .sidebar-logo h2 {
@@ -55,21 +79,22 @@
     background-color: #145e9c;
   }
 
-  @media (max-width: 768px) {
+  @media (min-width: 769px) {
+    .sidebar-toggle {
+      display: none;
+    }
+
     .sidebar {
-      width: 100%;
-      height: auto;
-      position: relative;
-    }
-
-    .sidebar-menu {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-    }
-
-    .sidebar-menu li {
-      margin: 0.5rem 0;
+      transform: translateX(0) !important;
     }
   }
 </style>
+
+<script>
+  const toggleBtn = document.getElementById("toggleSidebar");
+  const sidebar = document.getElementById("sidebar");
+
+  toggleBtn.addEventListener("click", () => {
+    sidebar.classList.toggle("hidden");
+  });
+</script>
