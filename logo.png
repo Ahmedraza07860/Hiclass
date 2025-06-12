@@ -1,0 +1,32 @@
+<!-- 👇 Add this in your HTML where logo should appear -->
+<div class="hiclass-logo">
+  <span class="icon">🎓</span>
+  <span class="text">HiClass</span>
+</div>
+
+<!-- 👇 Add this in <style> tag or style.css -->
+<style>
+  .hiclass-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: bold;
+    font-size: 28px;
+    color: #6a11cb; /* Purple gradient start */
+    background: -webkit-linear-gradient(45deg, #6a11cb, #2575fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .hiclass-logo .icon {
+    font-size: 32px;
+  }
+
+  @keyframes float {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-4px); }
+    100% { transform: translateY(0); }
+  }
+</style>
