@@ -24,7 +24,9 @@
       background: #004080;
       color: #fff;
       padding: 10px 20px;
+      position: relative;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      flex-wrap: wrap;
     }
 
     header img {
@@ -35,6 +37,18 @@
       font-size: 26px;
       display: none;
       cursor: pointer;
+    }
+
+    .search-bar {
+      margin-left: auto;
+      margin-right: 10px;
+    }
+
+    .search-bar input {
+      padding: 6px 10px;
+      border-radius: 5px;
+      border: none;
+      outline: none;
     }
 
     nav {
@@ -72,6 +86,22 @@
       opacity: 0.9;
     }
 
+    .hero .cta {
+      margin-top: 20px;
+      display: inline-block;
+      padding: 10px 20px;
+      background: #fff;
+      color: #004080;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .hero .cta:hover {
+      background: #e0e0e0;
+    }
+
     .section-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -81,17 +111,19 @@
       margin: auto;
     }
 
-    .section-grid div {
+    .section-grid a {
       background: #fff;
       border-radius: 10px;
       padding: 25px;
       text-align: center;
       font-size: 18px;
+      text-decoration: none;
+      color: #004080;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
       transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .section-grid div:hover {
+    .section-grid a:hover {
       transform: translateY(-5px);
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
@@ -138,6 +170,7 @@
         left: 0;
         width: 100%;
         padding: 10px 0;
+        z-index: 1000;
       }
 
       nav.show {
@@ -146,6 +179,13 @@
 
       .menu-toggle {
         display: block;
+      }
+
+      .search-bar {
+        order: 3;
+        width: 100%;
+        margin-top: 10px;
+        text-align: center;
       }
     }
   </style>
@@ -156,6 +196,9 @@
   <header>
     <img src="logo.png" alt="HiClass Logo" />
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search..." aria-label="Search"/>
+    </div>
     <nav id="mainNav">
       <a href="#">Home</a>
       <a href="book.html">Books</a>
@@ -178,23 +221,24 @@
   <section class="hero">
     <h2>Learn Smarter, Grow Faster – HICLASS</h2>
     <p>Smart education platform with Books, Past Papers, Quizzes, and More – in English & Urdu</p>
+    <a class="cta" href="signup.html">Join Now</a>
   </section>
 
   <!-- Grid Section -->
   <section class="section-grid">
-    <div>📚 Books</div>
-    <div>📝 Quiz</div>
-    <div>📄 Past Papers</div>
-    <div>🎓 Courses</div>
-    <div>🚀 Advanced Courses</div>
-    <div>🧭 Learning Path</div>
-    <div>🎁 Refer & Earn</div>
-    <div>📜 Certificate</div>
-    <div>👤 Profile</div>
-    <div>📊 Dashboard</div>
-    <div>📋 Menu</div>
-    <div>🤝 Support</div>
-    <div>💬 Chatbot</div>
+    <a href="book.html">📚 Books</a>
+    <a href="quiz.html">📝 Quiz</a>
+    <a href="pastpapper.html">📄 Past Papers</a>
+    <a href="courses.html">🎓 Courses</a>
+    <a href="advanced-courses.html">🚀 Advanced Courses</a>
+    <a href="learning-path.html">🧭 Learning Path</a>
+    <a href="refer.html">🎁 Refer & Earn</a>
+    <a href="certificate.html">📜 Certificate</a>
+    <a href="profile.html">👤 Profile</a>
+    <a href="dashboard.html">📊 Dashboard</a>
+    <a href="menu.html">📋 Menu</a>
+    <a href="support.html">🤝 Support</a>
+    <a href="chatbot.html">💬 Chatbot</a>
   </section>
 
   <!-- Footer -->
@@ -208,9 +252,9 @@
   </footer>
 
   <!-- Chat Button -->
-  <div class="chatbot">💬 Chat</div>
+  <a href="chatbot.html" class="chatbot" aria-label="Open Chat">💬 Chat</a>
 
-  <!-- JS Scripts -->
+  <!-- Scripts -->
   <script>
     function toggleMenu() {
       document.getElementById('mainNav').classList.toggle('show');
