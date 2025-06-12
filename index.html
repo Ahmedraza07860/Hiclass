@@ -1,206 +1,186 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>HICLASS | Learn Smarter</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
     body {
-      background: #f0f2f5;
-      color: #333;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f7f7f7;
     }
-
     header {
-      background: #1e1e2f;
+      background: #2c3e50;
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: relative;
+      color: white;
+      position: sticky;
+      top: 0;
       z-index: 1000;
     }
-
-    .logo {
-      color: white;
-      font-weight: 700;
-      font-size: 1.5rem;
-    }
-
     nav {
       display: flex;
-      gap: 20px;
+      flex-wrap: wrap;
     }
-
     nav a {
       color: white;
       text-decoration: none;
-      font-weight: 500;
+      margin-left: 20px;
+      font-weight: bold;
       transition: color 0.3s;
     }
-
     nav a:hover {
-      color: #00d1b2;
+      color: #1abc9c;
     }
-
     .hamburger {
       display: none;
-      font-size: 1.5rem;
-      color: white;
+      flex-direction: column;
       cursor: pointer;
     }
-
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background: white;
+      margin: 4px;
+      transition: all 0.3s ease;
+    }
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background: #34495e;
+    }
+    .mobile-nav a {
+      padding: 1rem;
+      border-top: 1px solid #2c3e50;
+    }
     @media (max-width: 768px) {
       nav {
-        position: absolute;
-        top: 70px;
-        left: 0;
-        right: 0;
-        background: #1e1e2f;
-        flex-direction: column;
         display: none;
       }
-
-      nav.show {
+      .hamburger {
         display: flex;
       }
-
-      .hamburger {
-        display: block;
+      .mobile-nav.active {
+        display: flex;
       }
     }
-
     .hero {
-      background: linear-gradient(to right, #6a11cb, #2575fc);
-      color: white;
       text-align: center;
       padding: 4rem 2rem;
+      background: linear-gradient(to right, #3498db, #8e44ad);
+      color: white;
     }
-
-    .hero h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
     .features {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 20px;
-      justify-content: center;
-      padding: 3rem 1rem;
+      padding: 2rem;
     }
-
     .feature-box {
-      background: rgba(255, 255, 255, 0.8);
-      backdrop-filter: blur(10px);
-      padding: 25px;
-      border-radius: 15px;
-      width: 180px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       text-align: center;
-      transition: transform 0.3s;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      font-weight: bold;
+      transition: transform 0.3s ease;
     }
-
-    .feature-box a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 600;
-      font-size: 1.1rem;
-    }
-
     .feature-box:hover {
-      transform: translateY(-5px);
+      transform: scale(1.05);
     }
-
     footer {
-      background: #1e1e2f;
-      color: #ccc;
+      background: #2c3e50;
+      color: white;
+      padding: 2rem;
       text-align: center;
-      padding: 2rem 1rem;
     }
-
     .footer-links a {
-      color: #aaa;
+      color: #ddd;
       margin: 0 10px;
       text-decoration: none;
     }
-
-    /* Chatbot Button */
     .chatbot-btn {
       position: fixed;
-      top: 80px;
-      left: 15px;
-      background: #00d1b2;
+      left: 10px;
+      bottom: 20px;
+      background: #27ae60;
       color: white;
       padding: 12px 18px;
-      border-radius: 30px;
+      border-radius: 50px;
       cursor: pointer;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      animation: slideIn 1s ease-out;
+      animation: pulse 2s infinite;
       z-index: 999;
     }
-
-    @keyframes slideIn {
-      from { transform: translateX(-100px); opacity: 0; }
-      to { transform: translateX(0); opacity: 1; }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
     }
-
     .chatbot-box {
       display: none;
       position: fixed;
       bottom: 80px;
-      left: 15px;
-      width: 320px;
-      height: 420px;
+      left: 10px;
+      width: 300px;
+      height: 400px;
       background: white;
       border: 1px solid #ccc;
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-      z-index: 998;
+      z-index: 999;
     }
   </style>
 </head>
-<body>
-
-<header>
-  <div class="logo">HICLASS</div>
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
-  <nav id="navMenu">
+<body><header>
+  <h1>HICLASS</h1>
+  <div class="hamburger" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <nav>
     <a href="index.html">Home</a>
     <a href="book.html">Books</a>
     <a href="pastpapper.html">Past Papers</a>
     <a href="quiz.html">Quiz</a>
     <a href="courses.html">Courses</a>
+    <a href="advancecourse.html">Advanced Courses</a>
+    <a href="refer.html">Refer</a>
     <a href="dashboard.html">Dashboard</a>
     <a href="menu.html">Menu</a>
     <a href="#" onclick="logout()">Logout</a>
   </nav>
 </header>
-
-<section class="hero">
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="book.html">Books</a>
+  <a href="pastpapper.html">Past Papers</a>
+  <a href="quiz.html">Quiz</a>
+  <a href="courses.html">Courses</a>
+  <a href="advancecourse.html">Advanced Courses</a>
+  <a href="refer.html">Refer</a>
+  <a href="dashboard.html">Dashboard</a>
+  <a href="menu.html">Menu</a>
+  <a href="#" onclick="logout()">Logout</a>
+</div><section class="hero">
   <h2>Learn Smarter, Grow Faster – HICLASS</h2>
   <p>Smart education platform with Books, Past Papers, Quizzes, and More – in English & Urdu</p>
-</section>
-
-<section class="features">
+</section><section class="features">
   <div class="feature-box"><a href="book.html">📚 Books</a></div>
   <div class="feature-box"><a href="quiz.html">📝 Quiz</a></div>
   <div class="feature-box"><a href="pastpapper.html">📄 Past Papers</a></div>
   <div class="feature-box"><a href="courses.html">🎓 Courses</a></div>
+  <div class="feature-box"><a href="advancecourse.html">🚀 Advanced Courses</a></div>
+  <div class="feature-box"><a href="refer.html">🎁 Refer & Earn</a></div>
   <div class="feature-box"><a href="dashboard.html">📊 Dashboard</a></div>
   <div class="feature-box"><a href="menu.html">📋 Menu</a></div>
   <div class="feature-box"><a href="chatbot.html">💬 Chatbot</a></div>
-</section>
-
-<footer>
+</section><footer>
   <p>&copy; 2025 HICLASS. All rights reserved.</p>
   <div class="footer-links">
     <a href="admin.html">Admin Panel</a> |
@@ -209,30 +189,23 @@
     <a href="contact.html">Contact</a> |
     <a href="chatbot.html">Chatbot</a>
   </div>
-</footer>
-
-<!-- Chatbot -->
-<div class="chatbot-btn" onclick="toggleChatbot()">💬 Chat</div>
+</footer><div class="chatbot-btn" onclick="toggleChatbot()">💬 Chat</div>
 <div class="chatbot-box" id="chatbotBox">
   <iframe src="chatbot.html" width="100%" height="100%" frameborder="0"></iframe>
-</div>
-
-<script>
+</div><script>
   function toggleChatbot() {
     const box = document.getElementById('chatbotBox');
     box.style.display = (box.style.display === 'block') ? 'none' : 'block';
   }
 
   function toggleMenu() {
-    const menu = document.getElementById('navMenu');
-    menu.classList.toggle('show');
+    const nav = document.getElementById('mobileNav');
+    nav.classList.toggle('active');
   }
 
   function logout() {
     alert("Logged out successfully!");
     window.location.href = "login.html";
   }
-</script>
-
-</body>
+</script></body>
 </html>
