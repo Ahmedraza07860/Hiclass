@@ -1,155 +1,191 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>HiClass | Modern Style</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-    }
+    }body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #cfd9df, #e2ebf0);
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  animation: bgShift 15s ease infinite alternate;
+}
 
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #cfd9df, #e2ebf0);
-      color: #333;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      animation: bgShift 15s ease infinite alternate;
-    }
+@keyframes bgShift {
+  0% { background: linear-gradient(135deg, #cfd9df, #e2ebf0); }
+  100% { background: linear-gradient(135deg, #dde5ef, #f5faff); }
+}
 
-    @keyframes bgShift {
-      0% { background: linear-gradient(135deg, #cfd9df, #e2ebf0); }
-      100% { background: linear-gradient(135deg, #dde5ef, #f5faff); }
-    }
+header {
+  background: rgba(30, 144, 255, 0.9);
+  color: white;
+  text-align: center;
+  padding: 60px 20px 40px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  border-bottom: 2px solid #ffffff22;
+}
 
-    header {
-      background: rgba(30, 144, 255, 0.9);
-      color: white;
-      text-align: center;
-      padding: 50px 20px;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-      border-bottom: 2px solid #ffffff22;
-    }
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 2px #00000033;
+}
 
-    header h1 {
-      font-size: 2.7rem;
-      margin-bottom: 12px;
-      text-shadow: 1px 1px 2px #00000033;
-    }
+header p {
+  font-size: 1.2rem;
+}
 
-    header p {
-      font-size: 1.1rem;
-    }
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 15px 0;
+  background: #f0f8ff;
+  border-bottom: 1px solid #ccc;
+}
 
-    main {
-      flex: 1;
-      padding: 40px 20px;
-      max-width: 1200px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-    }
+nav a {
+  text-decoration: none;
+  color: #1e90ff;
+  font-weight: 600;
+  transition: color 0.3s;
+}
 
-    .card {
-      background: rgba(255, 255, 255, 0.85);
-      border-radius: 20px;
-      padding: 30px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-      backdrop-filter: blur(12px);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border: 1px solid #ffffff33;
-      position: relative;
-      overflow: hidden;
-    }
+nav a:hover {
+  color: #104e8b;
+}
 
-    .card::before {
-      content: '';
-      position: absolute;
-      width: 150%;
-      height: 150%;
-      background: radial-gradient(circle at top left, rgba(30,144,255,0.1), transparent);
-      top: -50%;
-      left: -50%;
-      transform: rotate(25deg);
-    }
+main {
+  flex: 1;
+  padding: 50px 20px;
+  max-width: 1300px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
 
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-    }
+.card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  backdrop-filter: blur(12px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #ffffff33;
+  position: relative;
+  overflow: hidden;
+}
 
-    .card h2 {
-      color: #1e90ff;
-      margin-bottom: 15px;
-      position: relative;
-      z-index: 1;
-    }
+.card::before {
+  content: '';
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle at top left, rgba(30,144,255,0.1), transparent);
+  top: -50%;
+  left: -50%;
+  transform: rotate(25deg);
+}
 
-    .card p {
-      font-size: 1rem;
-      line-height: 1.6;
-      z-index: 1;
-      position: relative;
-    }
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: rgba(30, 144, 255, 0.95);
-      color: white;
-      font-size: 0.95rem;
-      border-top: 2px solid #ffffff22;
-      box-shadow: 0 -5px 20px rgba(0,0,0,0.15);
-    }
+.card h2 {
+  color: #1e90ff;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 1;
+}
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      .card {
-        padding: 20px;
-      }
-    }
+.card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  z-index: 1;
+  position: relative;
+}
+
+.join-btn {
+  display: inline-block;
+  background: #1e90ff;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 40px auto 0;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.join-btn:hover {
+  background: #104e8b;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  background: rgba(30, 144, 255, 0.95);
+  color: white;
+  font-size: 0.95rem;
+  border-top: 2px solid #ffffff22;
+  box-shadow: 0 -5px 20px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+  .card {
+    padding: 20px;
+  }
+}
+
   </style>
 </head>
-<body>
-
-  <header>
+<body>  <header>
     <h1>📘 Welcome to HiClass</h1>
     <p>Smart Learning Platform by Ahmad Reza</p>
-  </header>
-
-  <main>
+  </header>  <nav>
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+    <a href="dashboard.html">Dashboard</a>
+  </nav>  <main>
     <div class="card">
       <h2>🎓 Course Access</h2>
       <p>Get unlimited access to educational videos, Islamic content, and school subjects from your dashboard.</p>
-    </div>
+    </div><div class="card">
+  <h2>📊 Progress Tracker</h2>
+  <p>Stay motivated by checking your course completion stats, quiz scores, and achievements.</p>
+</div>
 
-    <div class="card">
-      <h2>📊 Progress Tracker</h2>
-      <p>Stay motivated by checking your course completion stats, quiz scores, and achievements.</p>
-    </div>
+<div class="card">
+  <h2>🏆 Earn Certificates</h2>
+  <p>Receive official certificates for every course you finish — verified and downloadable instantly.</p>
+</div>
 
-    <div class="card">
-      <h2>🏆 Earn Certificates</h2>
-      <p>Receive official certificates for every course you finish — verified and downloadable instantly.</p>
-    </div>
+<div class="card">
+  <h2>💡 Learn Anywhere</h2>
+  <p>Access your learning material on mobile, tablet, or desktop anytime, from anywhere in Pakistan.</p>
+</div>
 
-    <div class="card">
-      <h2>💡 Learn Anywhere</h2>
-      <p>Access your learning material on mobile, tablet, or desktop anytime, from anywhere in Pakistan.</p>
-    </div>
-  </main>
-
-  <footer>
+  </main>  <div style="text-align:center">
+    <a href="signup.html" class="join-btn">🚀 Join Now</a>
+  </div>  <footer>
     &copy; 2025 HiClass | Built by Ahmad Reza | All rights reserved.
-  </footer>
-
-</body>
+  </footer></body>
 </html>
