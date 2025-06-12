@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Refer & Earn – HiClass</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f4f8;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #007BFF;
+    }
+
+    .ref-box {
+      background: #e9f5ff;
+      border: 1px dashed #007BFF;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .ref-code {
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .copy-btn {
+      background: #007BFF;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      margin-top: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .whatsapp-share {
+      background-color: #25D366;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      display: block;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .progress {
+      margin-top: 30px;
+      text-align: center;
+      color: #333;
+    }
+
+    .progress span {
+      font-weight: bold;
+      color: #28a745;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🎁 Invite & Earn – HiClass</h2>
+    <div class="ref-box">
+      <p>Your Referral Code:</p>
+      <div class="ref-code" id="refCode">HICLASS-RAZA2025</div>
+      <button class="copy-btn" onclick="copyCode()">Copy Code</button>
+    </div>
+
+    <button class="whatsapp-share" onclick="shareWhatsApp()">📲 Share on WhatsApp</button>
+
+    <div class="progress">
+      <p>You’ve invited <span>14</span> friends.</p>
+      <p>Invite <span>6</span> more to unlock a free course! 🎓</p>
+    </div>
+  </div>
+
+  <script>
+    function copyCode() {
+      const ref = document.getElementById("refCode").innerText;
+      navigator.clipboard.writeText(ref).then(() => {
+        alert("Referral code copied!");
+      });
+    }
+
+    function shareWhatsApp() {
+      const message = encodeURIComponent(
+        "🎓 Join HiClass – Smart Education Platform!\n\nUse my referral code HICLASS-RAZA2025 to get access to free content.\n\nVisit: https://taleemghar.netlify.app"
+      );
+      const link = `https://wa.me/?text=${message}`;
+      window.open(link, '_blank');
+    }
+  </script>
+</body>
+</html>
