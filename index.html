@@ -1,213 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>HiClass - Modern Learning</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
-    }
-
-    body {
-      background: #f5f7fa;
-      color: #333;
-    }
-
-    header {
-      background: #004080;
-      color: white;
-      padding: 20px;
-      text-align: center;
-      font-size: 26px;
-      font-weight: bold;
-      letter-spacing: 1px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    nav {
-      background: #0059b3;
-      padding: 10px 0;
-      display: flex;
-      justify-content: center;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 16px;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: #ffcc00;
-    }
-
-    .hero {
-      padding: 60px 20px;
-      text-align: center;
-      background: linear-gradient(to right, #e6f2ff, #ffffff);
-    }
-
-    .hero h1 {
-      font-size: 40px;
-      color: #003366;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      font-size: 18px;
-      color: #555;
-      margin-bottom: 20px;
-    }
-
-    .hero a {
-      background: #004080;
-      color: white;
-      padding: 12px 25px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-size: 16px;
-      transition: 0.3s;
-    }
-
-    .hero a:hover {
-      background: #0066cc;
-    }
-
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin: 40px auto;
-      max-width: 1100px;
-      gap: 20px;
-      padding: 0 20px;
-    }
-
-    .card {
-      background: white;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      flex: 1 1 300px;
-      text-align: center;
-    }
-
-    .card i {
-      font-size: 40px;
-      color: #004080;
-      margin-bottom: 15px;
-    }
-
-    .card h3 {
-      margin-bottom: 10px;
-      color: #003366;
-    }
-
-    .card p {
-      font-size: 14px;
-      color: #555;
-    }
-
-    .chatbot-btn {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background: #004080;
-      color: white;
-      border: none;
-      border-radius: 50px;
-      padding: 12px 20px;
-      font-size: 16px;
-      text-decoration: none;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      z-index: 999;
-      transition: 0.3s;
-    }
-
-    .chatbot-btn:hover {
-      background: #0066cc;
-    }
-
-    footer {
-      background: #003366;
-      color: #ccc;
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      margin-top: 40px;
-    }
-
-    @media(max-width: 600px) {
-      .hero h1 {
-        font-size: 28px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      nav {
-        flex-wrap: wrap;
-      }
-
-      nav a {
-        margin: 10px;
-      }
-    }
-  </style>
+  <title>HiClass - Smart Education Platform</title>
+  <link rel="icon" href="logo.png" type="image/png" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#004080" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="animation.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body>
-
-  <header>HiClass Education</header>
-
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="courses.html">Courses</a>
-    <a href="book.html">Books</a>
-    <a href="pastpaper.html">Past Papers</a>
-    <a href="faq.html">FAQ</a>
+<body>  <!-- Header -->  <header>
+    <img src="logo.png" alt="HiClass Logo" />
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="search-bar">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder="Search..." aria-label="Search"/>
+    </div>
+    <nav id="mainNav">
+      <a href="#">Home</a>
+      <a href="book.html">Books</a>
+      <a href="pastpapper.html">Past Papers</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="courses.html">Courses</a>
+      <a href="advanced-courses.html">Advanced</a>
+      <a href="learning-path.html">Path</a>
+      <a href="certificate.html">Certificate</a>
+      <a href="profile.html">Profile</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="support.html">Support</a>
+      <a href="refer.html">Refer</a>
+      <a href="logout.html">Logout</a>
+    </nav>
+  </header>  <!-- Hero -->  <section class="hero">
+    <h2>Learn Smarter, Grow Faster – HICLASS</h2>
+    <p>Books, Quizzes, Certificates and More — all in one smart platform</p>
+    <a href="signup.html" class="cta">Join Now</a>
+  </section>  <!-- Grid Section -->  <section class="section-grid">
+    <a href="book.html">📚 Books</a>
+    <a href="quiz.html">📝 Quiz</a>
+    <a href="pastpapper.html">📄 Past Papers</a>
+    <a href="courses.html">🎓 Courses</a>
+    <a href="advanced-courses.html">🚀 Advanced</a>
+    <a href="learning-path.html">🧭 Learning Path</a>
+    <a href="refer.html">🎁 Refer & Earn</a>
+    <a href="certificate.html">📜 Certificate</a>
+    <a href="profile.html">👤 Profile</a>
+    <a href="dashboard.html">📊 Dashboard</a>
+    <a href="menu.html">📋 Menu</a>
+    <a href="support.html">🤝 Support</a>
+    <a href="chatbot.html">💬 Chatbot</a>
+  </section>  <!-- Footer -->  <footer class="footer">
+    © 2025 HiClass. All rights reserved.<br>
+    <a href="admin.html">Admin Panel</a> |
+    <a href="faq.html">FAQ</a> |
+    <a href="privacy.html">Privacy</a> |
     <a href="contact.html">Contact</a>
-  </nav>
+  </footer>  <!-- Chatbot --><a href="https://wa.me/923072080527" class="chatbot" title="WhatsApp Help">💬 Chat</a>
 
-  <div class="hero">
-    <h1>Welcome to HiClass</h1>
-    <p>Your one-stop platform for smart learning, Islamic knowledge, and modern education.</p>
-    <a href="signup.html">Join Now</a>
-  </div>
-
-  <section class="features">
-    <div class="card">
-      <i class="fas fa-book-open"></i>
-      <h3>Books & Notes</h3>
-      <p>Download full school and Islamic books with PDF and video lectures.</p>
-    </div>
-    <div class="card">
-      <i class="fas fa-question-circle"></i>
-      <h3>Smart Quizzes</h3>
-      <p>Test your knowledge with our interactive MCQs and scoring system.</p>
-    </div>
-    <div class="card">
-      <i class="fas fa-robot"></i>
-      <h3>AI Chatbot</h3>
-      <p>Need help? Chat with our HiClass assistant 24/7 for instant answers.</p>
-    </div>
-  </section>
-
-  <a href="hiclassbot.html" class="chatbot-btn">
-    🤖 Smart Chatbot
-  </a>
-
-  <footer>
-    &copy; 2025 HiClass - All rights reserved.
-  </footer>
-
-</body>
+  <!-- Scripts -->  <script>
+    function toggleMenu() {
+      document.getElementById('mainNav').classList.toggle('show');
+    }
+  </script>  <script src="app.js"></script>  <script src="theme.js"></script>  <script src="toast.js"></script></body>
 </html>
