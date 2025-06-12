@@ -14,28 +14,40 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: #f0f2f5;
+      background: #f5f7fa;
       color: #333;
-      line-height: 1.6;
     }
 
     header {
-      background: linear-gradient(135deg, #007bff, #00c6ff);
+      background: linear-gradient(to right, #007bff, #00c6ff);
       color: white;
-      padding: 40px 20px;
+      padding: 50px 20px;
       text-align: center;
       border-bottom-left-radius: 40px;
       border-bottom-right-radius: 40px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      animation: slideDown 1s ease-in-out;
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
 
     header h1 {
-      font-size: 36px;
+      font-size: 42px;
       margin-bottom: 10px;
     }
 
     header p {
-      font-size: 18px;
+      font-size: 20px;
+      font-weight: 500;
     }
 
     nav {
@@ -56,35 +68,38 @@
       text-decoration: none;
       font-weight: 600;
       font-size: 16px;
-      transition: color 0.3s ease;
+      transition: all 0.3s ease;
     }
 
     nav a:hover {
       color: #0056b3;
+      text-decoration: underline;
     }
 
     .container {
       max-width: 1100px;
-      margin: 30px auto;
+      margin: 40px auto;
       padding: 20px;
     }
 
     .card {
       background: white;
-      border-radius: 12px;
-      padding: 25px;
-      margin-bottom: 25px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.07);
-      transition: transform 0.3s ease;
+      border-radius: 14px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-6px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
     }
 
     .card h3 {
       margin-bottom: 15px;
       color: #007bff;
+      font-size: 22px;
     }
 
     .dashboard-image {
@@ -100,11 +115,43 @@
       width: 100%;
       height: 20px;
       margin-top: 10px;
+      appearance: none;
+    }
+
+    progress::-webkit-progress-bar {
+      background-color: #eee;
+      border-radius: 10px;
+    }
+
+    progress::-webkit-progress-value {
+      background-color: #007bff;
+      border-radius: 10px;
     }
 
     ul {
       padding-left: 20px;
       list-style-type: '✅ ';
+      margin-top: 10px;
+    }
+
+    .welcome-msg {
+      background: #e6f2ff;
+      border-left: 6px solid #007bff;
+      padding: 18px;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 30px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
     }
 
     footer {
@@ -116,14 +163,19 @@
 
     @media (max-width: 768px) {
       header h1 {
-        font-size: 28px;
+        font-size: 30px;
       }
+
+      .card {
+        padding: 20px;
+      }
+
       nav {
         gap: 15px;
-        padding: 10px;
       }
-      .card {
-        padding: 18px;
+
+      .welcome-msg {
+        font-size: 16px;
       }
     }
   </style>
@@ -132,7 +184,7 @@
 
   <header>
     <h1>📊 HiClass Dashboard</h1>
-    <p>Welcome, Ahmad Reza – Learn Smart & Fast!</p>
+    <p>Welcome back, Ahmad Raza — Ready to Learn & Achieve?</p>
   </header>
 
   <nav>
@@ -143,6 +195,10 @@
   </nav>
 
   <div class="container">
+
+    <div class="welcome-msg">
+      👋 Hello Ahmad Raza! Wishing you a powerful day of learning. Let's make it count! 🚀
+    </div>
 
     <div class="card">
       <h3>📈 Your Learning Progress</h3>
@@ -161,7 +217,7 @@
 
     <div class="card">
       <h3>📷 Dashboard Preview</h3>
-      <img file_000000001f0061f9927ed26cfea5ac0d.png" alt="Dashboard Screenshot" class="dashboard-image" />
+      <img src="file_000000001f0061f9927ed26cfea5ac0d.png" alt="Dashboard Screenshot" class="dashboard-image" />
     </div>
 
     <div class="card">
@@ -176,7 +232,7 @@
   </div>
 
   <footer>
-    © 2025 HiClass by Ahmad Reza. All rights reserved.
+    © 2025 HiClass by Ahmad Raza. All rights reserved.
   </footer>
 
 </body>
