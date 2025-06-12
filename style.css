@@ -1,15 +1,10 @@
-<!DOCTYPE html><html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>HiClass | Modern Style</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }body {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(135deg, #cfd9df, #e2ebf0);
   color: #333;
@@ -20,8 +15,12 @@
 }
 
 @keyframes bgShift {
-  0% { background: linear-gradient(135deg, #cfd9df, #e2ebf0); }
-  100% { background: linear-gradient(135deg, #dde5ef, #f5faff); }
+  0% {
+    background: linear-gradient(135deg, #cfd9df, #e2ebf0);
+  }
+  100% {
+    background: linear-gradient(135deg, #dde5ef, #f5faff);
+  }
 }
 
 header {
@@ -152,40 +151,3 @@ footer {
     padding: 20px;
   }
 }
-
-  </style>
-</head>
-<body>  <header>
-    <h1>📘 Welcome to HiClass</h1>
-    <p>Smart Learning Platform by Ahmad Reza</p>
-  </header>  <nav>
-    <a href="index.html">Home</a>
-    <a href="courses.html">Courses</a>
-    <a href="faq.html">FAQ</a>
-    <a href="contact.html">Contact</a>
-    <a href="dashboard.html">Dashboard</a>
-  </nav>  <main>
-    <div class="card">
-      <h2>🎓 Course Access</h2>
-      <p>Get unlimited access to educational videos, Islamic content, and school subjects from your dashboard.</p>
-    </div><div class="card">
-  <h2>📊 Progress Tracker</h2>
-  <p>Stay motivated by checking your course completion stats, quiz scores, and achievements.</p>
-</div>
-
-<div class="card">
-  <h2>🏆 Earn Certificates</h2>
-  <p>Receive official certificates for every course you finish — verified and downloadable instantly.</p>
-</div>
-
-<div class="card">
-  <h2>💡 Learn Anywhere</h2>
-  <p>Access your learning material on mobile, tablet, or desktop anytime, from anywhere in Pakistan.</p>
-</div>
-
-  </main>  <div style="text-align:center">
-    <a href="signup.html" class="join-btn">🚀 Join Now</a>
-  </div>  <footer>
-    &copy; 2025 HiClass | Built by Ahmad Reza | All rights reserved.
-  </footer></body>
-</html>
