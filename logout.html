@@ -4,46 +4,93 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Logging Out - HiClass</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f4f7fa;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #e0eafc, #cfdef3);
+      height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100vh;
       margin: 0;
     }
+
     .logout-box {
-      background: white;
-      padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      background: #ffffff;
+      padding: 50px 40px;
+      border-radius: 16px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
       text-align: center;
+      width: 90%;
+      max-width: 400px;
+      transition: all 0.3s ease-in-out;
     }
+
     .logout-box h1 {
+      font-size: 26px;
+      color: #007BFF;
+      margin-bottom: 12px;
+    }
+
+    .logout-box p {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .spinner {
+      margin: 30px auto 0;
+      width: 50px;
+      height: 50px;
+      border: 6px solid #f3f3f3;
+      border-top: 6px solid #007BFF;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0%   { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .hiclss-logo {
+      font-size: 32px;
+      font-weight: 600;
       color: #007BFF;
       margin-bottom: 10px;
+      animation: fadein 1.2s ease-in;
     }
-    .logout-box p {
-      color: #333;
+
+    @keyframes fadein {
+      from { opacity: 0; transform: translateY(-10px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
   <div class="logout-box">
-    <h1>Logging you out...</h1>
-    <p>Redirecting to login page shortly.</p>
+    <div class="hiclss-logo">HiClass</div>
+    <h1>Logging You Out...</h1>
+    <p>Thank you for using HiClass. Redirecting to login page...</p>
+    <div class="spinner"></div>
   </div>
 
   <script>
-    // Clear login flag
+    // Remove login session (localStorage flag or token)
     localStorage.removeItem('loggedIn');
 
-    // Redirect to login page after 2 seconds
+    // Optional: also clear user email/username if stored
+    localStorage.removeItem('userEmail');
+    localStorage.removeItem('username');
+
+    // Redirect to login page after delay
     setTimeout(() => {
       window.location.href = 'login.html';
-    }, 2000);
+    }, 2500);
   </script>
 </body>
 </html>
