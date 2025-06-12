@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Learning Path – HiClass</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f9fbfd;
+      margin: 0;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(135deg, #007bff, #00c6ff);
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+    }
+
+    header h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 18px;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      background-color: #007bff;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+    }
+
+    .step {
+      padding: 20px 30px;
+      position: relative;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+      width: 45%;
+      margin-bottom: 40px;
+    }
+
+    .step.left {
+      left: 0;
+    }
+
+    .step.right {
+      left: 55%;
+    }
+
+    .step::before {
+      content: '📘';
+      position: absolute;
+      top: 20px;
+      width: 30px;
+      height: 30px;
+      background-color: #007bff;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 30px;
+      font-size: 18px;
+      z-index: 1;
+    }
+
+    .step.left::before {
+      right: -45px;
+    }
+
+    .step.right::before {
+      left: -45px;
+    }
+
+    .step h3 {
+      margin-top: 0;
+      font-size: 20px;
+      color: #007bff;
+    }
+
+    .step p {
+      margin: 10px 0 0;
+    }
+
+    @media (max-width: 768px) {
+      .timeline::after {
+        left: 20px;
+      }
+
+      .step {
+        width: 100%;
+        left: 0 !important;
+        margin-left: 40px;
+      }
+
+      .step::before {
+        left: -40px;
+      }
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🚀 Your Learning Journey</h1>
+  <p>Follow your personalized path to success with HiClass</p>
+</header>
+
+<div class="timeline">
+
+  <div class="step left">
+    <h3>Step 1: Sign Up & Select Language</h3>
+    <p>Create your account and choose Urdu, Hindi or English interface.</p>
+  </div>
+
+  <div class="step right">
+    <h3>Step 2: Explore Free Courses</h3>
+    <p>Access beginner-friendly lessons and basic knowledge packs.</p>
+  </div>
+
+  <div class="step left">
+    <h3>Step 3: Enroll in Your First Subject</h3>
+    <p>Choose a subject like Math, Islamiyat, Science, or English.</p>
+  </div>
+
+  <div class="step right">
+    <h3>Step 4: Attempt Quizzes & Earn Points</h3>
+    <p>Test your knowledge and track progress on your dashboard.</p>
+  </div>
+
+  <div class="step left">
+    <h3>Step 5: Unlock Certificates</h3>
+    <p>Complete courses and receive official HiClass certificates.</p>
+  </div>
+
+  <div class="step right">
+    <h3>Step 6: Refer Friends & Unlock Premium</h3>
+    <p>Invite friends to earn rewards and free paid content access.</p>
+  </div>
+
+  <div class="step left">
+    <h3>Step 7: Achieve Graduation</h3>
+    <p>Track full subject progress and prepare for board-level exams.</p>
+  </div>
+
+</div>
+
+<footer>
+  © 2025 HiClass – Powered by Ahmad Raza | All Rights Reserved
+</footer>
+
+</body>
+</html>
