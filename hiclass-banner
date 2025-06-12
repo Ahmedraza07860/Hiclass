@@ -1,0 +1,66 @@
+<section class="main-banner">
+  <div class="banner-content">
+    <h1>🚀 Welcome to <span class="highlight">HiClass</span></h1>
+    <p>Smart Learning for Every Student | سمارٹ لرننگ ہر طالبعلم کے لیے</p>
+    <a href="courses.html" class="banner-btn">🎓 Explore Courses</a>
+    <a href="signup.html" class="banner-btn secondary">🚀 Get Started</a>
+  </div>
+</section>
+
+<style>
+.main-banner {
+  background: linear-gradient(135deg, #7b2ff7, #f107a3);
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 5px solid #fff;
+}
+.banner-content h1 {
+  font-size: 2.5rem;
+  animation: fadeInDown 1s ease;
+}
+.banner-content .highlight {
+  color: #ffff00;
+  font-weight: bold;
+}
+.banner-content p {
+  font-size: 1.2rem;
+  margin: 15px 0 25px;
+  animation: fadeInUp 1s ease;
+}
+.banner-btn {
+  padding: 12px 25px;
+  background: #fff;
+  color: #7b2ff7;
+  font-weight: bold;
+  border-radius: 25px;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+.banner-btn:hover {
+  background: #f107a3;
+  color: #fff;
+}
+.banner-btn.secondary {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+.banner-btn.secondary:hover {
+  background: #fff;
+  color: #f107a3;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
