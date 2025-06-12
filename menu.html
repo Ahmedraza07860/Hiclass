@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HiClass Menu</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <style>
+    body {
+      background: #f2f7ff;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .navbar {
+      background: #003366;
+    }
+
+    .navbar-brand, .nav-link {
+      color: white !important;
+      font-weight: 500;
+    }
+
+    .nav-link:hover {
+      text-decoration: underline;
+    }
+
+    .menu-container {
+      margin-top: 50px;
+    }
+
+    .menu-box {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .menu-box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .menu-icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    footer {
+      margin-top: 50px;
+      text-align: center;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">HiClass</a>
+      <div class="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">🏠 Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="book.html">📚 Books & Quran</a></li>
+          <li class="nav-item"><a class="nav-link" href="pastpaper.html">📝 Past Papers</a></li>
+          <li class="nav-item"><a class="nav-link" href="quiz.html">🧠 Quiz Zone</a></li>
+          <li class="nav-item"><a class="nav-link" href="courses.html">🎓 Courses</a></li>
+          <li class="nav-item"><a class="nav-link" href="profile.html">👤 Profile</a></li>
+          <li class="nav-item"><a class="nav-link" href="admin.html">🛠️ Admin Panel</a></li>
+          <li class="nav-item"><a class="nav-link" href="settings.html">⚙️ Settings</a></li>
+          <li class="nav-item"><a class="nav-link" href="interview.html">💼 Interview Tips</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container menu-container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="menu-box">
+          <div class="menu-icon">📚</div>
+          <h4>Books & Quran</h4>
+          <p>Full course and Islamic books</p>
+          <a href="book.html" class="btn btn-primary">Explore</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="menu-box">
+          <div class="menu-icon">📝</div>
+          <h4>Past Papers</h4>
+          <p>Download solved past papers</p>
+          <a href="pastpaper.html" class="btn btn-primary">View Papers</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="menu-box">
+          <div class="menu-icon">🧠</div>
+          <h4>Quiz Zone</h4>
+          <p>Islamic and General Knowledge</p>
+          <a href="quiz.html" class="btn btn-primary">Start Quiz</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="menu-box">
+          <div class="menu-icon">🎓</div>
+          <h4>Online Courses</h4>
+          <p>Learn IT, Freelancing & more</p>
+          <a href="courses.html" class="btn btn-primary">Browse</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="menu-box">
+          <div class="menu-icon">👤</div>
+          <h4>My Profile</h4>
+          <p>Track your learning progress</p>
+          <a href="profile.html" class="btn btn-primary">Go to Profile</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="menu-box">
+          <div class="menu-icon">🛠️</div>
+          <h4>Admin Panel</h4>
+          <p>Manage content & users</p>
+          <a href="admin.html" class="btn btn-danger">Admin Login</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="mt-5">
+    <hr>
+    <p>&copy; 2025 HiClass by Ahmad Reza | <a href="privacy.html">Privacy Policy</a> | <a href="contact.html">Contact Us</a></p>
+  </footer>
+
+</body>
+</html>
