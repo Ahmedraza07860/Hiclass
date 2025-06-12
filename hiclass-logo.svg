@@ -1,0 +1,16 @@
+<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="higradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7b2ff7"/>
+      <stop offset="100%" stop-color="#f107a3"/>
+    </linearGradient>
+  </defs>
+  <g>
+    <!-- Icon (Book) -->
+    <path fill="url(#higradient)" d="M10 10 h20 a5 5 0 0 1 5 5 v30 a5 5 0 0 1 -5 5 h-20 z M30 10 h20 a5 5 0 0 1 5 5 v30 a5 5 0 0 1 -5 5 h-20 z" />
+    <!-- Text -->
+    <text x="60" y="38" font-family="Segoe UI, sans-serif" font-size="26" fill="url(#higradient)" font-weight="bold">
+      HiClass
+    </text>
+  </g>
+</svg>
