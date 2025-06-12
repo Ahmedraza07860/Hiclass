@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FAQs - HiClass</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #eef4fc;
+    }
+
+    header {
+      background: linear-gradient(to right, #4e54c8, #8f94fb);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.8em;
+    }
+
+    .faq-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .faq-item {
+      background: white;
+      margin-bottom: 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 20px;
+      cursor: pointer;
+      font-size: 1.1em;
+      font-weight: bold;
+      background: #f8f9fc;
+      border-left: 5px solid #4e54c8;
+      transition: background 0.3s;
+    }
+
+    .faq-question:hover {
+      background: #e7ecff;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 18px 20px;
+      background: #fff;
+      color: #444;
+      font-size: 0.95em;
+      line-height: 1.6;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Frequently Asked Questions</h1>
+    <p>Answers to common questions about HiClass platform.</p>
+  </header>
+
+  <div class="faq-container">
+    <div class="faq-item">
+      <div class="faq-question">What is HiClass and how does it work?</div>
+      <div class="faq-answer">HiClass is an educational and earning platform offering free viral courses, TikTok tricks, YouTube growth methods, and more for students and creators in Pakistan.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Are these courses really free?</div>
+      <div class="faq-answer">Yes, all viral earning courses provided on HiClass are 100% free and regularly updated.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Can I contact the admin for help?</div>
+      <div class="faq-answer">Absolutely! You can contact Ahmad Reza at kingpubg45555@gmail.com or WhatsApp at +923072080527.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Do I need to sign up?</div>
+      <div class="faq-answer">No signup is needed to access most materials, but you can create an account for tracking progress and unlocking premium features.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">How often are new courses added?</div>
+      <div class="faq-answer">We add fresh courses and tricks weekly to keep you ahead in earning and learning!</div>
+    </div>
+  </div>
+
+  <script>
+    const items = document.querySelectorAll(".faq-item");
+    items.forEach(item => {
+      item.addEventListener("click", () => {
+        item.classList.toggle("active");
+      });
+    });
+  </script>
+
+</body>
+</html>
