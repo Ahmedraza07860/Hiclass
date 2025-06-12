@@ -1,0 +1,65 @@
+<nav class="navbar">
+  <div class="container">
+    <div class="logo">
+      <a href="index.html">HiClass</a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="courses.html">📘 Courses</a></li>
+      <li><a href="dashboard.html">📊 Dashboard</a></li>
+      <li><a href="learning-path.html">🧭 Learning Path</a></li>
+      <li><a href="contact.html">📞 Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<style>
+  .navbar {
+    background-color: #0f4c81;
+    padding: 0.8rem 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  .navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .navbar .logo a {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+
+  .nav-links li a:hover {
+    color: #ffdd57;
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+      margin-top: 1rem;
+    }
+  }
+</style>
