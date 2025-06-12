@@ -1,77 +1,52 @@
 <!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>HICLASS | Learn Smarter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HiClass | Learn Smarter</title>
   <link rel="stylesheet" href="style.css" />
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #f7f7f7;
+      background: #f9fafb;
     }
     header {
-      background: #2c3e50;
+      background: #1e3a8a;
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       color: white;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
     }
-    nav {
+    .logo {
       display: flex;
-      flex-wrap: wrap;
+      align-items: center;
+    }
+    .logo img {
+      height: 40px;
+      margin-right: 10px;
     }
     nav a {
       color: white;
       text-decoration: none;
       margin-left: 20px;
-      font-weight: bold;
+      font-weight: 600;
       transition: color 0.3s;
     }
     nav a:hover {
-      color: #1abc9c;
-    }
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-    .hamburger div {
-      width: 25px;
-      height: 3px;
-      background: white;
-      margin: 4px;
-      transition: all 0.3s ease;
-    }
-    .mobile-nav {
-      display: none;
-      flex-direction: column;
-      background: #34495e;
-    }
-    .mobile-nav a {
-      padding: 1rem;
-      border-top: 1px solid #2c3e50;
-    }
-    @media (max-width: 768px) {
-      nav {
-        display: none;
-      }
-      .hamburger {
-        display: flex;
-      }
-      .mobile-nav.active {
-        display: flex;
-      }
+      color: #3b82f6;
     }
     .hero {
-      text-align: center;
+      background: linear-gradient(to right, #3b82f6, #6366f1);
       padding: 4rem 2rem;
-      background: linear-gradient(to right, #3498db, #8e44ad);
+      text-align: center;
       color: white;
+    }
+    .hero img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 1rem;
+      border-radius: 1rem;
     }
     .features {
       display: grid;
@@ -81,131 +56,111 @@
     }
     .feature-box {
       background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
       text-align: center;
       font-weight: bold;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s;
     }
     .feature-box:hover {
       transform: scale(1.05);
     }
     footer {
-      background: #2c3e50;
+      background: #1e3a8a;
       color: white;
       padding: 2rem;
       text-align: center;
     }
     .footer-links a {
-      color: #ddd;
+      color: #cbd5e1;
       margin: 0 10px;
       text-decoration: none;
     }
     .chatbot-btn {
       position: fixed;
-      left: 10px;
       bottom: 20px;
-      background: #27ae60;
+      left: 20px;
+      background: #10b981;
       color: white;
-      padding: 12px 18px;
+      padding: 0.75rem 1.25rem;
       border-radius: 50px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
       cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
       animation: pulse 2s infinite;
       z-index: 999;
     }
     @keyframes pulse {
-      0% { transform: scale(1); }
+      0%, 100% { transform: scale(1); }
       50% { transform: scale(1.1); }
-      100% { transform: scale(1); }
     }
     .chatbot-box {
       display: none;
       position: fixed;
-      bottom: 80px;
-      left: 10px;
-      width: 300px;
-      height: 400px;
+      bottom: 90px;
+      left: 20px;
+      width: 320px;
+      height: 420px;
       background: white;
-      border: 1px solid #ccc;
       border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.15);
       overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
       z-index: 999;
     }
   </style>
 </head>
-<body><header>
-  <h1>HICLASS</h1>
-  <div class="hamburger" onclick="toggleMenu()">
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="book.html">Books</a>
-    <a href="pastpapper.html">Past Papers</a>
-    <a href="quiz.html">Quiz</a>
-    <a href="courses.html">Courses</a>
-    <a href="advancecourse.html">Advanced Courses</a>
-    <a href="refer.html">Refer</a>
-    <a href="dashboard.html">Dashboard</a>
-    <a href="menu.html">Menu</a>
-    <a href="#" onclick="logout()">Logout</a>
-  </nav>
-</header>
-<div class="mobile-nav" id="mobileNav">
-  <a href="index.html">Home</a>
-  <a href="book.html">Books</a>
-  <a href="pastpapper.html">Past Papers</a>
-  <a href="quiz.html">Quiz</a>
-  <a href="courses.html">Courses</a>
-  <a href="advancecourse.html">Advanced Courses</a>
-  <a href="refer.html">Refer</a>
-  <a href="dashboard.html">Dashboard</a>
-  <a href="menu.html">Menu</a>
-  <a href="#" onclick="logout()">Logout</a>
-</div><section class="hero">
-  <h2>Learn Smarter, Grow Faster – HICLASS</h2>
-  <p>Smart education platform with Books, Past Papers, Quizzes, and More – in English & Urdu</p>
-</section><section class="features">
-  <div class="feature-box"><a href="book.html">📚 Books</a></div>
-  <div class="feature-box"><a href="quiz.html">📝 Quiz</a></div>
-  <div class="feature-box"><a href="pastpapper.html">📄 Past Papers</a></div>
-  <div class="feature-box"><a href="courses.html">🎓 Courses</a></div>
-  <div class="feature-box"><a href="advancecourse.html">🚀 Advanced Courses</a></div>
-  <div class="feature-box"><a href="refer.html">🎁 Refer & Earn</a></div>
-  <div class="feature-box"><a href="dashboard.html">📊 Dashboard</a></div>
-  <div class="feature-box"><a href="menu.html">📋 Menu</a></div>
-  <div class="feature-box"><a href="chatbot.html">💬 Chatbot</a></div>
-</section><footer>
-  <p>&copy; 2025 HICLASS. All rights reserved.</p>
-  <div class="footer-links">
-    <a href="admin.html">Admin Panel</a> |
-    <a href="faq.html">FAQ</a> |
-    <a href="privacy.html">Privacy</a> |
-    <a href="contact.html">Contact</a> |
-    <a href="chatbot.html">Chatbot</a>
-  </div>
-</footer><div class="chatbot-btn" onclick="toggleChatbot()">💬 Chat</div>
-<div class="chatbot-box" id="chatbotBox">
-  <iframe src="chatbot.html" width="100%" height="100%" frameborder="0"></iframe>
-</div><script>
-  function toggleChatbot() {
-    const box = document.getElementById('chatbotBox');
-    box.style.display = (box.style.display === 'block') ? 'none' : 'block';
-  }
-
-  function toggleMenu() {
-    const nav = document.getElementById('mobileNav');
-    nav.classList.toggle('active');
-  }
-
-  function logout() {
-    alert("Logged out successfully!");
-    window.location.href = "login.html";
-  }
-</script></body>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo.svg" alt="HiClass Logo" />
+      <h1>HiClass</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="book.html">Books</a>
+      <a href="pastpapper.html">Past Papers</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="courses.html">Courses</a>
+      <a href="advancecourse.html">Advanced Courses</a>
+      <a href="refer.html">Refer</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="menu.html">Menu</a>
+      <a href="#" onclick="logout()">Logout</a>
+    </nav>
+  </header>  <section class="hero">
+    <h2>Learn Smarter, Grow Faster – HICLASS</h2>
+    <p>Smart education platform with Books, Past Papers, Quizzes, and More – in English & Urdu</p>
+    <img src="banner-hero.png" alt="Hero Banner" />
+  </section>  <section class="features">
+    <div class="feature-box"><a href="book.html">📚 Books</a></div>
+    <div class="feature-box"><a href="quiz.html">📝 Quiz</a></div>
+    <div class="feature-box"><a href="pastpapper.html">📄 Past Papers</a></div>
+    <div class="feature-box"><a href="courses.html">🎓 Courses</a></div>
+    <div class="feature-box"><a href="advancecourse.html">🚀 Advanced Courses</a></div>
+    <div class="feature-box"><a href="refer.html">🎁 Refer & Earn</a></div>
+    <div class="feature-box"><a href="dashboard.html">📊 Dashboard</a></div>
+    <div class="feature-box"><a href="menu.html">📋 Menu</a></div>
+    <div class="feature-box"><a href="chatbot.html">💬 Chatbot</a></div>
+  </section>  <footer>
+    <p>&copy; 2025 HiClass. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="admin.html">Admin Panel</a> |
+      <a href="faq.html">FAQ</a> |
+      <a href="privacy.html">Privacy</a> |
+      <a href="contact.html">Contact</a> |
+      <a href="chatbot.html">Chatbot</a>
+    </div>
+  </footer>  <div class="chatbot-btn" onclick="toggleChatbot()">💬 Chat</div>
+  <div class="chatbot-box" id="chatbotBox">
+    <iframe src="chatbot.html" width="100%" height="100%" frameborder="0"></iframe>
+  </div>  <script>
+    function toggleChatbot() {
+      const box = document.getElementById('chatbotBox');
+      box.style.display = (box.style.display === 'block') ? 'none' : 'block';
+    }
+    function logout() {
+      alert("Logged out successfully!");
+      window.location.href = "login.html";
+    }
+  </script></body>
 </html>
