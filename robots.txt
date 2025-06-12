@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /private/
+Allow: /
+
+Sitemap: https://ahmedraza07860.github.io/Hiclass/sitemap.xml
