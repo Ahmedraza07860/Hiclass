@@ -1,43 +1,160 @@
-<!-- HiclassBot Start -->
-<div id="hiclassbot" style="position: fixed; bottom: 20px; right: 20px; width: 280px; max-width: 90%; background: #004080; color: white; border-radius: 15px; box-shadow: 0 0 10px rgba(0,0,0,0.2); font-family: sans-serif; overflow: hidden; z-index: 999;">
-  <div style="background: #00264d; padding: 12px 15px; font-size: 16px; font-weight: bold; display: flex; align-items: center;">
-    💬&nbsp; HiclassBot
-  </div>
-  <div style="padding: 12px; font-size: 14px;">
-    <p id="botMessage">👋 Assalamu Alaikum! Aap kya maloom karna chahte hain?</p>
-    <select id="langSelect" style="margin-top: 10px; width: 100%; padding: 8px; border: none; border-radius: 8px;">
-      <option value="ur">🇵🇰 Urdu</option>
-      <option value="hi">🇮🇳 Hindi</option>
-      <option value="en">🇺🇸 English</option>
-      <option value="ar">🇸🇦 Arabic</option>
-    </select>
-    <input type="text" id="userInput" placeholder="Type your question..." style="margin-top: 10px; padding: 8px; width: 100%; border-radius: 8px; border: none;" />
-    <button onclick="sendToWhatsApp()" style="margin-top: 10px; background: white; color: #004080; border: none; padding: 8px 15px; border-radius: 8px; width: 100%;">Send</button>
-  </div>
-</div>
-
-<script>
-  const greetings = {
-    ur: "👋 Assalamu Alaikum! Aap kya maloom karna chahte hain?",
-    hi: "👋 नमस्ते! आप क्या जानना चाहते हैं?",
-    en: "👋 Hello! What would you like to know?",
-    ar: "👋 السلام عليكم! ماذا تريد أن تعرف؟"
-  };
-
-  document.getElementById("langSelect").addEventListener("change", function () {
-    const lang = this.value;
-    document.getElementById("botMessage").innerText = greetings[lang] || greetings.en;
-  });
-
-  function sendToWhatsApp() {
-    const message = document.getElementById("userInput").value.trim();
-    if (message === "") {
-      alert("⚠️ Please type a message.");
-      return;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HiClass Chatbot Assistant</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #f0f4f8;
     }
-    const phoneNumber = "923072080527"; // Your WhatsApp number without "+"
-    const url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
-    window.open(url, "_blank");
-  }
-</script>
-<!-- HiclassBot End -->
+
+    header {
+      background: #004080;
+      color: #fff;
+      padding: 15px 20px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .chat-container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      height: 80vh;
+    }
+
+    .messages {
+      flex: 1;
+      overflow-y: auto;
+      padding-right: 10px;
+    }
+
+    .bot-message, .user-message {
+      margin: 10px 0;
+      padding: 12px 15px;
+      border-radius: 15px;
+      max-width: 80%;
+      line-height: 1.4;
+      font-size: 16px;
+    }
+
+    .bot-message {
+      background: #e6f0ff;
+      align-self: flex-start;
+    }
+
+    .user-message {
+      background: #d1f7d1;
+      align-self: flex-end;
+    }
+
+    .input-area {
+      display: flex;
+      margin-top: 15px;
+    }
+
+    .input-area input {
+      flex: 1;
+      padding: 10px 15px;
+      border: 1px solid #ccc;
+      border-radius: 25px 0 0 25px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .input-area button {
+      padding: 10px 20px;
+      background: #004080;
+      color: white;
+      border: none;
+      border-radius: 0 25px 25px 0;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .input-area button:hover {
+      background: #0066cc;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #666;
+      margin-top: 20px;
+    }
+
+    @media(max-width: 600px) {
+      .chat-container {
+        margin: 20px;
+        height: 85vh;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    🤖 HiClass Smart Chatbot
+  </header>
+
+  <div class="chat-container">
+    <div class="messages" id="messages">
+      <div class="bot-message">Assalamualaikum! How can I help you today?</div>
+    </div>
+
+    <div class="input-area">
+      <input type="text" id="userInput" placeholder="Type your message..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 HiClass Chatbot Assistant
+  </footer>
+
+  <script>
+    function sendMessage() {
+      const input = document.getElementById('userInput');
+      const msg = input.value.trim();
+      if (!msg) return;
+
+      const msgBox = document.getElementById('messages');
+
+      // User message
+      const userDiv = document.createElement('div');
+      userDiv.className = 'user-message';
+      userDiv.textContent = msg;
+      msgBox.appendChild(userDiv);
+
+      // Bot response (static sample, replace with real AI logic)
+      const botDiv = document.createElement('div');
+      botDiv.className = 'bot-message';
+      botDiv.textContent = generateBotReply(msg);
+      msgBox.appendChild(botDiv);
+
+      input.value = '';
+      msgBox.scrollTop = msgBox.scrollHeight;
+    }
+
+    function generateBotReply(userMsg) {
+      const lower = userMsg.toLowerCase();
+      if (lower.includes('book')) return 'You can find books in the "Books" section.';
+      if (lower.includes('quiz')) return 'Try our quizzes on the "Quiz" page.';
+      if (lower.includes('certificate')) return 'Certificates are available after completing a course.';
+      return 'I am here to help! Ask about books, courses, quizzes, or anything.';
+    }
+  </script>
+</body>
+</html>
