@@ -1,22 +1,28 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HiClass | Learn Smarter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f9fafb;
+      background: #f4f6fa;
     }
     header {
-      background: #1e3a8a;
+      background: linear-gradient(to right, #1e3a8a, #3b82f6);
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       color: white;
+      position: relative;
     }
     .logo {
       display: flex;
@@ -26,18 +32,61 @@
       height: 40px;
       margin-right: 10px;
     }
+    nav {
+      display: flex;
+      gap: 15px;
+    }
     nav a {
       color: white;
       text-decoration: none;
-      margin-left: 20px;
       font-weight: 600;
       transition: color 0.3s;
     }
     nav a:hover {
-      color: #3b82f6;
+      color: #38bdf8;
     }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background: white;
+      margin: 4px 0;
+      transition: 0.4s;
+      border-radius: 3px;
+    }
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background: #1e3a8a;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      width: 100%;
+      text-align: center;
+    }
+    .mobile-nav a {
+      padding: 1rem;
+      border-top: 1px solid #3b82f6;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+      }
+      .mobile-nav.show {
+        display: flex;
+      }
+    }
+
     .hero {
-      background: linear-gradient(to right, #3b82f6, #6366f1);
+      background: linear-gradient(to right, #6366f1, #3b82f6);
       padding: 4rem 2rem;
       text-align: center;
       color: white;
@@ -48,6 +97,7 @@
       margin-top: 1rem;
       border-radius: 1rem;
     }
+
     .features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -66,6 +116,7 @@
     .feature-box:hover {
       transform: scale(1.05);
     }
+
     footer {
       background: #1e3a8a;
       color: white;
@@ -77,6 +128,7 @@
       margin: 0 10px;
       text-decoration: none;
     }
+
     .chatbot-btn {
       position: fixed;
       bottom: 20px;
@@ -112,8 +164,11 @@
 <body>
   <header>
     <div class="logo">
-      <img src="logo.svg" alt="HiClass Logo" />
+      <img src="assets/logo.svg" alt="HiClass Logo" />
       <h1>HiClass</h1>
+    </div>
+    <div class="hamburger" onclick="toggleMobileMenu()">
+      <div></div><div></div><div></div>
     </div>
     <nav>
       <a href="index.html">Home</a>
@@ -127,11 +182,27 @@
       <a href="menu.html">Menu</a>
       <a href="#" onclick="logout()">Logout</a>
     </nav>
-  </header>  <section class="hero">
+    <div class="mobile-nav" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="book.html">Books</a>
+      <a href="pastpapper.html">Past Papers</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="courses.html">Courses</a>
+      <a href="advancecourse.html">Advanced Courses</a>
+      <a href="refer.html">Refer</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="menu.html">Menu</a>
+      <a href="#" onclick="logout()">Logout</a>
+    </div>
+  </header>
+
+  <section class="hero">
     <h2>Learn Smarter, Grow Faster – HICLASS</h2>
     <p>Smart education platform with Books, Past Papers, Quizzes, and More – in English & Urdu</p>
-    <img src="banner-hero.png" alt="Hero Banner" />
-  </section>  <section class="features">
+    <img src="assets/banner-hero.png" alt="Hero Banner" />
+  </section>
+
+  <section class="features">
     <div class="feature-box"><a href="book.html">📚 Books</a></div>
     <div class="feature-box"><a href="quiz.html">📝 Quiz</a></div>
     <div class="feature-box"><a href="pastpapper.html">📄 Past Papers</a></div>
@@ -141,7 +212,9 @@
     <div class="feature-box"><a href="dashboard.html">📊 Dashboard</a></div>
     <div class="feature-box"><a href="menu.html">📋 Menu</a></div>
     <div class="feature-box"><a href="chatbot.html">💬 Chatbot</a></div>
-  </section>  <footer>
+  </section>
+
+  <footer>
     <p>&copy; 2025 HiClass. All rights reserved.</p>
     <div class="footer-links">
       <a href="admin.html">Admin Panel</a> |
@@ -150,10 +223,14 @@
       <a href="contact.html">Contact</a> |
       <a href="chatbot.html">Chatbot</a>
     </div>
-  </footer>  <div class="chatbot-btn" onclick="toggleChatbot()">💬 Chat</div>
+  </footer>
+
+  <div class="chatbot-btn" onclick="toggleChatbot()">💬 Chat</div>
   <div class="chatbot-box" id="chatbotBox">
     <iframe src="chatbot.html" width="100%" height="100%" frameborder="0"></iframe>
-  </div>  <script>
+  </div>
+
+  <script>
     function toggleChatbot() {
       const box = document.getElementById('chatbotBox');
       box.style.display = (box.style.display === 'block') ? 'none' : 'block';
@@ -162,5 +239,9 @@
       alert("Logged out successfully!");
       window.location.href = "login.html";
     }
-  </script></body>
+    function toggleMobileMenu() {
+      document.getElementById('mobileMenu').classList.toggle('show');
+    }
+  </script>
+</body>
 </html>
