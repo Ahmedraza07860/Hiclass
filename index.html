@@ -6,70 +6,40 @@
   <title>HiClass - Smart Learning</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap">
   <style>
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-    body {
-      background: #f4f7fa; color: #333;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background: #f4f7fa; color: #333; }
     header {
-      background: #0d47a1; color: #fff;
-      padding: 20px 30px;
-      display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap;
+      background: #0d47a1; color: #fff; padding: 20px 30px;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
     }
-    .logo {
-      font-size: 24px; font-weight: bold;
-    }
+    .logo { font-size: 24px; font-weight: bold; }
     nav {
-      display: flex; flex-wrap: wrap; gap: 15px; margin-top: 10px;
+      display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px;
     }
     nav a {
       color: #fff; text-decoration: none;
       padding: 8px 14px; border-radius: 8px;
       background: rgba(255,255,255,0.1); transition: 0.3s;
     }
-    nav a:hover {
-      background: #1976d2;
-    }
+    nav a:hover { background: #1976d2; }
     .hero {
       padding: 60px 30px; text-align: center;
-      background: linear-gradient(to right, #2196f3, #42a5f5);
-      color: #fff;
+      background: linear-gradient(to right, #2196f3, #42a5f5); color: #fff;
     }
-    .hero h1 {
-      font-size: 36px; margin-bottom: 10px;
-    }
-    .hero p {
-      font-size: 20px;
-      font-weight: 400;
-    }
+    .hero h1 { font-size: 36px; margin-bottom: 10px; }
+    .hero p { font-size: 20px; font-weight: 400; }
     .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      padding: 40px 20px;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px; padding: 40px 20px;
     }
     .feature-box {
       background: #fff; padding: 20px; border-radius: 14px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      position: relative;
-      transition: 0.3s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1); position: relative; transition: 0.3s;
     }
-    .feature-box:hover {
-      transform: translateY(-5px);
-    }
-    .feature-box h2 {
-      font-size: 20px; margin-bottom: 10px;
-    }
-    .feature-box p {
-      font-size: 15px; margin-bottom: 15px;
-    }
-    .feature-box a {
-      text-decoration: none;
-      color: #2196f3; font-weight: 600;
-    }
+    .feature-box:hover { transform: translateY(-5px); }
+    .feature-box h2 { font-size: 20px; margin-bottom: 10px; }
+    .feature-box p { font-size: 15px; margin-bottom: 15px; }
+    .feature-box a { text-decoration: none; color: #2196f3; font-weight: 600; }
     .dots {
       position: absolute; top: 10px; right: 10px;
       cursor: pointer; font-size: 18px;
@@ -80,12 +50,9 @@
       display: none; flex-direction: column;
     }
     .dots-menu a {
-      padding: 8px 12px; text-decoration: none;
-      color: #333;
+      padding: 8px 12px; text-decoration: none; color: #333;
     }
-    .dots:hover + .dots-menu, .dots-menu:hover {
-      display: flex;
-    }
+    .dots:hover + .dots-menu, .dots-menu:hover { display: flex; }
     footer {
       background: #0d47a1; color: white;
       padding: 30px 20px; text-align: center;
@@ -98,8 +65,7 @@
     }
     .auth-buttons a {
       background: #1976d2; padding: 8px 14px;
-      color: white; text-decoration: none;
-      border-radius: 8px;
+      color: white; text-decoration: none; border-radius: 8px;
     }
     @media (max-width: 600px) {
       nav { flex-direction: column; align-items: center; }
@@ -125,8 +91,11 @@
       <a href="courses.html">🎓 Courses</a>
       <a href="dashboard.html">👤 Profile</a>
       <a href="admin.html">🛠️ Admin Panel</a>
-      <a href="#">⚙️ Settings</a>
-      <a href="#">💼 Interview Tips</a>
+      <a href="chat.html">💬 Chat</a>
+      <a href="menu.html">📋 Menu</a>
+      <a href="contact.html">📨 Contact</a>
+      <a href="faq.html">❓ FAQ</a>
+      <a href="privacy.html">🔒 Privacy</a>
     </nav>
   </header>
 
@@ -184,6 +153,24 @@
       <h2>🎓 Online Courses</h2>
       <p>IT, Freelancing, Graphics, Amazon & More</p>
       <a href="courses.html">Browse Courses</a>
+    </div>
+
+    <div class="feature-box">
+      <h2>👤 Profile Dashboard</h2>
+      <p>Track your learning and progress</p>
+      <a href="dashboard.html">Go to Dashboard</a>
+    </div>
+
+    <div class="feature-box">
+      <h2>💬 Live Chat</h2>
+      <p>Support and learning discussion via chat</p>
+      <a href="chat.html">Open Chat</a>
+    </div>
+
+    <div class="feature-box">
+      <h2>📋 Full Menu</h2>
+      <p>All website sections in one place</p>
+      <a href="menu.html">Open Menu</a>
     </div>
   </section>
 
