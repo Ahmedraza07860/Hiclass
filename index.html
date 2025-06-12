@@ -4,96 +4,176 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>HICLASS | Learn Smarter</title>
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: sans-serif;
-      background: #f7f7f7;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
     }
+
+    body {
+      background: #f0f2f5;
+      color: #333;
+    }
+
     header {
-      background: #2c3e50;
+      background: #1e1e2f;
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      color: white;
+      position: relative;
+      z-index: 1000;
     }
+
+    .logo {
+      color: white;
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
     nav a {
       color: white;
       text-decoration: none;
-      margin-left: 20px;
-      font-weight: bold;
+      font-weight: 500;
+      transition: color 0.3s;
     }
+
+    nav a:hover {
+      color: #00d1b2;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 1.5rem;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: #1e1e2f;
+        flex-direction: column;
+        display: none;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+    }
+
     .hero {
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      color: white;
       text-align: center;
       padding: 4rem 2rem;
-      background: linear-gradient(to right, #3498db, #8e44ad);
-      color: white;
     }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
     .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
       gap: 20px;
-      padding: 2rem;
+      justify-content: center;
+      padding: 3rem 1rem;
     }
+
     .feature-box {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      padding: 25px;
+      border-radius: 15px;
+      width: 180px;
       text-align: center;
-      font-weight: bold;
+      transition: transform 0.3s;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
+
+    .feature-box a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .feature-box:hover {
+      transform: translateY(-5px);
+    }
+
     footer {
-      background: #2c3e50;
-      color: white;
-      padding: 2rem;
+      background: #1e1e2f;
+      color: #ccc;
       text-align: center;
+      padding: 2rem 1rem;
     }
+
     .footer-links a {
-      color: #ddd;
+      color: #aaa;
       margin: 0 10px;
       text-decoration: none;
     }
+
     /* Chatbot Button */
     .chatbot-btn {
       position: fixed;
-      left: 10px;
-      bottom: 20px;
-      background: #27ae60;
+      top: 80px;
+      left: 15px;
+      background: #00d1b2;
       color: white;
       padding: 12px 18px;
-      border-radius: 50px;
+      border-radius: 30px;
       cursor: pointer;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      animation: pulse 2s infinite;
+      animation: slideIn 1s ease-out;
+      z-index: 999;
     }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-      100% { transform: scale(1); }
+
+    @keyframes slideIn {
+      from { transform: translateX(-100px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
     }
+
     .chatbot-box {
       display: none;
       position: fixed;
       bottom: 80px;
-      left: 10px;
-      width: 300px;
-      height: 400px;
+      left: 15px;
+      width: 320px;
+      height: 420px;
       background: white;
       border: 1px solid #ccc;
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      z-index: 998;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>HICLASS</h1>
-  <nav>
+  <div class="logo">HICLASS</div>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <nav id="navMenu">
     <a href="index.html">Home</a>
     <a href="book.html">Books</a>
     <a href="pastpapper.html">Past Papers</a>
@@ -131,7 +211,7 @@
   </div>
 </footer>
 
-<!-- Chatbot Button -->
+<!-- Chatbot -->
 <div class="chatbot-btn" onclick="toggleChatbot()">💬 Chat</div>
 <div class="chatbot-box" id="chatbotBox">
   <iframe src="chatbot.html" width="100%" height="100%" frameborder="0"></iframe>
@@ -143,8 +223,12 @@
     box.style.display = (box.style.display === 'block') ? 'none' : 'block';
   }
 
+  function toggleMenu() {
+    const menu = document.getElementById('navMenu');
+    menu.classList.toggle('show');
+  }
+
   function logout() {
-    // Replace with Firebase logout if needed
     alert("Logged out successfully!");
     window.location.href = "login.html";
   }
