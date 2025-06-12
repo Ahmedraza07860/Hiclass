@@ -27,8 +27,13 @@
       height: 50px;
     }
 
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
     nav {
-      margin-top: 10px;
       display: flex;
       flex-wrap: wrap;
       gap: 15px;
@@ -44,6 +49,25 @@
 
     nav a:hover {
       background-color: #0066cc;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #003366;
+        margin-top: 10px;
+        padding: 10px;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
     }
 
     .hero {
@@ -103,7 +127,6 @@
       font-weight: bold;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
-
   </style>
 </head>
 <body>
@@ -111,13 +134,18 @@
   <!-- Header with Logo and Navigation -->
   <header>
     <img src="logo.png" alt="HiClass Logo" />
-    <nav>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <nav id="mainNav">
       <a href="#">Home</a>
       <a href="book.html">Books</a>
       <a href="pastpapper.html">Past Papers</a>
       <a href="quiz.html">Quiz</a>
       <a href="courses.html">Courses</a>
       <a href="advanced-courses.html">Advanced Courses</a>
+      <a href="learning-path.html">Learning Path</a>
+      <a href="certificate.html">Certificate</a>
+      <a href="profile.html">Profile</a>
+      <a href="support.html">Support</a>
       <a href="refer.html">Refer</a>
       <a href="dashboard.html">Dashboard</a>
       <a href="menu.html">Menu</a>
@@ -138,9 +166,13 @@
     <div>📄 Past Papers</div>
     <div>🎓 Courses</div>
     <div>🚀 Advanced Courses</div>
+    <div>🧭 Learning Path</div>
     <div>🎁 Refer & Earn</div>
+    <div>📜 Certificate</div>
+    <div>👤 Profile</div>
     <div>📊 Dashboard</div>
     <div>📋 Menu</div>
+    <div>🤝 Support</div>
     <div>💬 Chatbot</div>
   </section>
 
@@ -156,6 +188,14 @@
 
   <!-- Floating Chat Button -->
   <div class="chatbot">💬 Chat</div>
+
+  <!-- JS for Hamburger Menu -->
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('mainNav');
+      nav.classList.toggle('active');
+    }
+  </script>
 
 </body>
 </html>
