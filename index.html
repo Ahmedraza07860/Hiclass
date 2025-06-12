@@ -4,134 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>HiClass - Smart Education Platform</title>
-  <link rel="icon" href="logo.png" type="image/png"/>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #f4f4f4;
-      color: #333;
-    }
-
-    header {
-      background-color: #004080;
-      color: white;
-      padding: 15px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-
-    header img {
-      height: 50px;
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 28px;
-      cursor: pointer;
-    }
-
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 5px 10px;
-      border-radius: 5px;
-    }
-
-    nav a:hover {
-      background-color: #0066cc;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: #003366;
-        margin-top: 10px;
-        padding: 10px;
-      }
-
-      nav.active {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-    }
-
-    .hero {
-      padding: 40px 20px;
-      background: linear-gradient(to right, #004080, #0073e6);
-      color: white;
-      text-align: center;
-    }
-
-    .hero h2 {
-      margin-bottom: 10px;
-    }
-
-    .section-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 20px;
-      padding: 30px;
-      background-color: white;
-      text-align: center;
-    }
-
-    .section-grid div {
-      padding: 20px;
-      background: #e6f0ff;
-      border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-    }
-
-    .footer {
-      background-color: #00264d;
-      color: white;
-      padding: 20px;
-      text-align: center;
-      font-size: 14px;
-    }
-
-    .footer a {
-      color: #a8d0ff;
-      text-decoration: none;
-      margin: 0 8px;
-    }
-
-    .footer a:hover {
-      text-decoration: underline;
-    }
-
-    .chatbot {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #0073e6;
-      color: white;
-      padding: 10px 15px;
-      border-radius: 25px;
-      cursor: pointer;
-      font-weight: bold;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-  </style>
+  <link rel="icon" href="logo.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="animation.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#004080" />
 </head>
 <body>
 
-  <!-- Header with Logo and Navigation -->
+  <!-- Header -->
   <header>
     <img src="logo.png" alt="HiClass Logo" />
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
@@ -154,13 +35,13 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero slide-in">
     <h2>Learn Smarter, Grow Faster – HICLASS</h2>
     <p>Smart education platform with Books, Past Papers, Quizzes, and More – in English & Urdu</p>
   </section>
 
-  <!-- Main Section Blocks -->
-  <section class="section-grid">
+  <!-- Grid Section -->
+  <section class="section-grid fade-in">
     <div>📚 Books</div>
     <div>📝 Quiz</div>
     <div>📄 Past Papers</div>
@@ -186,16 +67,12 @@
     <a href="chatbot.html">Chatbot</a>
   </footer>
 
-  <!-- Floating Chat Button -->
-  <div class="chatbot">💬 Chat</div>
+  <!-- Chat Button -->
+  <div class="chatbot bounce-in">💬 Chat</div>
 
-  <!-- JS for Hamburger Menu -->
-  <script>
-    function toggleMenu() {
-      const nav = document.getElementById('mainNav');
-      nav.classList.toggle('active');
-    }
-  </script>
-
+  <!-- JS Scripts -->
+  <script src="app.js"></script>
+  <script src="theme.js"></script>
+  <script src="toast.js"></script>
 </body>
 </html>
