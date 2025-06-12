@@ -1,14 +1,11 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hiclass - Smart Learning</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Segoe UI', sans-serif;
       text-align: center;
@@ -100,27 +97,35 @@
       }
     }
   </style>
+
   <script>
-    // User login check
-    const isLoggedIn = localStorage.getItem("userLoggedIn");
-    const protectedPages = ["book.html", "pastpapper.html", "courses.html", "dashboard.html"];
+    // ✅ Permanent Login Check with Testing Mode Allowance
+    const isLoggedIn = localStorage.getItem("userLoggedIn") === "true";
     const currentPage = window.location.pathname.split("/").pop();
-    if (protectedPages.includes(currentPage) && !isLoggedIn) {
+    const protectedPages = ["book.html", "pastpapper.html", "courses.html", "dashboard.html"];
+    const isTesting = window.location.hostname === "localhost" || window.location.hostname.includes("netlify.app");
+
+    if (protectedPages.includes(currentPage) && !isLoggedIn && !isTesting) {
       window.location.href = "login.html";
     }
   </script>
+
 </head>
 <body>
+
   <img src="file_00000000f52c61f8a973cb3d08a7bde2.png" alt="Hiclass Logo" class="logo">
   <h1>Welcome to Hiclass</h1>
   <p>Smart Learning for Every Student</p>
+
   <img src="file_00000000d9786230b1fe5a42df76ffbe.png" alt="Learning Banner" class="banner">
+
   <div class="button-group">
     <a href="signup.html"><button class="cta-button">Join Now</button></a>
     <a href="login.html"><button class="cta-button">Login</button></a>
     <a href="courses.html"><button class="cta-button">Explore Courses</button></a>
     <a href="dashboard.html"><button class="cta-button">Go to Dashboard</button></a>
   </div>
+
   <section class="screenshots">
     <h2>📸 Platform Previews</h2>
     <div class="screenshot-row">
@@ -138,6 +143,7 @@
       </div>
     </div>
   </section>
+
   <div class="footer">
     <p>
       <a href="about.html">About Us</a> |
@@ -147,5 +153,6 @@
     </p>
     <p>© 2025 Hiclass by Ahmad Reza</p>
   </div>
+
 </body>
 </html>
