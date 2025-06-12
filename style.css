@@ -43,6 +43,7 @@ header p {
   font-size: 1.2rem;
 }
 
+/* Navigation Bar */
 nav {
   display: flex;
   justify-content: center;
@@ -50,6 +51,7 @@ nav {
   padding: 15px 0;
   background: #f0f8ff;
   border-bottom: 1px solid #ccc;
+  flex-wrap: wrap;
 }
 
 nav a {
@@ -61,6 +63,18 @@ nav a {
 
 nav a:hover {
   color: #104e8b;
+}
+
+/* Mobile Toggle (if used) */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: #1e90ff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin: 10px;
+  cursor: pointer;
 }
 
 main {
@@ -143,11 +157,50 @@ footer {
   box-shadow: 0 -5px 20px rgba(0,0,0,0.15);
 }
 
-@media (max-width: 600px) {
+/* Floating Chatbot Button */
+.chatbot-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #1e90ff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 16px 18px;
+  font-size: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  cursor: pointer;
+  animation: bounce 2s infinite;
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+.chatbot-btn:hover {
+  background: #104e8b;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   header h1 {
     font-size: 2.2rem;
   }
   .card {
     padding: 20px;
+  }
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  .menu-toggle {
+    display: block;
   }
 }
