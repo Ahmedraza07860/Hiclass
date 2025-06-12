@@ -8,59 +8,53 @@
     body {
       margin: 0;
       padding: 0;
-      background: #f0f4f8;
+      background: #0f172a;
+      color: #fff;
       font-family: 'Segoe UI', sans-serif;
       display: flex;
       align-items: center;
       justify-content: center;
       height: 100vh;
+      overflow: hidden;
     }
 
-    .loader-container {
+    .loader {
       text-align: center;
     }
 
-    .logo {
-      width: 100px;
-      height: 100px;
+    svg {
+      width: 80px;
+      height: 80px;
       margin-bottom: 20px;
-      animation: bounce 2s infinite;
+      animation: rotate 2s linear infinite;
     }
 
-    .spinner {
-      border: 6px solid #e0e0e0;
-      border-top: 6px solid #007BFF;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      margin: auto;
-      animation: spin 1s linear infinite;
-    }
-
-    .text {
-      margin-top: 20px;
-      color: #333;
-      font-size: 18px;
+    .loading-text {
+      font-size: 1.2rem;
       font-weight: 500;
+      color: #94a3b8;
+      letter-spacing: 1px;
     }
 
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
     }
   </style>
 </head>
 <body>
-
-  <div class="loader-container">
-    <img src="logo.svg" alt="HiClass Logo" class="logo" />
-    <div class="spinner"></div>
-    <div class="text">Loading HiClass content...</div>
+  <div class="loader">
+    <!-- SVG Spinner Icon -->
+    <svg viewBox="0 0 100 100" fill="none">
+      <circle cx="50" cy="50" r="40" stroke="#3b82f6" stroke-width="10" stroke-linecap="round" stroke-dasharray="200" stroke-dashoffset="100">
+        <animate attributeName="stroke-dashoffset" from="100" to="0" dur="2s" repeatCount="indefinite" />
+      </circle>
+    </svg>
+    <div class="loading-text">Loading your learning experience...</div>
   </div>
-
 </body>
 </html>
