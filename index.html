@@ -3,187 +3,152 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>HiClass - Smart Learning</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap">
+  <title>HICLASS | Learn Smarter</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-    body { background: #f4f7fa; color: #333; }
-    header {
-      background: #0d47a1; color: #fff; padding: 20px 30px;
-      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #f7f7f7;
     }
-    .logo { font-size: 24px; font-weight: bold; }
-    nav {
-      display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px;
+    header {
+      background: #2c3e50;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
     }
     nav a {
-      color: #fff; text-decoration: none;
-      padding: 8px 14px; border-radius: 8px;
-      background: rgba(255,255,255,0.1); transition: 0.3s;
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
     }
-    nav a:hover { background: #1976d2; }
     .hero {
-      padding: 60px 30px; text-align: center;
-      background: linear-gradient(to right, #2196f3, #42a5f5); color: #fff;
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(to right, #3498db, #8e44ad);
+      color: white;
     }
-    .hero h1 { font-size: 36px; margin-bottom: 10px; }
-    .hero p { font-size: 20px; font-weight: 400; }
     .features {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px; padding: 40px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      padding: 2rem;
     }
     .feature-box {
-      background: #fff; padding: 20px; border-radius: 14px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1); position: relative; transition: 0.3s;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      font-weight: bold;
     }
-    .feature-box:hover { transform: translateY(-5px); }
-    .feature-box h2 { font-size: 20px; margin-bottom: 10px; }
-    .feature-box p { font-size: 15px; margin-bottom: 15px; }
-    .feature-box a { text-decoration: none; color: #2196f3; font-weight: 600; }
-    .dots {
-      position: absolute; top: 10px; right: 10px;
-      cursor: pointer; font-size: 18px;
-    }
-    .dots-menu {
-      position: absolute; top: 35px; right: 10px;
-      background: #f1f1f1; border-radius: 8px;
-      display: none; flex-direction: column;
-    }
-    .dots-menu a {
-      padding: 8px 12px; text-decoration: none; color: #333;
-    }
-    .dots:hover + .dots-menu, .dots-menu:hover { display: flex; }
     footer {
-      background: #0d47a1; color: white;
-      padding: 30px 20px; text-align: center;
+      background: #2c3e50;
+      color: white;
+      padding: 2rem;
+      text-align: center;
     }
     .footer-links a {
-      margin: 0 8px; color: #fff; text-decoration: none;
+      color: #ddd;
+      margin: 0 10px;
+      text-decoration: none;
     }
-    .auth-buttons {
-      display: flex; gap: 10px;
+    /* Chatbot Button */
+    .chatbot-btn {
+      position: fixed;
+      left: 10px;
+      bottom: 20px;
+      background: #27ae60;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      animation: pulse 2s infinite;
     }
-    .auth-buttons a {
-      background: #1976d2; padding: 8px 14px;
-      color: white; text-decoration: none; border-radius: 8px;
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
     }
-    @media (max-width: 600px) {
-      nav { flex-direction: column; align-items: center; }
-      .auth-buttons { justify-content: center; margin-top: 10px; }
+    .chatbot-box {
+      display: none;
+      position: fixed;
+      bottom: 80px;
+      left: 10px;
+      width: 300px;
+      height: 400px;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="logo">📘 HiClass</div>
-    <div class="auth-buttons">
-      <a href="login.html">🔐 Login</a>
-      <a href="signup.html">🚀 Sign Up</a>
-      <a href="#">🚪 Logout</a>
-    </div>
-    <nav>
-      <a href="#">🏠 Home</a>
-      <a href="book.html">📚 Books & Quran</a>
-      <a href="pastpaper.html">📝 Past Papers</a>
-      <a href="quiz.html">🧠 Quiz Zone</a>
-      <a href="courses.html">🎓 Courses</a>
-      <a href="dashboard.html">👤 Profile</a>
-      <a href="admin.html">🛠️ Admin Panel</a>
-      <a href="chat.html">💬 Chat</a>
-      <a href="menu.html">📋 Menu</a>
-      <a href="contact.html">📨 Contact</a>
-      <a href="faq.html">❓ FAQ</a>
-      <a href="privacy.html">🔒 Privacy</a>
-    </nav>
-  </header>
+<header>
+  <h1>HICLASS</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="book.html">Books</a>
+    <a href="pastpapper.html">Past Papers</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="courses.html">Courses</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="menu.html">Menu</a>
+    <a href="#" onclick="logout()">Logout</a>
+  </nav>
+</header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <h1>HiClass - Smart Learning for Every Student</h1>
-    <p>سمارٹ لرننگ ہر طالبعلم کے لیے</p>
-  </section>
+<section class="hero">
+  <h2>Learn Smarter, Grow Faster – HICLASS</h2>
+  <p>Smart education platform with Books, Past Papers, Quizzes, and More – in English & Urdu</p>
+</section>
 
-  <!-- Features -->
-  <section class="features">
-    <div class="feature-box">
-      <div class="dots">⋮</div>
-      <div class="dots-menu">
-        <a href="#">🔍 View</a>
-        <a href="#">✏️ Edit</a>
-        <a href="#">❌ Delete</a>
-      </div>
-      <h2>📚 Quran & Books</h2>
-      <p>9th, 10th, 1st Year, 2nd Year & Islamic Books</p>
-      <a href="book.html">Explore Books</a>
-    </div>
+<section class="features">
+  <div class="feature-box"><a href="book.html">📚 Books</a></div>
+  <div class="feature-box"><a href="quiz.html">📝 Quiz</a></div>
+  <div class="feature-box"><a href="pastpapper.html">📄 Past Papers</a></div>
+  <div class="feature-box"><a href="courses.html">🎓 Courses</a></div>
+  <div class="feature-box"><a href="dashboard.html">📊 Dashboard</a></div>
+  <div class="feature-box"><a href="menu.html">📋 Menu</a></div>
+  <div class="feature-box"><a href="chatbot.html">💬 Chatbot</a></div>
+</section>
 
-    <div class="feature-box">
-      <div class="dots">⋮</div>
-      <div class="dots-menu">
-        <a href="#">🔍 View</a>
-        <a href="#">✏️ Edit</a>
-        <a href="#">❌ Delete</a>
-      </div>
-      <h2>📝 Past Papers</h2>
-      <p>All Board Past Papers Download & View</p>
-      <a href="pastpaper.html">View Papers</a>
-    </div>
+<footer>
+  <p>&copy; 2025 HICLASS. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="admin.html">Admin Panel</a> |
+    <a href="faq.html">FAQ</a> |
+    <a href="privacy.html">Privacy</a> |
+    <a href="contact.html">Contact</a> |
+    <a href="chatbot.html">Chatbot</a>
+  </div>
+</footer>
 
-    <div class="feature-box">
-      <div class="dots">⋮</div>
-      <div class="dots-menu">
-        <a href="#">🔍 View</a>
-        <a href="#">✏️ Edit</a>
-        <a href="#">❌ Delete</a>
-      </div>
-      <h2>🧠 Quiz Zone</h2>
-      <p>Islamic & General Knowledge Quizzes</p>
-      <a href="quiz.html">Start Quiz</a>
-    </div>
+<!-- Chatbot Button -->
+<div class="chatbot-btn" onclick="toggleChatbot()">💬 Chat</div>
+<div class="chatbot-box" id="chatbotBox">
+  <iframe src="chatbot.html" width="100%" height="100%" frameborder="0"></iframe>
+</div>
 
-    <div class="feature-box">
-      <div class="dots">⋮</div>
-      <div class="dots-menu">
-        <a href="#">🔍 View</a>
-        <a href="#">✏️ Edit</a>
-        <a href="#">❌ Delete</a>
-      </div>
-      <h2>🎓 Online Courses</h2>
-      <p>IT, Freelancing, Graphics, Amazon & More</p>
-      <a href="courses.html">Browse Courses</a>
-    </div>
+<script>
+  function toggleChatbot() {
+    const box = document.getElementById('chatbotBox');
+    box.style.display = (box.style.display === 'block') ? 'none' : 'block';
+  }
 
-    <div class="feature-box">
-      <h2>👤 Profile Dashboard</h2>
-      <p>Track your learning and progress</p>
-      <a href="dashboard.html">Go to Dashboard</a>
-    </div>
-
-    <div class="feature-box">
-      <h2>💬 Live Chat</h2>
-      <p>Support and learning discussion via chat</p>
-      <a href="chat.html">Open Chat</a>
-    </div>
-
-    <div class="feature-box">
-      <h2>📋 Full Menu</h2>
-      <p>All website sections in one place</p>
-      <a href="menu.html">Open Menu</a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-links">
-      <a href="about.html">About Us</a> |
-      <a href="faq.html">FAQ</a> |
-      <a href="privacy.html">Privacy Policy</a> |
-      <a href="contact.html">Contact</a>
-    </div>
-    <p>© 2025 HiClass by Ahmad Reza</p>
-  </footer>
+  function logout() {
+    // Replace with Firebase logout if needed
+    alert("Logged out successfully!");
+    window.location.href = "login.html";
+  }
+</script>
 
 </body>
 </html>
