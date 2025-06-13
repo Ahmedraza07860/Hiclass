@@ -2,125 +2,140 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HiClass | Books Library</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HiClass Books Library</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
       margin: 0;
-      background: #f5f6fa;
-      color: #2f3640;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f8fb;
+      color: #333;
     }
+
     header {
-      background: #273c75;
-      color: white;
+      background: #004080;
+      color: #fff;
       padding: 20px;
       text-align: center;
+      font-size: 26px;
+      font-weight: bold;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      animation: slideIn 1s ease-in-out;
     }
-    h2 {
-      border-left: 5px solid #40739e;
-      padding-left: 10px;
-      margin-top: 40px;
-      color: #273c75;
+
+    @keyframes slideIn {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
-    .section {
-      padding: 20px;
+
+    .container {
       max-width: 1000px;
-      margin: auto;
+      margin: 40px auto;
+      padding: 20px;
     }
-    .book-card {
-      background: white;
-      border-radius: 10px;
-      padding: 15px;
-      margin: 15px 0;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    .book {
+      background: #fff;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+      transition: 0.3s ease;
+      animation: fadeIn 1s ease;
     }
-    .book-card h3 {
-      margin: 0;
-      color: #192a56;
+
+    .book:hover {
+      transform: scale(1.02);
     }
-    .book-card p {
-      margin: 5px 0 10px;
+
+    .book h3 {
+      font-size: 22px;
+      margin-bottom: 8px;
+      color: #004080;
+    }
+
+    .book p {
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .book a {
+      text-decoration: none;
+      background: #004080;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 25px;
+      display: inline-block;
+      transition: 0.3s;
+    }
+
+    .book a:hover {
+      background: #0066cc;
+    }
+
+    .book i {
+      margin-right: 8px;
+      color: #004080;
+      font-size: 22px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #002244;
+      color: #ccc;
+      margin-top: 50px;
       font-size: 14px;
     }
-    .book-card a {
-      display: inline-block;
-      margin-right: 10px;
-      padding: 8px 15px;
-      background: #44bd32;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-size: 13px;
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-    .book-card a.video {
-      background: #e84118;
+
+    @media (max-width: 600px) {
+      .book {
+        padding: 20px 15px;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>📚 HiClass | Digital Book Library</h1>
-    <p>Full Course PDFs + Video Lectures (Quran, School & Knowledge Books)</p>
+    <i class="fas fa-book-reader"></i> HiClass Books Library
   </header>
 
-  <div class="section">
-    <h2>🕋 Quran Pak</h2>
-    <div class="book-card">
-      <h3>Full Quran with Translation</h3>
-      <p>High-quality PDF with Urdu translation of the Holy Quran.</p>
-      <a href="https://drive.google.com/file/d/1tPSlghpG5J4TRG9wIrEQhzMwDaTYHoYv/view" target="_blank">📄 View PDF</a>
-      <a href="https://youtube.com/playlist?list=PL6dHkBqFfVzHkRJW8TxIUIwDwts-H7xlM" class="video" target="_blank">▶️ Watch Tafseer</a>
+  <div class="container">
+    <div class="book">
+      <h3><i class="fas fa-quran"></i> Quran Pak (PDF)</h3>
+      <p>Complete Holy Quran in PDF format for reading and learning.</p>
+      <a href="https://ia800903.us.archive.org/17/items/Quran_Pak_PDF/Quran%20Pak%20%5BURDU%5D.pdf" target="_blank">
+        📖 View Quran PDF
+      </a>
     </div>
 
-    <h2>📘 Knowledge Books</h2>
-    <div class="book-card">
-      <h3>General Knowledge (Urdu)</h3>
-      <p>Essential GK for students and competitive exams in Urdu language.</p>
-      <a href="https://drive.google.com/file/d/1W0Ho1gYw7gf3zXmeW9IoNdKP4AJMfT8O/view" target="_blank">📄 View PDF</a>
-      <a href="https://youtube.com/playlist?list=PLhrv2Z1jqYtIZLjDOUAgEPFe7NvBAt9tQ" class="video" target="_blank">▶️ Video Guide</a>
+    <div class="book">
+      <h3><i class="fas fa-flask"></i> Knowledge Book: Science Wonders</h3>
+      <p>A fun and educational book filled with amazing scientific facts and explanations.</p>
+      <a href="https://ia803208.us.archive.org/1/items/Science_Wonders_by_Tahir/Science%20Wonders.pdf" target="_blank">
+        📘 View Science Book
+      </a>
     </div>
 
-    <h2>🧪 Class 9 Books</h2>
-    <div class="book-card">
-      <h3>Biology - 9th</h3>
-      <p>Complete textbook + lecture playlist</p>
-      <a href="https://drive.google.com/file/d/1WEUlOUGuw0yR2s4_mr60TVXOfRiUJ0pt/view" target="_blank">📄 Biology PDF</a>
-      <a href="https://youtube.com/playlist?list=PLbVY1NOBh9v5Jv5OYrdNTBwhnpX2jM1S1" class="video" target="_blank">▶️ Video Lectures</a>
-    </div>
-
-    <h2>🔬 Class 10 Books</h2>
-    <div class="book-card">
-      <h3>Chemistry - 10th</h3>
-      <p>Textbook with solved exercises and HD lectures.</p>
-      <a href="https://drive.google.com/file/d/10l9YrEoBYwrL9jMchcGSH9PqGdIRylUi/view" target="_blank">📄 Chemistry PDF</a>
-      <a href="https://youtube.com/playlist?list=PLbVY1NOBh9v4h1W6_KW71Go9YIk7RaJkx" class="video" target="_blank">▶️ Lectures</a>
-    </div>
-
-    <h2>📗 1st Year (11th) Books</h2>
-    <div class="book-card">
-      <h3>Maths - 1st Year</h3>
-      <p>FSc 1st Year Math Book + online class links</p>
-      <a href="https://drive.google.com/file/d/1RnBgEF6Tf2PGePfNvbi7YPuCBoNkgAmg/view" target="_blank">📄 PDF Book</a>
-      <a href="https://youtube.com/playlist?list=PLbVY1NOBh9v6F6_5B7GkqU7WwQ-9eFfPe" class="video" target="_blank">▶️ Lectures</a>
-    </div>
-
-    <h2>📕 2nd Year (12th) Books</h2>
-    <div class="book-card">
-      <h3>Physics - 2nd Year</h3>
-      <p>FSc complete Physics guide with past paper tips.</p>
-      <a href="https://drive.google.com/file/d/1V8qV7tIbUMCHuTANepCUtFzi8tc1yJRx/view" target="_blank">📄 Download PDF</a>
-      <a href="https://youtube.com/playlist?list=PLbVY1NOBh9v5vqkV4OCuo6mRwOi_P_a4G" class="video" target="_blank">▶️ Physics Classes</a>
-    </div>
-
-    <h2>📚 More Books</h2>
-    <div class="book-card">
-      <h3>Islamiat + Pakistan Studies</h3>
-      <p>Important for Matric & Inter exams</p>
-      <a href="https://drive.google.com/file/d/1F9a9r8gHsDC-YcmJUtAfhZQb7YqgWojL/view" target="_blank">📄 Download PDF</a>
-      <a href="https://youtube.com/playlist?list=PLbVY1NOBh9v7DkLq-dX_HVSk0KrMLkCCm" class="video" target="_blank">▶️ Watch Videos</a>
+    <div class="book">
+      <h3><i class="fas fa-moon"></i> Islamic Stories for Youth</h3>
+      <p>Beautiful Islamic short stories for young readers to gain moral lessons.</p>
+      <a href="https://ia600503.us.archive.org/11/items/IslamicStoryBookUrdu/Islamic%20Stories%20%28Urdu%29.pdf" target="_blank">
+        📗 View Stories PDF
+      </a>
     </div>
   </div>
+
+  <footer>
+    © 2025 HiClass | All rights reserved.
+  </footer>
+
 </body>
 </html>
