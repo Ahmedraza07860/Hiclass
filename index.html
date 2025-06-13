@@ -7,12 +7,14 @@
   <link rel="icon" href="logo.png" type="image/png" />
   <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#004080" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background: #f8f9fa;
       color: #222;
+      scroll-behavior: smooth;
     }
     header {
       background-color: #001f3f;
@@ -22,6 +24,11 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
+      animation: slideDown 1s ease;
+    }
+    @keyframes slideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
     .logo {
       font-size: 1.6em;
@@ -44,20 +51,26 @@
     }
     nav a:hover {
       background-color: #0074D9;
+      transform: scale(1.05);
     }
     .hero {
       text-align: center;
       padding: 60px 20px;
       background: linear-gradient(to right, #0074D9, #00c4ff);
       color: white;
+      animation: fadeIn 2s ease;
     }
     .hero h2 {
-      font-size: 2em;
+      font-size: 2.3em;
       margin-bottom: 10px;
     }
     .hero p {
       font-size: 1.2em;
       margin-bottom: 30px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     .join-btn {
       background-color: white;
@@ -81,7 +94,7 @@
     .grid-links a {
       background-color: white;
       border: 1px solid #ddd;
-      padding: 15px;
+      padding: 20px;
       text-align: center;
       border-radius: 15px;
       text-decoration: none;
@@ -89,10 +102,21 @@
       font-weight: 600;
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
       transition: 0.3s;
+      animation: zoomIn 0.5s ease;
     }
     .grid-links a:hover {
       background-color: #0074D9;
       color: white;
+      transform: scale(1.05);
+    }
+    .grid-links a i {
+      display: block;
+      font-size: 1.8em;
+      margin-bottom: 8px;
+    }
+    @keyframes zoomIn {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
     }
     .chatbot {
       position: fixed;
@@ -129,7 +153,7 @@
 </head>
 <body>
   <header>
-    <div class="logo">HiClass</div>
+    <div class="logo"><i class="fas fa-graduation-cap"></i> HiClass</div>
     <nav>
       <a href="index.html">Home</a>
       <a href="books.html">Books</a>
@@ -139,9 +163,9 @@
       <a href="advanceds.html">Advanced</a>
       <a href="path.html">Path</a>
       <a href="certificate.html">Certificate</a>
-      <a href="full-course-pack.html">Full Courses</a>
       <a href="profile.html">Profile</a>
       <a href="dashboard.html">Dashboard</a>
+      <a href="full-course-pack.html">Course Pack</a>
       <a href="support.html">Support</a>
       <a href="settings.html">Settings</a>
       <a href="refer.html">Refer</a>
@@ -159,23 +183,23 @@
   </section>
 
   <section class="grid-links">
-    <a href="books.html">📚 Books</a>
-    <a href="quiz.html">📝 Quiz</a>
-    <a href="pastpapper.html">📄 Past Papers</a>
-    <a href="courses.html">🎓 Courses</a>
-    <a href="advanceds.html">🚀 Advanced</a>
-    <a href="path.html">🧭 Learning Path</a>
-    <a href="refer.html">🎁 Refer & Earn</a>
-    <a href="certificate.html">📜 Certificate</a>
-    <a href="full-course-pack.html">🎁 Full Course Pack</a>
-    <a href="profile.html">👤 Profile</a>
-    <a href="dashboard.html">📊 Dashboard</a>
-    <a href="settings.html">⚙️ Settings</a>
-    <a href="menu.html">📋 Menu</a>
-    <a href="support.html">🤝 Support</a>
-    <a href="faq.html">❓ FAQ</a>
-    <a href="contact.html">📞 Contact</a>
-    <a href="admin.html">🔒 Admin</a>
+    <a href="books.html"><i class="fas fa-book"></i>Books</a>
+    <a href="quiz.html"><i class="fas fa-pen"></i>Quiz</a>
+    <a href="pastpapper.html"><i class="fas fa-file-alt"></i>Past Papers</a>
+    <a href="courses.html"><i class="fas fa-laptop-code"></i>Courses</a>
+    <a href="advanceds.html"><i class="fas fa-rocket"></i>Advanced</a>
+    <a href="path.html"><i class="fas fa-compass"></i>Learning Path</a>
+    <a href="refer.html"><i class="fas fa-gift"></i>Refer & Earn</a>
+    <a href="certificate.html"><i class="fas fa-certificate"></i>Certificate</a>
+    <a href="profile.html"><i class="fas fa-user"></i>Profile</a>
+    <a href="dashboard.html"><i class="fas fa-chart-line"></i>Dashboard</a>
+    <a href="full-course-pack.html"><i class="fas fa-box-open"></i>Course Pack</a>
+    <a href="settings.html"><i class="fas fa-cog"></i>Settings</a>
+    <a href="menu.html"><i class="fas fa-bars"></i>Menu</a>
+    <a href="support.html"><i class="fas fa-headset"></i>Support</a>
+    <a href="faq.html"><i class="fas fa-question-circle"></i>FAQ</a>
+    <a href="contact.html"><i class="fas fa-phone"></i>Contact</a>
+    <a href="admin.html"><i class="fas fa-lock"></i>Admin</a>
   </section>
 
   <a class="chatbot" href="https://wa.me/923072080527" target="_blank">💬 Chat</a>
