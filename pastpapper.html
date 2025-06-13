@@ -1,133 +1,183 @@
-<!-- FILE: pastpapper.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Past Papers - HiClass</title>
+  <title>HiClass - Past Papers</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
     body {
       margin: 0;
-      font-family: "Segoe UI", sans-serif;
-      background: #f0f2f5;
-      color: #333;
-    }
-    header {
-      background: #1976d2;
-      padding: 15px 20px;
-      color: white;
-      text-align: center;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e0f2f1, #ffffff);
+      padding: 20px;
     }
     h1 {
-      margin: 0;
-      font-size: 28px;
-    }
-    .section {
-      padding: 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .category {
-      background: white;
-      border-left: 6px solid #1976d2;
-      padding: 15px;
-      margin-bottom: 20px;
-      border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    .category h2 {
-      margin-top: 0;
-      font-size: 22px;
-      color: #1976d2;
-    }
-    .resource-links a {
-      display: inline-block;
-      margin: 8px 10px 0 0;
-      padding: 8px 12px;
-      background: #eee;
-      border-radius: 4px;
-      text-decoration: none;
-      color: #333;
-      transition: 0.3s;
-    }
-    .resource-links a:hover {
-      background: #1976d2;
-      color: white;
-    }
-    footer {
       text-align: center;
-      padding: 15px;
-      background: #1976d2;
+      color: #004d40;
+      font-size: 36px;
+    }
+    .search-bar {
+      text-align: center;
+      margin: 20px 0;
+    }
+    input[type="text"] {
+      padding: 12px;
+      width: 60%;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #bbb;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .accordion {
+      max-width: 900px;
+      margin: 10px auto;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.15);
+      overflow: hidden;
+    }
+    .accordion-item {
+      border-bottom: 1px solid #ccc;
+    }
+    .accordion-header {
+      padding: 18px;
+      background-color: #004d40;
       color: white;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 18px;
+    }
+    .accordion-header:hover {
+      background-color: #00695c;
+    }
+    .accordion-body {
+      display: none;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+    .paper-item {
+      margin: 10px 0;
+      padding: 14px;
+      background: #ffffffcc;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .paper-item i {
+      margin-right: 10px;
+      color: #009688;
+    }
+    .paper-buttons button {
+      padding: 8px 12px;
+      margin-left: 5px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
       font-size: 14px;
     }
+    .pdf-btn {
+      background-color: #00796b;
+      color: white;
+    }
+    .video-btn {
+      background-color: #f57c00;
+      color: white;
+    }
+
     @media (max-width: 600px) {
-      .resource-links a {
-        display: block;
-        width: 100%;
-        margin-bottom: 10px;
+      input[type="text"] {
+        width: 90%;
+      }
+      .paper-item {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
   </style>
 </head>
 <body>
+  <h1><i class="fas fa-file-alt"></i> HiClass Past Papers</h1>
 
-  <header>
-    <h1>📚 Past Papers - HiClass</h1>
-  </header>
-
-  <div class="section">
-
-    <!-- 9th Class -->
-    <div class="category">
-      <h2>9th Class Past Papers</h2>
-      <div class="resource-links">
-        <a href="pdfs/9th_paper.pdf" target="_blank">📄 Download PDF</a>
-        <a href="https://www.youtube.com/embed/_DUMMY_VIDEO_9" target="_blank">▶️ Watch Video</a>
-      </div>
-    </div>
-
-    <!-- 10th Class -->
-    <div class="category">
-      <h2>10th Class Past Papers</h2>
-      <div class="resource-links">
-        <a href="pdfs/10th_paper.pdf" target="_blank">📄 Download PDF</a>
-        <a href="https://www.youtube.com/embed/_DUMMY_VIDEO_10" target="_blank">▶️ Watch Video</a>
-      </div>
-    </div>
-
-    <!-- 1st Year -->
-    <div class="category">
-      <h2>1st Year Past Papers</h2>
-      <div class="resource-links">
-        <a href="pdfs/1styear_paper.pdf" target="_blank">📄 Download PDF</a>
-        <a href="https://www.youtube.com/embed/_DUMMY_VIDEO_1ST" target="_blank">▶️ Watch Video</a>
-      </div>
-    </div>
-
-    <!-- 2nd Year -->
-    <div class="category">
-      <h2>2nd Year Past Papers</h2>
-      <div class="resource-links">
-        <a href="pdfs/2ndyear_paper.pdf" target="_blank">📄 Download PDF</a>
-        <a href="https://www.youtube.com/embed/_DUMMY_VIDEO_2ND" target="_blank">▶️ Watch Video</a>
-      </div>
-    </div>
-
-    <!-- Graduation -->
-    <div class="category">
-      <h2>Graduation Level</h2>
-      <div class="resource-links">
-        <a href="pdfs/graduate_paper.pdf" target="_blank">📄 Download PDF</a>
-        <a href="https://www.youtube.com/embed/_DUMMY_VIDEO_GRAD" target="_blank">▶️ Watch Video</a>
-      </div>
-    </div>
-
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search for subject or class...">
   </div>
 
-  <footer>
-    © 2025 HiClass - All Rights Reserved
-  </footer>
+  <div class="accordion" id="papersAccordion">
+    <!-- Repeat this block for each class -->
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        <span><i class="fas fa-book"></i> 9th Class Papers</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="accordion-body">
+        <div class="paper-item">
+          <div><i class="fas fa-file-pdf"></i> Physics 2023</div>
+          <div class="paper-buttons">
+            <button class="pdf-btn" onclick="clickSound()">Download PDF</button>
+            <button class="video-btn" onclick="clickSound()">Watch Video</button>
+          </div>
+        </div>
+        <div class="paper-item">
+          <div><i class="fas fa-file-pdf"></i> Biology 2023</div>
+          <div class="paper-buttons">
+            <button class="pdf-btn" onclick="clickSound()">Download PDF</button>
+            <button class="video-btn" onclick="clickSound()">Watch Video</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        <span><i class="fas fa-book-open"></i> 10th Class Papers</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="accordion-body">
+        <div class="paper-item">
+          <div><i class="fas fa-file-pdf"></i> Chemistry 2023</div>
+          <div class="paper-buttons">
+            <button class="pdf-btn" onclick="clickSound()">Download PDF</button>
+            <button class="video-btn" onclick="clickSound()">Watch Video</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add similar sections for 1st Year, 2nd Year, Graduation -->
+  </div>
+
+  <audio id="clickSound" src="https://www.fesliyanstudios.com/play-mp3/387"></audio>
+
+  <script>
+    function toggleAccordion(header) {
+      const body = header.nextElementSibling;
+      const icon = header.querySelector('i.fas.fa-chevron-down');
+
+      if (body.style.display === "block") {
+        body.style.display = "none";
+        icon.style.transform = "rotate(0deg)";
+      } else {
+        body.style.display = "block";
+        icon.style.transform = "rotate(180deg)";
+      }
+    }
+
+    function clickSound() {
+      document.getElementById('clickSound').play();
+    }
+
+    document.getElementById('searchInput').addEventListener("input", function() {
+      const value = this.value.toLowerCase();
+      const items = document.querySelectorAll(".paper-item");
+      items.forEach(item => {
+        item.style.display = item.innerText.toLowerCase().includes(value) ? "flex" : "none";
+      });
+    });
+  </script>
 </body>
 </html>
