@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -58,93 +57,64 @@
       margin-top: 20px;
       color: green;
     }
+    .timer {
+      text-align: center;
+      font-size: 20px;
+      color: #d32f2f;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>📘 HICLASS Quiz Game</h1>
-    <h2>Select Quiz Category</h2>
+    <h2>Select Quiz Category</h2><select id="category">
+  <option value="islamic">🕌 Islamic Quiz</option>
+  <option value="knowledge">🌐 General Knowledge</option>
+  <option value="class9">📚 9th Class Quiz</option>
+  <option value="class10">📘 10th Class Quiz</option>
+  <option value="1styear">📙 1st Year Quiz</option>
+  <option value="2ndyear">📒 2nd Year Quiz</option>
+  <option value="graduate">🎓 Graduation Quiz</option>
+</select>
 
-    <select id="category">
-      <option value="islamic">🕌 Islamic Quiz</option>
-      <option value="knowledge">🌐 General Knowledge</option>
-      <option value="class9">📚 9th Class Quiz</option>
-      <option value="class10">📘 10th Class Quiz</option>
-      <option value="1styear">📙 1st Year Quiz</option>
-      <option value="2ndyear">📒 2nd Year Quiz</option>
-      <option value="graduate">🎓 Graduation Quiz</option>
-    </select>
+<button onclick="startQuiz()">Start Quiz</button>
 
-    <button onclick="startQuiz()">Start Quiz</button>
+<div id="timerBox" class="timer"></div>
+<div id="quizBox" class="question-box"></div>
+<div id="scoreBox" class="score"></div>
 
-    <div id="quizBox" class="question-box"></div>
-    <div id="scoreBox" class="score"></div>
-  </div>
+  </div><audio id="correctSound" src="correct.mp3" preload="auto"></audio> <audio id="wrongSound" src="wrong.mp3" preload="auto"></audio>
 
-  <script>
-    const quizzes = {
-      islamic: [
-        { q: "What is the first month of Islamic calendar?", o: ["Muharram", "Ramadan", "Shaban", "ZilHajj"], a: 0 },
-        { q: "How many times do Muslims pray daily?", o: ["3", "4", "5", "6"], a: 2 },
-        { q: "What is the Holy Book of Muslims?", o: ["Bible", "Torah", "Quran", "Geeta"], a: 2 },
-        { q: "Who was the last Prophet of Islam?", o: ["Musa A.S", "Isa A.S", "Muhammad S.A.W", "Ibrahim A.S"], a: 2 }
-      ],
-      knowledge: [
-        { q: "What is the capital of Pakistan?", o: ["Lahore", "Karachi", "Islamabad", "Multan"], a: 2 },
-        { q: "Which planet is known as the Red Planet?", o: ["Earth", "Mars", "Venus", "Jupiter"], a: 1 },
-        { q: "Who invented the light bulb?", o: ["Newton", "Einstein", "Edison", "Faraday"], a: 2 },
-        { q: "Which is the longest river in the world?", o: ["Amazon", "Nile", "Yangtze", "Indus"], a: 1 }
-      ],
-      class9: [
-        { q: "What is H2O?", o: ["Hydrogen", "Oxygen", "Water", "Acid"], a: 2 },
-        { q: "Who discovered gravity?", o: ["Einstein", "Newton", "Darwin", "Galileo"], a: 1 },
-        { q: "Which organ purifies blood in humans?", o: ["Heart", "Liver", "Kidney", "Lungs"], a: 2 },
-        { q: "What is the unit of current?", o: ["Volt", "Ampere", "Ohm", "Watt"], a: 1 }
-      ],
-      class10: [
-        { q: "What is the chemical symbol for Gold?", o: ["Au", "Ag", "Fe", "Pb"], a: 0 },
-        { q: "Which gas do plants absorb?", o: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"], a: 1 },
-        { q: "Who wrote 'Jinnah of Pakistan'?", o: ["Stanley Wolpert", "Ibn-e-Insha", "Allama Iqbal", "Fatima Jinnah"], a: 0 },
-        { q: "What is the square root of 144?", o: ["10", "11", "12", "13"], a: 2 }
-      ],
-      1styear: [
-        { q: "Who is the father of Biology?", o: ["Aristotle", "Newton", "Einstein", "Darwin"], a: 0 },
-        { q: "What is the unit of Force?", o: ["Watt", "Newton", "Pascal", "Joule"], a: 1 },
-        { q: "Which acid is found in lemon?", o: ["Acetic", "Citric", "Sulfuric", "Nitric"], a: 1 },
-        { q: "What is the SI unit of work?", o: ["Newton", "Joule", "Pascal", "Watt"], a: 1 }
-      ],
-      2ndyear: [
-        { q: "Define Ohm's Law.", o: ["V=IR", "F=ma", "E=mc^2", "P=VI"], a: 0 },
-        { q: "Derivative of sin(x)?", o: ["cos(x)", "-cos(x)", "tan(x)", "-sin(x)"], a: 0 },
-        { q: "What is the pH of neutral solution?", o: ["6", "7", "8", "10"], a: 1 },
-        { q: "Who discovered electron?", o: ["Newton", "Thomson", "Rutherford", "Bohr"], a: 1 }
-      ],
-      graduate: [
-        { q: "What is GDP?", o: ["Gross Domestic Product", "Global Demand Plan", "Good Domestic Policy", "General Data Protection"], a: 0 },
-        { q: "Who developed C language?", o: ["Dennis Ritchie", "Bill Gates", "Linus Torvalds", "Steve Jobs"], a: 0 },
-        { q: "What is the full form of CPU?", o: ["Central Power Unit", "Central Processing Unit", "Control Panel Unit", "Computer Power Unit"], a: 1 },
-        { q: "Who is known as the father of computer?", o: ["Charles Babbage", "Turing", "Jobs", "Gates"], a: 0 }
-      ]
-    };
-
+  <script src="islamic.js"></script>  <script src="knowledge.js"></script>  <script src="class9.js"></script>  <script src="class10.js"></script>  <script>
+    const quizzes = {};
     let currentQuiz = [];
     let currentIndex = 0;
     let score = 0;
+    let timer;
+    let timeLeft = 15;
 
     function startQuiz() {
       const selected = document.getElementById('category').value;
-      currentQuiz = quizzes[selected];
-      currentIndex = 0;
-      score = 0;
-      document.getElementById('scoreBox').innerText = "";
-      loadQuestion();
+      fetch(`${selected}.js`).then(res => res.text()).then(code => {
+        eval(code);
+        currentQuiz = quizData;
+        currentIndex = 0;
+        score = 0;
+        document.getElementById('scoreBox').innerText = "";
+        loadQuestion();
+      });
     }
 
     function loadQuestion() {
       const quizBox = document.getElementById('quizBox');
       quizBox.innerHTML = "";
+      clearInterval(timer);
+      timeLeft = 15;
+      updateTimer();
+
       if (currentIndex >= currentQuiz.length) {
-        document.getElementById('scoreBox').innerText = `🎉 Your Score: ${score}/${currentQuiz.length}`;
+        document.getElementById('scoreBox').innerHTML = `🎉 Your Score: ${score}/${currentQuiz.length} <br><a href='mailto:kingpubg45555@gmail.com?subject=Quiz%20Result&body=I%20completed%20the%20quiz%20with%20score%20${score}/${currentQuiz.length}'>📧 Send Result to Gmail</a>`;
+        document.getElementById('timerBox').innerText = "";
         return;
       }
 
@@ -169,19 +139,35 @@
       btn.innerText = "Next";
       btn.onclick = checkAnswer;
       quizBox.appendChild(btn);
+
+      timer = setInterval(() => {
+        timeLeft--;
+        updateTimer();
+        if (timeLeft <= 0) {
+          clearInterval(timer);
+          checkAnswer();
+        }
+      }, 1000);
+    }
+
+    function updateTimer() {
+      document.getElementById('timerBox').innerText = `⏳ Time Left: ${timeLeft}s`;
     }
 
     function checkAnswer() {
+      clearInterval(timer);
       const selected = document.querySelector('input[name="option"]:checked');
-      if (!selected) {
-        alert("⚠️ Please select an option before continuing.");
-        return;
-      }
+      const correctSound = document.getElementById('correctSound');
+      const wrongSound = document.getElementById('wrongSound');
 
-      if (parseInt(selected.value) === currentQuiz[currentIndex].a) score++;
+      if (selected && parseInt(selected.value) === currentQuiz[currentIndex].a) {
+        score++;
+        correctSound.play();
+      } else {
+        wrongSound.play();
+      }
       currentIndex++;
-      loadQuestion();
+      setTimeout(loadQuestion, 1000);
     }
-  </script>
-</body>
+  </script></body>
 </html>
