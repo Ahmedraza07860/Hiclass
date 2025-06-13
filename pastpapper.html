@@ -15,7 +15,7 @@
     h1 {
       text-align: center;
       color: #004d40;
-      font-size: 36px;
+      font-size: 32px;
     }
     .search-bar {
       text-align: center;
@@ -23,14 +23,15 @@
     }
     input[type="text"] {
       padding: 12px;
-      width: 60%;
+      width: 90%;
+      max-width: 600px;
       font-size: 16px;
       border-radius: 8px;
       border: 1px solid #bbb;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
     .accordion {
-      max-width: 900px;
+      max-width: 800px;
       margin: 10px auto;
       background: rgba(255, 255, 255, 0.5);
       border-radius: 12px;
@@ -88,14 +89,13 @@
       background-color: #f57c00;
       color: white;
     }
-
     @media (max-width: 600px) {
-      input[type="text"] {
-        width: 90%;
-      }
       .paper-item {
         flex-direction: column;
         align-items: flex-start;
+      }
+      .paper-buttons {
+        margin-top: 8px;
       }
     }
   </style>
@@ -108,7 +108,8 @@
   </div>
 
   <div class="accordion" id="papersAccordion">
-    <!-- Repeat this block for each class -->
+
+    <!-- 9th Class -->
     <div class="accordion-item">
       <div class="accordion-header" onclick="toggleAccordion(this)">
         <span><i class="fas fa-book"></i> 9th Class Papers</span>
@@ -118,20 +119,29 @@
         <div class="paper-item">
           <div><i class="fas fa-file-pdf"></i> Physics 2023</div>
           <div class="paper-buttons">
-            <button class="pdf-btn" onclick="clickSound()">Download PDF</button>
-            <button class="video-btn" onclick="clickSound()">Watch Video</button>
+            <a href="https://drive.google.com/file/d/1W7bODXlD0rbWjHOdxgySD3RzD4sHfXFN/view?usp=sharing" target="_blank">
+              <button class="pdf-btn" onclick="clickSound()">Download PDF</button>
+            </a>
+            <a href="https://www.youtube.com/watch?v=jfKfPfyJRdk" target="_blank">
+              <button class="video-btn" onclick="clickSound()">Watch Video</button>
+            </a>
           </div>
         </div>
         <div class="paper-item">
           <div><i class="fas fa-file-pdf"></i> Biology 2023</div>
           <div class="paper-buttons">
-            <button class="pdf-btn" onclick="clickSound()">Download PDF</button>
-            <button class="video-btn" onclick="clickSound()">Watch Video</button>
+            <a href="https://drive.google.com/file/d/1rCYOXY1Hz5F7aOonEAg3I3Wi3jUYpaLk/view?usp=sharing" target="_blank">
+              <button class="pdf-btn" onclick="clickSound()">Download PDF</button>
+            </a>
+            <a href="https://www.youtube.com/watch?v=y6120QOlsfU" target="_blank">
+              <button class="video-btn" onclick="clickSound()">Watch Video</button>
+            </a>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- 10th Class -->
     <div class="accordion-item">
       <div class="accordion-header" onclick="toggleAccordion(this)">
         <span><i class="fas fa-book-open"></i> 10th Class Papers</span>
@@ -141,23 +151,26 @@
         <div class="paper-item">
           <div><i class="fas fa-file-pdf"></i> Chemistry 2023</div>
           <div class="paper-buttons">
-            <button class="pdf-btn" onclick="clickSound()">Download PDF</button>
-            <button class="video-btn" onclick="clickSound()">Watch Video</button>
+            <a href="https://drive.google.com/file/d/1QMWljghjZLkvdaxN91dyk8MJlOfwa64T/view?usp=sharing" target="_blank">
+              <button class="pdf-btn" onclick="clickSound()">Download PDF</button>
+            </a>
+            <a href="https://www.youtube.com/watch?v=oHg5SJYRHA0" target="_blank">
+              <button class="video-btn" onclick="clickSound()">Watch Video</button>
+            </a>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Add similar sections for 1st Year, 2nd Year, Graduation -->
   </div>
 
-  <audio id="clickSound" src="https://www.fesliyanstudios.com/play-mp3/387"></audio>
+  <!-- Sound Effect -->
+  <audio id="clickSound" src="https://www.fesliyanstudios.com/play-mp3/387" preload="auto"></audio>
 
   <script>
     function toggleAccordion(header) {
       const body = header.nextElementSibling;
       const icon = header.querySelector('i.fas.fa-chevron-down');
-
       if (body.style.display === "block") {
         body.style.display = "none";
         icon.style.transform = "rotate(0deg)";
@@ -168,14 +181,16 @@
     }
 
     function clickSound() {
-      document.getElementById('clickSound').play();
+      const sound = document.getElementById('clickSound');
+      sound.currentTime = 0;
+      sound.play();
     }
 
-    document.getElementById('searchInput').addEventListener("input", function() {
-      const value = this.value.toLowerCase();
+    document.getElementById('searchInput').addEventListener("input", function () {
+      const query = this.value.toLowerCase();
       const items = document.querySelectorAll(".paper-item");
       items.forEach(item => {
-        item.style.display = item.innerText.toLowerCase().includes(value) ? "flex" : "none";
+        item.style.display = item.textContent.toLowerCase().includes(query) ? "flex" : "none";
       });
     });
   </script>
