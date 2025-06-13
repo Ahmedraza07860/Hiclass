@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>HiClass Chatbot Assistant</title>
-  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
     body {
@@ -12,7 +11,6 @@
       margin: 0;
       background: #f0f4f8;
     }
-
     header {
       background: #004080;
       color: #fff;
@@ -22,7 +20,6 @@
       font-weight: bold;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
-
     .chat-container {
       max-width: 700px;
       margin: 40px auto;
@@ -34,13 +31,11 @@
       flex-direction: column;
       height: 80vh;
     }
-
     .messages {
       flex: 1;
       overflow-y: auto;
       padding-right: 10px;
     }
-
     .bot-message, .user-message {
       margin: 10px 0;
       padding: 12px 15px;
@@ -49,22 +44,18 @@
       line-height: 1.4;
       font-size: 16px;
     }
-
     .bot-message {
       background: #e6f0ff;
       align-self: flex-start;
     }
-
     .user-message {
       background: #d1f7d1;
       align-self: flex-end;
     }
-
     .input-area {
       display: flex;
       margin-top: 15px;
     }
-
     .input-area input {
       flex: 1;
       padding: 10px 15px;
@@ -73,7 +64,6 @@
       font-size: 16px;
       outline: none;
     }
-
     .input-area button {
       padding: 10px 20px;
       background: #004080;
@@ -83,18 +73,15 @@
       cursor: pointer;
       transition: 0.3s;
     }
-
     .input-area button:hover {
       background: #0066cc;
     }
-
     footer {
       text-align: center;
       font-size: 13px;
       color: #666;
       margin-top: 20px;
     }
-
     @media(max-width: 600px) {
       .chat-container {
         margin: 20px;
@@ -105,9 +92,7 @@
 </head>
 <body>
 
-  <header>
-    🤖 HiClass Smart Chatbot
-  </header>
+  <header>🤖 HiClass Smart Chatbot</header>
 
   <div class="chat-container">
     <div class="messages" id="messages">
@@ -120,9 +105,7 @@
     </div>
   </div>
 
-  <footer>
-    © 2025 HiClass Chatbot Assistant
-  </footer>
+  <footer>© 2025 HiClass Chatbot Assistant</footer>
 
   <script>
     function sendMessage() {
@@ -132,13 +115,13 @@
 
       const msgBox = document.getElementById('messages');
 
-      // User message
+      // Add user message
       const userDiv = document.createElement('div');
       userDiv.className = 'user-message';
       userDiv.textContent = msg;
       msgBox.appendChild(userDiv);
 
-      // Bot response (static sample, replace with real AI logic)
+      // Simulate bot reply
       const botDiv = document.createElement('div');
       botDiv.className = 'bot-message';
       botDiv.textContent = generateBotReply(msg);
@@ -149,11 +132,18 @@
     }
 
     function generateBotReply(userMsg) {
-      const lower = userMsg.toLowerCase();
-      if (lower.includes('book')) return 'You can find books in the "Books" section.';
-      if (lower.includes('quiz')) return 'Try our quizzes on the "Quiz" page.';
-      if (lower.includes('certificate')) return 'Certificates are available after completing a course.';
-      return 'I am here to help! Ask about books, courses, quizzes, or anything.';
+      const msg = userMsg.toLowerCase();
+      if (msg.includes('book')) return '📚 You can explore all books in the "Books" section.';
+      if (msg.includes('quiz')) return '📝 Try your knowledge on the "Quiz" page.';
+      if (msg.includes('certificate')) return '🎓 Certificates are given after completing specific courses.';
+      if (msg.includes('login')) return '🔐 You can login from the "Login" page.';
+      if (msg.includes('register') || msg.includes('signup')) return '🆕 Join us from the "Signup" page.';
+      if (msg.includes('admin')) return '🛠️ Admins can access the "Admin Panel".';
+      if (msg.includes('video')) return '🎥 All video courses are available in "Courses" section.';
+      if (msg.includes('contact')) return '📞 Visit the "Contact" page to get in touch with our team.';
+      if (msg.includes('past')) return '📄 Past papers are in the "Past Papers" section.';
+      if (msg.includes('refer')) return '🎁 Refer friends using the "Refer" section and earn rewards.';
+      return '🤖 I am your smart assistant. Ask me about books, courses, login, quiz, contact, or anything related to HiClass.';
     }
   </script>
 </body>
