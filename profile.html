@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>User Profile - HiClass</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     * {
       box-sizing: border-box;
@@ -26,6 +27,12 @@
       justify-content: space-between;
       align-items: center;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      animation: slideDown 1s ease-in-out;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
 
     .logo {
@@ -69,6 +76,12 @@
       padding: 2rem;
       border-radius: 20px;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .profile-header {
@@ -138,11 +151,12 @@
       border-radius: 10px;
       text-decoration: none;
       font-weight: 600;
-      transition: background 0.3s;
+      transition: background 0.3s, transform 0.2s;
     }
 
     .edit-btn:hover {
       background: #0066ff;
+      transform: scale(1.05);
     }
 
     footer {
@@ -169,15 +183,17 @@
 </head>
 <body>
 
+<audio id="clickSound" src="https://www.soundjay.com/buttons/sounds/button-16.mp3" preload="auto"></audio>
+
   <header>
     <div class="logo">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/H_letter_blue.svg/2048px-H_letter_blue.svg.png" alt="Logo">
-      <h1>HiClass</h1>
+      <h1><i class="fas fa-user-graduate"></i> HiClass</h1>
     </div>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="dashboard.html">Dashboard</a>
-      <a href="setting.html">Settings</a>
+      <a href="index.html" onclick="playClick()">Home</a>
+      <a href="dashboard.html" onclick="playClick()">Dashboard</a>
+      <a href="setting.html" onclick="playClick()">Settings</a>
     </nav>
   </header>
 
@@ -185,37 +201,47 @@
     <div class="profile-header">
       <img src="https://via.placeholder.com/120" alt="Profile Picture" />
       <div>
-        <h2>Ahmad Reza</h2>
-        <p>Student | Karachi, Pakistan</p>
+        <h2><i class="fas fa-user"></i> Ahmad Reza</h2>
+        <p><i class="fas fa-map-marker-alt"></i> Student | Karachi, Pakistan</p>
       </div>
     </div>
 
     <div class="info-grid">
       <div class="info-box">
-        <h4>📧 Email</h4>
+        <h4><i class="fas fa-envelope"></i> Email</h4>
         <p>kingpubg45555@gmail.com</p>
       </div>
       <div class="info-box">
-        <h4>📱 Contact</h4>
+        <h4><i class="fas fa-phone"></i> Contact</h4>
         <p>+923072080527</p>
       </div>
       <div class="info-box">
-        <h4>🎓 Enrolled Courses</h4>
+        <h4><i class="fas fa-book-open"></i> Enrolled Courses</h4>
         <p>Matric | FSC | Islamic Studies</p>
       </div>
       <div class="info-box">
-        <h4>🌐 Language</h4>
+        <h4><i class="fas fa-language"></i> Language</h4>
         <p>English, Urdu</p>
       </div>
     </div>
 
-    <a href="setting.html" class="edit-btn">✏️ Edit Profile</a>
+    <a href="setting.html" class="edit-btn" onclick="playClick()"><i class="fas fa-edit"></i> Edit Profile</a>
   </div>
 
   <footer>
     <p>© 2025 HiClass | Designed by Ahmad Reza</p>
-    <p><a href="privacy.html">Privacy Policy</a> | <a href="faq.html">FAQ</a></p>
+    <p><a href="privacy.html" onclick="playClick()">Privacy Policy</a> | <a href="faq.html" onclick="playClick()">FAQ</a></p>
   </footer>
+
+  <script>
+    function playClick() {
+      const audio = document.getElementById('clickSound');
+      if (audio) {
+        audio.currentTime = 0;
+        audio.play();
+      }
+    }
+  </script>
 
 </body>
 </html>
