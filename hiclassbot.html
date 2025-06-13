@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>HiClass Chatbot Assistant</title>
+  <title>HiClass AI Chatbot</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
     body {
@@ -11,6 +11,7 @@
       margin: 0;
       background: #f0f4f8;
     }
+
     header {
       background: #004080;
       color: #fff;
@@ -20,6 +21,7 @@
       font-weight: bold;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
+
     .chat-container {
       max-width: 700px;
       margin: 40px auto;
@@ -31,31 +33,37 @@
       flex-direction: column;
       height: 80vh;
     }
+
     .messages {
       flex: 1;
       overflow-y: auto;
       padding-right: 10px;
     }
+
     .bot-message, .user-message {
       margin: 10px 0;
       padding: 12px 15px;
       border-radius: 15px;
       max-width: 80%;
-      line-height: 1.4;
+      line-height: 1.5;
       font-size: 16px;
     }
+
     .bot-message {
       background: #e6f0ff;
       align-self: flex-start;
     }
+
     .user-message {
       background: #d1f7d1;
       align-self: flex-end;
     }
+
     .input-area {
       display: flex;
       margin-top: 15px;
     }
+
     .input-area input {
       flex: 1;
       padding: 10px 15px;
@@ -64,6 +72,7 @@
       font-size: 16px;
       outline: none;
     }
+
     .input-area button {
       padding: 10px 20px;
       background: #004080;
@@ -73,15 +82,18 @@
       cursor: pointer;
       transition: 0.3s;
     }
+
     .input-area button:hover {
       background: #0066cc;
     }
+
     footer {
       text-align: center;
       font-size: 13px;
       color: #666;
       margin-top: 20px;
     }
+
     @media(max-width: 600px) {
       .chat-container {
         margin: 20px;
@@ -92,20 +104,24 @@
 </head>
 <body>
 
-  <header>🤖 HiClass Smart Chatbot</header>
+  <header>
+    🤖 HiClass Smart Chatbot Assistant
+  </header>
 
   <div class="chat-container">
     <div class="messages" id="messages">
-      <div class="bot-message">Assalamualaikum! How can I help you today?</div>
+      <div class="bot-message">Assalamualaikum! 👋 How can I help you today?</div>
     </div>
 
     <div class="input-area">
-      <input type="text" id="userInput" placeholder="Type your message..." />
+      <input type="text" id="userInput" placeholder="Ask something like 'quiz', 'books', 'certificate'..." />
       <button onclick="sendMessage()">Send</button>
     </div>
   </div>
 
-  <footer>© 2025 HiClass Chatbot Assistant</footer>
+  <footer>
+    © 2025 HiClass Chatbot | Powered by Ahmad Reza
+  </footer>
 
   <script>
     function sendMessage() {
@@ -115,13 +131,13 @@
 
       const msgBox = document.getElementById('messages');
 
-      // Add user message
+      // User message
       const userDiv = document.createElement('div');
       userDiv.className = 'user-message';
       userDiv.textContent = msg;
       msgBox.appendChild(userDiv);
 
-      // Simulate bot reply
+      // Bot reply
       const botDiv = document.createElement('div');
       botDiv.className = 'bot-message';
       botDiv.textContent = generateBotReply(msg);
@@ -131,20 +147,22 @@
       msgBox.scrollTop = msgBox.scrollHeight;
     }
 
-    function generateBotReply(userMsg) {
-      const msg = userMsg.toLowerCase();
-      if (msg.includes('book')) return '📚 You can explore all books in the "Books" section.';
-      if (msg.includes('quiz')) return '📝 Try your knowledge on the "Quiz" page.';
-      if (msg.includes('certificate')) return '🎓 Certificates are given after completing specific courses.';
-      if (msg.includes('login')) return '🔐 You can login from the "Login" page.';
-      if (msg.includes('register') || msg.includes('signup')) return '🆕 Join us from the "Signup" page.';
-      if (msg.includes('admin')) return '🛠️ Admins can access the "Admin Panel".';
-      if (msg.includes('video')) return '🎥 All video courses are available in "Courses" section.';
-      if (msg.includes('contact')) return '📞 Visit the "Contact" page to get in touch with our team.';
-      if (msg.includes('past')) return '📄 Past papers are in the "Past Papers" section.';
-      if (msg.includes('refer')) return '🎁 Refer friends using the "Refer" section and earn rewards.';
-      return '🤖 I am your smart assistant. Ask me about books, courses, login, quiz, contact, or anything related to HiClass.';
+    function generateBotReply(msg) {
+      const lower = msg.toLowerCase();
+
+      if (lower.includes('book')) return '📚 You can find books in the "Books" section on the website.';
+      if (lower.includes('quiz')) return '📝 Try your knowledge in the "Quiz" section!';
+      if (lower.includes('certificate')) return '🎓 Certificates are awarded after completing a course.';
+      if (lower.includes('login')) return '🔐 Login from the Login page in the top menu.';
+      if (lower.includes('register') || lower.includes('signup')) return '🆕 Create your account using the Signup page.';
+      if (lower.includes('admin')) return '🛠️ The Admin Panel is for course management and uploads.';
+      if (lower.includes('video')) return '🎥 Video courses are available in the "Courses" tab.';
+      if (lower.includes('past')) return '📄 You’ll find past papers in the "Past Papers" section.';
+      if (lower.includes('contact')) return '📞 Visit the "Contact Us" page for help or support.';
+      if (lower.includes('refer')) return '🎁 Refer your friends from the "Refer & Earn" section!';
+      
+      return '🤖 I am here to assist! Ask me about: books, courses, quiz, login, contact, etc.';
     }
   </script>
 </body>
-</html>
+</html> 
