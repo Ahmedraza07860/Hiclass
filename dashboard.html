@@ -4,236 +4,141 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>HiClass Dashboard</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
-      font-family: 'Inter', sans-serif;
-      background: #f5f7fa;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f2f5;
       color: #333;
     }
 
     header {
-      background: linear-gradient(to right, #007bff, #00c6ff);
+      background: #001f3f;
       color: white;
-      padding: 50px 20px;
-      text-align: center;
-      border-bottom-left-radius: 40px;
-      border-bottom-right-radius: 40px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-      animation: slideDown 1s ease-in-out;
-    }
-
-    @keyframes slideDown {
-      from {
-        transform: translateY(-50px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-
-    header h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 20px;
-      font-weight: 500;
-    }
-
-    nav {
-      background: white;
-      padding: 15px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 25px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-      position: sticky;
-      top: 0;
-      z-index: 999;
-    }
-
-    nav a {
-      color: #007bff;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 16px;
-      transition: all 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #0056b3;
-      text-decoration: underline;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 40px auto;
       padding: 20px;
+      font-size: 1.6em;
+      text-align: center;
+      font-weight: bold;
+      position: relative;
+    }
+
+    .welcome {
+      font-size: 1em;
+      font-weight: normal;
+      margin-top: 10px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .dashboard-container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
     }
 
     .card {
       background: white;
-      border-radius: 14px;
-      padding: 30px;
-      margin-bottom: 30px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: 0.3s ease;
     }
 
     .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      transform: translateY(-2px);
     }
 
-    .card h3 {
-      margin-bottom: 15px;
-      color: #007bff;
-      font-size: 22px;
+    .card h2 {
+      margin-bottom: 10px;
+      color: #0074D9;
     }
 
-    .dashboard-image {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-      border-radius: 12px;
-      margin-top: 10px;
-      border: 2px solid #007bff;
+    .stat {
+      font-size: 1.4em;
+      font-weight: bold;
+      color: #001f3f;
     }
 
-    progress {
-      width: 100%;
-      height: 20px;
-      margin-top: 10px;
-      appearance: none;
+    .progress-bar {
+      background: #e0e0e0;
+      height: 14px;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 6px;
     }
 
-    progress::-webkit-progress-bar {
-      background-color: #eee;
-      border-radius: 10px;
+    .progress {
+      height: 100%;
+      background: #0074D9;
     }
 
-    progress::-webkit-progress-value {
-      background-color: #007bff;
-      border-radius: 10px;
-    }
-
-    ul {
-      padding-left: 20px;
-      list-style-type: '✅ ';
-      margin-top: 10px;
-    }
-
-    .welcome-msg {
-      background: #e6f2ff;
-      border-left: 6px solid #007bff;
-      padding: 18px;
-      border-radius: 10px;
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 30px;
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
-    footer {
+    .footer-links {
       text-align: center;
-      padding: 30px 20px;
-      color: #666;
-      font-size: 14px;
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #777;
     }
 
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 30px;
-      }
+    .footer-links a {
+      margin: 0 10px;
+      color: #0074D9;
+      text-decoration: none;
+    }
 
-      .card {
-        padding: 20px;
-      }
-
-      nav {
-        gap: 15px;
-      }
-
-      .welcome-msg {
-        font-size: 16px;
-      }
+    .footer-links a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>📊 HiClass Dashboard</h1>
-    <p>Welcome back, Ahmad Raza — Ready to Learn & Achieve?</p>
+    📊 HiClass Dashboard
+    <div class="welcome">👋 Welcome back, <strong>Ahmad Reza</strong>! Keep pushing your limits 🚀</div>
   </header>
 
-  <nav>
-    <a href="index.html">🏠 Home</a>
-    <a href="courses.html">📚 Courses</a>
-    <a href="profile.html">👤 Profile</a>
-    <a href="login.html">🚪 Logout</a>
-  </nav>
-
-  <div class="container">
-
-    <div class="welcome-msg">
-      👋 Hello Ahmad Raza! Wishing you a powerful day of learning. Let's make it count! 🚀
+  <div class="dashboard-container">
+    
+    <div class="card">
+      <h2>🎓 Courses Enrolled</h2>
+      <div class="stat">5 Active Courses</div>
     </div>
 
     <div class="card">
-      <h3>📈 Your Learning Progress</h3>
-      <p>You’ve completed <strong>3 out of 10</strong> enrolled courses. Keep going!</p>
-      <progress value="30" max="100"></progress>
+      <h2>📜 Certificates Earned</h2>
+      <div class="stat">2 Certificates</div>
     </div>
 
     <div class="card">
-      <h3>🗓️ Latest Announcements</h3>
-      <ul>
-        <li>New course on <strong>Quran with Translation</strong> added.</li>
-        <li>Final exams portal opens <strong>15 June</strong>.</li>
-        <li>Mobile app version launching soon!</li>
-      </ul>
+      <h2>📝 Quiz Performance</h2>
+      <div class="stat">Average Score: 85%</div>
+      <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
     </div>
 
     <div class="card">
-      <h3>📷 Dashboard Preview</h3>
-      <img src="dashboard.png" alt="Dashboard Screenshot" class="dashboard-image" />
+      <h2>📚 Book Read Progress</h2>
+      <div class="stat">12 out of 20 chapters read</div>
+      <div class="progress-bar"><div class="progress" style="width: 60%;"></div></div>
     </div>
 
     <div class="card">
-      <h3>📌 Quick Tips</h3>
-      <ul>
-        <li>Click "Courses" to access your subjects.</li>
-        <li>Update your profile to receive certificates.</li>
-        <li>Use the app in Urdu, Hindi, or English.</li>
-      </ul>
+      <h2>🎁 Referral Points</h2>
+      <div class="stat">💰 300 Points Earned</div>
     </div>
 
   </div>
 
-  <footer>
-    © 2025 HiClass by Ahmad Raza. All rights reserved.
-  </footer>
+  <div class="footer-links">
+    <a href="index.html">🏠 Home</a> |
+    <a href="quiz.html">Quiz</a> |
+    <a href="certificate.html">Certificate</a> |
+    <a href="refer.html">Refer</a>
+  </div>
 
 </body>
 </html>
