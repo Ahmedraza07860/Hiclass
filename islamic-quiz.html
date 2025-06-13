@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Islamic Quiz – HiClass</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Rubik', sans-serif;
+      background: linear-gradient(to right, #dbeafe, #f0fdf4);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      background: #10b981;
+      color: white;
+      width: 100%;
+      text-align: center;
+      padding: 25px 10px;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    .quiz-box {
+      background: white;
+      max-width: 600px;
+      width: 90%;
+      margin: 30px auto;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .question {
+      font-size: 1.2em;
+      margin-bottom: 15px;
+      font-weight: 600;
+      color: #1e293b;
+    }
+
+    .options button {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 12px;
+      background: #f1f5f9;
+      border: 2px solid #94a3b8;
+      border-radius: 12px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .options button:hover {
+      background-color: #10b981;
+      color: white;
+      border-color: #10b981;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 1.1em;
+      font-weight: bold;
+      color: #0f172a;
+      text-align: center;
+    }
+
+    .btn-try {
+      margin-top: 20px;
+      background: #2563eb;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 12px;
+      font-size: 1em;
+      cursor: pointer;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🕌 Islamic Knowledge Quiz</h1>
+    <p>Test your Islamic understanding with multiple questions</p>
+  </header>
+
+  <div class="quiz-box" id="quizBox">
+    <div class="question" id="question">Loading...</div>
+    <div class="options" id="options"></div>
+    <div id="result"></div>
+    <button class="btn-try" onclick="restartQuiz()">Try Again</button>
+  </div>
+
+  <script>
+    const quizData = [
+      {
+        question: "Q1. Islam ke paanch bunyadi arkan kya hain?",
+        options: ["Namaz, Roza, Zakat, Hajj, Shahadat", "Roza, Zakat, Jihad, Namaz, Khutbah", "Shahadat, Quran, Namaz, Roza, Zakat"],
+        answer: 0
+      },
+      {
+        question: "Q2. Quran Sharif kis zuban mein nazil hua?",
+        options: ["Farsi", "Arabic", "Urdu"],
+        answer: 1
+      },
+      {
+        question: "Q3. Nabi Muhammad ﷺ ko pehli wahi kis ghari aayi?",
+        options: ["Ghar-e-Hira", "Ghar-e-Saur", "Masjid Nabwi"],
+        answer: 0
+      },
+      {
+        question: "Q4. Islam mein pehla kalma kya hai?",
+        options: ["La ilaha illallah", "Bismillah", "SubhanAllah"],
+        answer: 0
+      },
+      {
+        question: "Q5. Zakat kis par farz hai?",
+        options: ["Sab logon par", "Ghareebon par", "Amiron par"],
+        answer: 2
+      },
+      {
+        question: "Q6. Hajj kis shehar mein ada hota hai?",
+        options: ["Madina", "Mecca", "Baghdad"],
+        answer: 1
+      },
+      {
+        question: "Q7. Quran mein kitni Surahs hain?",
+        options: ["100", "114", "120"],
+        answer: 1
+      },
+      {
+        question: "Q8. Islam ka pehla khalifa kaun tha?",
+        options: ["Umar (R.A)", "Usman (R.A)", "Abu Bakr (R.A)"],
+        answer: 2
+      }
+    ];
+
+    let current = 0;
+    let score = 0;
+
+    function loadQuestion() {
+      const q = quizData[current];
+      document.getElementById('question').innerText = q.question;
+      const optDiv = document.getElementById('options');
+      optDiv.innerHTML = "";
+
+      q.options.forEach((opt, index) => {
+        const btn = document.createElement("button");
+        btn.innerText = opt;
+        btn.onclick = () => checkAnswer(index);
+        optDiv.appendChild(btn);
+      });
+    }
+
+    function checkAnswer(index) {
+      if (index === quizData[current].answer) {
+        score++;
+      }
+      current++;
+      if (current < quizData.length) {
+        loadQuestion();
+      } else {
+        document.getElementById('question').innerText = "🎉 Quiz Completed!";
+        document.getElementById('options').innerHTML = "";
+        document.getElementById('result').innerText = `Aapka Score: ${score} / ${quizData.length}`;
+        document.querySelector(".btn-try").style.display = "inline-block";
+      }
+    }
+
+    function restartQuiz() {
+      current = 0;
+      score = 0;
+      document.getElementById('result').innerText = "";
+      document.querySelector(".btn-try").style.display = "none";
+      loadQuestion();
+    }
+
+    window.onload = loadQuestion;
+  </script>
+
+</body>
+</html>
